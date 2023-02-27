@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.contenedor{
+    background-color: rgb(240,240,240);
+    height: 80vh;
+    padding-top: 10vh;
+    margin: 0;
+}

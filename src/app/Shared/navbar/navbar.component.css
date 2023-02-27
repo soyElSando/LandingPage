@@ -1,0 +1,15 @@
+.logo{
+    height: 6vh !important;
+}
+
+.logo2{
+    height: 8vh !important;
+}
+
+.nav-link:hover, .logo:hover{
+    cursor: pointer;
+}
+
+nav{
+    height: 10vh;
+}

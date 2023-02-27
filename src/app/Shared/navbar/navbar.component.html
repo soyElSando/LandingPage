@@ -1,6 +1,88 @@
-<nav>
-    <ul>
-        <a routerLink="/home">Home</a>
-        <a>Contacto</a>
-    </ul>
-</nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" data-bs-theme="dark" >
+    <div class="container-fluid">
+      <div class="d-flex">
+        <a class="navbar-brand my-auto" (click)="scrollTo('home')">
+          <img class="logo" src="../../../assets/Logo_DEV.png" alt="GS DEV" id="logo" />
+        </a>
+        <div class="navbar-brand my-auto">
+          <img class="logo2" src="../../../assets/LogoArgentinaPrograma.png" alt="LogoArgentinaPrograma" id="logo2" />
+        </div>
+      </div>
+      <button
+        class="navbar-toggler text-light"
+        type="button"
+        data-bs-toggle="collapse"
+        aria-controls="mynavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        data-bs-target="#mynavbar"
+      >
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse bg-dark navbar-collapse" id="mynavbar" style="width: 100%" >
+        <ul class="navbar-nav m-auto px-3">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              (click)="scrollTo('sobre-mi')"
+              data-bs-toggle="collapse"
+              data-bs-target="#mynavbar"
+              >Sobre mí</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              (click)="scrollTo('proyectos')"
+              data-bs-toggle="collapse"
+              data-bs-target="#mynavbar"
+              >Proyectos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              (click)="scrollTo('formacion')"
+              data-bs-toggle="collapse"
+              data-bs-target="#mynavbar"
+              >Formacion</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="'/contacto'"
+              data-bs-toggle="collapse"
+              data-bs-target="#mynavbar"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+        <div class="float-sm-end">
+            <button class="btn btn-sm m-2 float-sm-end btn-outline-secondary">
+                Español / Inglés
+            </button>
+          <!-- <button
+            *ngIf="!estaLogueado()"
+            type="button"
+            class="btn btn-sm m-2 float-sm-end"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+            id="login"
+          >
+            Login
+          </button>
+          <button
+            *ngIf="estaLogueado()"
+            type="button"
+            class="btn btn-outline-secondary btn-sm m-2 float-sm-end"
+            (click)="logout()"
+            data-bs-toggle="collapse"
+            data-bs-target="#mynavbar"
+          >
+            Logout
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </nav>
