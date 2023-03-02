@@ -1,0 +1,40 @@
+/* portfolio */
+.carousel-caption{
+    background-color: black;
+    opacity: 0.7;
+}
+
+/*No sé porqué el código de la sección 3 no funciona, lo tuve que poner en el html*/
+/* #section3{
+    padding:60px 0px 0px 0px;
+    color: black;  
+    min-height: 100vh;
+      
+}
+
+.carrousel{
+    height: 60%;
+} */
+.imagenCarrousel{
+    width: 100%; 
+    height: 60vh;
+    object-fit: contain;
+}
+
+i{
+    font-size: 0.75rem;
+    
+}
+.mas-en-proyectos{
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+#editarProy{    
+    font-size: 0.8rem;
+}
+
+input{
+    font-size: 0.8rem;
+
+}
