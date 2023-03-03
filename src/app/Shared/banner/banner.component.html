@@ -6,13 +6,13 @@
     <!-- Botones de edición-->
     <div *ngIf="estaLogueado()" class="mt-2">
       <i class="fa-regular fa-plus p-2 m-1 float-end mas-en-proyectos my-3 mt-2 text-muted" data-bs-toggle="modal"
-        data-bs-target="#agregarProy"></i>
+        data-bs-target="#agregarElemento"></i>
   
       <i class="fa-regular fa-trash-can float-end mas-en-proyectos my-3 mt-2 text-muted p-2 m-1" data-bs-toggle="modal"
-        data-bs-target="#seleccionarProyABorrar" ></i>
+        data-bs-target="#seleccionarElementoABorrar" ></i>
   
       <i class="fa-regular fa-pen-to-square float-end mas-en-proyectos my-3 mt-2 text-muted p-2 m-1" data-bs-toggle="modal"
-      data-bs-target="#seleccionarProyAEditar" ></i>
+      data-bs-target="#seleccionarElementoAEditar" ></i>
   
     </div>
   
@@ -26,23 +26,23 @@
   
           <!-- Indicators/dots -->
           <div class="carousel-indicators">
-            <button *ngFor="let proyecto of proyectos; index as i; first as isFirst" type="button" data-bs-target="#demo"
+            <button *ngFor="let elemento of elementos; index as i; first as isFirst" type="button" data-bs-target="#demo"
               [attr.data-bs-slide-to]=i [ngClass]="{'active': isFirst }"></button>
             <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button> -->
           </div>
   
           <!-- The slideshow/carousel -->
           <div class="carousel-inner" style="height:fit-content">
-            <div *ngFor="let proyecto of proyectos; first as isFirst" class="carousel-item active"
+            <div *ngFor="let elemento of elementos; first as isFirst" class="carousel-item active"
               [ngClass]="{'active': isFirst }">
-              <img [src]="proyecto.imagenProy" [alt]="proyecto.nombreProy" class="d-block imagenCarrousel">
+              <img [src]="elemento.imagen" [alt]="elemento.nombre" class="d-block imagenCarrousel">
               <div class="carousel-caption">
   
-                <h3>{{proyecto.nombreProy}}</h3>
+                <h3>{{elemento.nombre}}</h3>
   
-                <p>{{proyecto.descripcionProy}}</p>
+                <p>{{elemento.descripcion}}</p>
   
-                <a [href]="proyecto.linkProy" target="_blank" class="btn btn-sm text-white">
+                <a [href]="elemento.link" target="_blank" class="btn btn-sm text-white">
                   Ver en GitHub <i class="fab fa-github lead text-white"></i>
                 </a>
                 
