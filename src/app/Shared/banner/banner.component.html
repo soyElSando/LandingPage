@@ -1,4 +1,4 @@
-<!-- Seción 3 Porfolio-->
+<!-- Seción 3 Porfolio   HACER ID DINAMICO     -->  
 
 <!-- La edición de esta sección resulta distinta a la de las otras secciones porque al ser un carrousel, si el botón de edición está dentro, el modal se ve solo en el primer slide del carrousel. Para no complicarme, decidí resolverlo de esta manera, para mantener los modales. -->
 <div id="section3" class="container-fluid text-white" style="padding:10px 0px 0px 0px; background-color: rgb(224, 224, 224);">
@@ -22,7 +22,7 @@
   
       <div class="container-fluid float-cenert pb-3 mt-5" id="contenedorCarrousel">
         <!-- Carrousel -->
-        <div id="demo" class="carousel slide mb-2" data-bs-ride="carousel">
+        <div [id]="bannerId" class="carousel slide mb-2" data-bs-ride="carousel">
   
           <!-- Indicators/dots -->
           <div class="carousel-indicators">
@@ -51,10 +51,10 @@
             </div>
   
             <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + bannerId" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + bannerId" data-bs-slide="next">
               <span class="carousel-control-next-icon"></span>
             </button>
           </div>

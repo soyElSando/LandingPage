@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import I18n from 'src/assets/I18n.json'
 
 @Component({
   selector: 'navbar',
@@ -8,7 +9,15 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(private _router: Router) { }
+  titulos = I18n.seccion
+  idiomaEspanol = true
+
+  constructor(private _router: Router) { 
+  }
+
+  toggleLanguage(){
+    this.idiomaEspanol = !this.idiomaEspanol
+  }
 
   scrollTo(element: any): void {
     this._router.navigate(['']).then(() => {

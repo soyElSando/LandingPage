@@ -27,7 +27,7 @@
               (click)="scrollTo('sobre-mi')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              >Sobre mí</a
+              >{{idiomaEspanol ? titulos.sobreMi.es : titulos.sobreMi.en}}</a
             >
           </li>
           <li class="nav-item">
@@ -36,7 +36,7 @@
               (click)="scrollTo('proyectos')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              >Proyectos</a
+              >{{idiomaEspanol ? titulos.proyectos.es : titulos.proyectos.en}}</a
             >
           </li>
           <li class="nav-item">
@@ -45,7 +45,7 @@
               (click)="scrollTo('formacion')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              >Formacion</a
+              >{{idiomaEspanol ? titulos.formacion.es : titulos.formacion.en}}</a
             >
           </li>
           <li class="nav-item">
@@ -54,13 +54,15 @@
               [routerLink]="'/contacto'"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              >Contacto</a
+              >{{idiomaEspanol ? titulos.contacto.es : titulos.contacto.en}}</a
             >
           </li>
         </ul>
         <div class="float-sm-end">
-            <button class="btn btn-sm m-2 float-sm-end btn-outline-secondary">
-                Español / Inglés
+            <button 
+              class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
+              (click)="toggleLanguage()">
+                {{idiomaEspanol ? "English" : "Español"}}
             </button>
           <!-- <button
             *ngIf="!estaLogueado()"

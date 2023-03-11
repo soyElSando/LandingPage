@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BannerComponent } from 'src/app/Shared/banner/banner.component';
 import { ProyectosComponent } from './proyectos.component';
 
 describe('ProyectosComponent', () => {
@@ -8,7 +8,8 @@ describe('ProyectosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProyectosComponent ]
+      declarations: [ ProyectosComponent ,
+      BannerComponent ]
     })
     .compileComponents();
 

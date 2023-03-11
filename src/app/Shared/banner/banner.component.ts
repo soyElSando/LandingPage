@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Banner } from 'src/app/models/banner.model';
 
 @Component({
   selector: 'app-banner',
@@ -7,7 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class BannerComponent {
 
-  @Input()  elementos: any =
+  static instancia:number = 1;
+
+  bannerId:string;
+
+  @Input()  elementos: Banner[] =
   [{
     id: 0,
     nombre: "Site under construction",
@@ -16,6 +21,9 @@ export class BannerComponent {
     link:"",
   }];
 
+  constructor() {
+    this.bannerId = "banner"+(++BannerComponent.instancia);
+  }
   estaLogueado = () => {
     return false;
   }

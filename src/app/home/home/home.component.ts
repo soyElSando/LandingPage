@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Banner } from 'src/app/models/banner.model';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   
-  promos = [
+  promos :Banner[]= [
   {
     id: 1,
     nombre: "Promo1",

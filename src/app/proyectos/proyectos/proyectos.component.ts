@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Banner } from 'src/app/models/banner.model';
 
 @Component({
   selector: 'app-proyectos',
@@ -6,25 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent {
-  proyectos = [
+  proyectos:Banner[] = [
     {
       id: 1,
       nombre: "Proyecto1",
-      imagen:"https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/757_iss044e020824.jpg",
+      imagen:"https://lonelyplanetes.cdnstatics2.com/sites/default/files/fotos/Marruecos_Chefcahouen_500px_103832325_Gareth%20Bell_500px.jpg",
       descripcion:"Un proyecto de prueba1",
       link:"https://www.youtube.com/",
     },
     {
       id: 2,
       nombre: "Proyecto2",
-      imagen:"https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/2-1-2023_rst_courtney_lee_portraits_1-2.jpg",
+      imagen:"https://lonelyplanetes.cdnstatics2.com/sites/default/files/fotos/Marruecos_Casablanca_LPT0517_110_Philip%20Lee%20Harvey_Lonely%20Planet.jpg",
       descripcion:"Un proyecto de prueba2",
       link:"https://www.youtube.com/",
     },
     {
       id: 3,
       nombre: "Proyecto3",
-      imagen:"https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/web_first_images_release_0.png?itok=eP3obzhq",
+      imagen:"https://lonelyplanetes.cdnstatics2.com/sites/default/files/fotos/Marruecos_Sahara_shutterstock_717589531_Igor%20from%20Sarajevo_Shutterstock.jpg",
       descripcion:"Un proyecto de prueba3",
       link:"https://www.youtube.com/",
     }

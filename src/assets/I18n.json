@@ -1,0 +1,20 @@
+{
+    "seccion":{
+        "sobreMi":{
+            "es":"Sobre mí",
+            "en":"About myself"
+        },
+        "proyectos":{
+            "es":"Proyectos",
+            "en":"Proyects"
+        },
+        "formacion":{
+            "es":"Formación",
+            "en":"Education"
+        },
+        "contacto":{
+            "es":"Contacto",
+            "en":"Contact us"
+        }
+    }
+}
