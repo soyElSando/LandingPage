@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BannerComponent } from 'src/app/Shared/banner/banner.component';
+import { CarrouselComponent } from 'src/app/Shared/carrousel/carrousel.component';
 import { ProyectosComponent } from './proyectos.component';
 
 describe('ProyectosComponent', () => {
@@ -9,7 +9,7 @@ describe('ProyectosComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ProyectosComponent ,
-      BannerComponent ]
+      CarrouselComponent ]
     })
     .compileComponents();
 

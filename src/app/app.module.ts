@@ -8,7 +8,7 @@ import { ProyectosComponent } from './proyectos/proyectos/proyectos.component';
 import { FormacionComponent } from './formacion/formacion/formacion.component';
 import { ContactoComponent } from './contacto/contacto/contacto.component';
 import { SobreMiComponent } from './sobreMi/sobre-mi/sobre-mi.component';
-import { BannerComponent } from './Shared/banner/banner.component';
+import { CarrouselComponent } from './Shared/carrousel/carrousel.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { BannerComponent } from './Shared/banner/banner.component';
     ProyectosComponent,
     FormacionComponent,
     ContactoComponent,
-    BannerComponent,
+    CarrouselComponent,
   ],
   imports: [
     BrowserModule,

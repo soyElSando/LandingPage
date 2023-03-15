@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from '../services/language.service';
 import I18n from 'src/assets/I18n.json'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'navbar',
@@ -10,13 +12,24 @@ import I18n from 'src/assets/I18n.json'
 export class NavbarComponent {
 
   titulos = I18n.seccion
-  idiomaEspanol = true
+  idiomaEspanol:boolean =true
+  esEspanolSub: Subscription = new Subscription;
 
-  constructor(private _router: Router) { 
+  constructor(private _router: Router, private languageService: LanguageService) { 
+  }
+
+  ngOnInit() {
+    this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
+      this.idiomaEspanol = isAuthenticated
+    })
+  }
+
+  ngOnDestroy() {
+    this.esEspanolSub.unsubscribe();
   }
 
   toggleLanguage(){
-    this.idiomaEspanol = !this.idiomaEspanol
+    this.languageService.toogleLanguage();
   }
 
   scrollTo(element: any): void {

@@ -22,7 +22,7 @@
   
       <div class="container-fluid float-cenert pb-3 mt-5" id="contenedorCarrousel">
         <!-- Carrousel -->
-        <div [id]="bannerId" class="carousel slide mb-2" data-bs-ride="carousel">
+        <div [id]="carrouselId" class="carousel slide mb-2" data-bs-ride="carousel">
   
           <!-- Indicators/dots -->
           <div class="carousel-indicators">
@@ -35,15 +35,15 @@
           <div class="carousel-inner" style="height:fit-content">
             <div *ngFor="let elemento of elementos; first as isFirst" class="carousel-item active"
               [ngClass]="{'active': isFirst }">
-              <img [src]="elemento.imagen" [alt]="elemento.nombre" class="d-block imagenCarrousel">
+              <img [src]="elemento.imagen" [alt]="idiomaEspanol ? elemento.nombreEs : elemento.nombreEn" class="d-block imagenCarrousel">
               <div class="carousel-caption">
   
-                <h3>{{elemento.nombre}}</h3>
+                <h3>{{idiomaEspanol ? elemento.nombreEs : elemento.nombreEn}}</h3>
   
-                <p>{{elemento.descripcion}}</p>
+                <p>{{idiomaEspanol ? elemento.descripcionEs : elemento.descripcionEn}}</p>
   
                 <a [href]="elemento.link" target="_blank" class="btn btn-sm text-white">
-                  Ver en GitHub <i class="fab fa-github lead text-white"></i>
+                  {{idiomaEspanol ? link.es : link.en}} <i class="fab fa-github lead text-white"></i>
                 </a>
                 
               </div>
@@ -51,10 +51,10 @@
             </div>
   
             <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + bannerId" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + bannerId" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="next">
               <span class="carousel-control-next-icon"></span>
             </button>
           </div>

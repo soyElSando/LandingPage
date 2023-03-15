@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BannerComponent } from 'src/app/Shared/banner/banner.component';
+import { FormacionComponent } from 'src/app/formacion/formacion/formacion.component';
+import { ProyectosComponent } from 'src/app/proyectos/proyectos/proyectos.component';
+import { CarrouselComponent } from 'src/app/Shared/carrousel/carrousel.component';
+import { SobreMiComponent } from 'src/app/sobreMi/sobre-mi/sobre-mi.component';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -10,7 +13,10 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ 
         HomeComponent ,
-        BannerComponent
+        CarrouselComponent,
+        SobreMiComponent,
+        ProyectosComponent,
+        FormacionComponent
       ]
     })
     .compileComponents();

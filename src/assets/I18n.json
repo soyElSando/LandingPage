@@ -16,5 +16,11 @@
             "es":"Contacto",
             "en":"Contact us"
         }
+    },
+    "boton":{
+        "link":{
+            "es":"Ir al enlace",
+            "en":"Visit Link"
+        }
     }
 }
