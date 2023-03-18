@@ -1,0 +1,13 @@
+{
+    "nombre": "Germán Sandoval",
+    "email": "argentina@programa.com",
+    "password": "1234",
+    "profesion": "Desarrolladora Full Stack Jr.",
+    "linkIn": "https://www.linkedin.com/in/leticia-portillo-b62ba3103/",
+    "linkMail":"/contacto",
+    "linkWP":"",
+    "linkGH": "https://github.com/soyElSando",
+    "linkIG":"https://instagram.com/ger.sando",
+    "descripcion": "La <strong>diversidad</strong> en la formación, en el trabajo y en los intereses es algo pasado de moda. Hoy no está bien visto porque se tiende a pensar que se es 'poco especialista'. Sin embargo, es algo de mi persona que valoro mucho. Admito ante la mirada del lector que mi formación es diversa en distintas áreas. Cuando digo áreas diversas digo artes, electrónica, redes, administración y digo desarrollo de software (por supuesto). <br><br>Mis intereses variados me llevan siempre a tener buen trato con clientes y colaboradores, allí lo positivo del caso. En el desarrollo de páginas web, ese es mi <strong>valor agregado </strong>.<br><br> Hace unos años comencé a sumergirme en el mundo de la programación, encontrando en el <strong>desarrollo de aplicaciones Web</strong> mi lugar.<br><br> Mi experiencia de màs de 5 años en gestión me aportan practicidad y eficiencia.<br><br> Si bien no tengo mucha experiencia en el desarrollo de páginas web, soy responsable, detallista y autoexigente y esto se traduce en trabajos de calidad.Te invito a revisar mi portfolio para comprobarlo.<br><br> Para saber más, hacé clic en los siguientes links",
+    "imagenPersonal": "assets/gerSando.png"
+}
