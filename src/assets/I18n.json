@@ -8,13 +8,13 @@
             "es":"Proyectos",
             "en":"Proyects"
         },
-        "formacion":{
-            "es":"Formación",
-            "en":"Education"
-        },
         "contacto":{
             "es":"Contacto",
-            "en":"Contact us"
+            "en":"Contact Us"
+        },
+        "skills":{
+            "es":"Habilidades",
+            "en":"Skills"
         }
     },
     "boton":{

@@ -42,19 +42,19 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              (click)="scrollTo('formacion')"
+              (click)="scrollTo('contacto')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              >{{idiomaEspanol ? titulos.formacion.es : titulos.formacion.en}}</a
+              >{{idiomaEspanol ? titulos.contacto.es : titulos.contacto.en}}</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
-              [routerLink]="'/contacto'"
+              [routerLink]="'/skills'"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              >{{idiomaEspanol ? titulos.contacto.es : titulos.contacto.en}}</a
+              >{{idiomaEspanol ? titulos.skills.es : titulos.skills.en}}</a
             >
           </li>
         </ul>

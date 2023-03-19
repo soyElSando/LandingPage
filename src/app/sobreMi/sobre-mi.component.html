@@ -1,0 +1,25 @@
+<div class="">
+    <div class="row">
+        <img class="avatar col-xs-12 col-sm-7 col-md-4 p-4 m-auto" [src]="datos.avatar" alt="mi foto">
+        <div class="col-sm-12 col-md-7 p-4 d-flex flex-column justify-content-between">
+            <div class="texto">{{idiomaEspanol ? datos.descripcionEs : datos.descripcionEn}}</div>
+            <div class="d-flex row justify-content-center alig-items-center">
+                <a
+                class="btn btn-secondary m-3 col-xs-7 col-sm-3"
+                [routerLink]="'/skills'"
+                >{{idiomaEspanol ? titulos.skills.es : titulos.skills.en}}</a
+                >
+                <a
+                class="btn btn-secondary m-3 col-xs-7 col-sm-3"
+                [routerLink]="'/skills'"
+                >{{idiomaEspanol ? titulos.skills.es : titulos.skills.en}}</a
+                >
+                <a
+                class="btn btn-secondary m-3 col-xs-7 col-sm-3"
+                [routerLink]="'/skills'"
+                >{{idiomaEspanol ? titulos.skills.es : titulos.skills.en}}</a
+                >
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.avatar{
+    border-radius: 100%;
+    max-width: 70vw;
+}
+
+
+.texto{
+    text-align: justify;
+}
+
+.btn{
+    max-width: 60vw !important;
+    align-items: center;
+    justify-content: center;
+}

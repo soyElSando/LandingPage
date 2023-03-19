@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Carrousel } from '../../models/Carrousel.model';
+import { Carrousel } from '../models/Carrousel.model';
 import proyectos from 'src/assets/mockBD/proyectos.json'
 
 @Injectable({
