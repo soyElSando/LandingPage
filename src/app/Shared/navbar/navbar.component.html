@@ -48,42 +48,33 @@
               >{{idiomaEspanol ? titulos.contacto.es : titulos.contacto.en}}</a
             >
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="'/skills'"
-              data-bs-toggle="collapse"
-              data-bs-target="#mynavbar"
-              >{{idiomaEspanol ? titulos.skills.es : titulos.skills.en}}</a
-            >
-          </li>
         </ul>
         <div class="float-sm-end">
-            <button 
-              class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
-              (click)="toggleLanguage()">
-                {{idiomaEspanol ? "English" : "Español"}}
-            </button>
-          <!-- <button
+          <button 
+            class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
+            (click)="toggleLanguage()">
+              {{idiomaEspanol ? "English" : "Español"}}
+          </button>
+          <button
             *ngIf="!estaLogueado()"
             type="button"
-            class="btn btn-sm m-2 float-sm-end"
+            class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
             data-bs-toggle="modal"
             data-bs-target="#myModal"
             id="login"
           >
-            Login
+          {{idiomaEspanol ? boton.login.es : boton.login.en}}
           </button>
           <button
             *ngIf="estaLogueado()"
             type="button"
-            class="btn btn-outline-secondary btn-sm m-2 float-sm-end"
+            class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
             (click)="logout()"
             data-bs-toggle="collapse"
             data-bs-target="#mynavbar"
           >
-            Logout
-          </button> -->
+          {{idiomaEspanol ? boton.logout.es : boton.logout.en}}
+          </button>
         </div>
       </div>
     </div>

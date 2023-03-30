@@ -15,12 +15,31 @@
         "skills":{
             "es":"Habilidades",
             "en":"Skills"
+        },
+        "educacion":{
+            "es":"Formación",
+            "en":"Education"
+        },
+        "experience":{
+            "es":"Experiencia",
+            "en":"Experience"
         }
     },
     "boton":{
         "link":{
             "es":"Ir al enlace",
             "en":"Visit Link"
-        }
+        },"login":{
+            "es":"Ingresar",
+            "en":"Login"
+        },
+        "logout":{
+            "es":"Cerrar sesión",
+            "en":"Logout"
+        },
+        "back":{
+            "es":"Volver",
+            "en":"Back"
+        }   
     }
 }

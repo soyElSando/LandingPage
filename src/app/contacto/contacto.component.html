@@ -1,1 +1,113 @@
-<div class="contenedor">contacto works!</div>
+<div id="section5" class="container-fluid contenedor">
+  <div class="row">
+    <div class="col-10">
+      <div class="container mt-3">
+        <h2>Dejame un Mensaje</h2>
+        <form
+          [formGroup]="mailForm"
+          class="custom-form"
+          (ngSubmit)="enviar($event)"
+        >
+          <div class="mb-3 mt-3">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="email"
+              placeholder="Dirección de correo electrónico"
+              name="email"
+              [ngClass]="{
+                'is-invalid': Email?.errors && Email?.touched,
+                'is-valid': !Email?.errors && Email?.touched
+              }"
+              [(ngModel)]="email"
+            />
+          </div>
+          <div *ngIf="Email?.errors && Email?.touched" class="mb-3">
+            <p *ngIf="Email?.hasError('required')" class="text-danger">
+              Debe ingresar un email si quiere enviar un mensaje
+            </p>
+            <p *ngIf="Email?.hasError('email')" class="text-danger">
+              El formato es incorrecto
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="nombre"
+              id="nombre"
+              placeholder="Ingresá tu nombre"
+              name="nombre"
+              [ngClass]="{
+                'is-invalid': Nombre?.errors && Nombre?.touched,
+                'is-valid': !Nombre?.errors && Nombre?.touched
+              }"
+              [(ngModel)]="nombre"
+            />
+            <div *ngIf="Nombre?.errors && Nombre?.touched" class="mb-3">
+              <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                Debe ingresar un nombre
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="body">Mensaje:</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              formControlName="body"
+              id="body"
+              name="body"
+              [ngClass]="{
+                'is-invalid': Body?.errors && Nombre?.touched,
+                'is-valid': !Body?.errors && Body?.touched
+              }"
+              [(ngModel)]="body"
+            ></textarea>
+          </div>
+          <div *ngIf="Body?.errors && Body?.touched" class="mb-3">
+            <p *ngIf="Body?.hasError('required')" class="text-danger">
+              Debe ingresar un texto si quiere enviar un mensaje
+            </p>
+          </div>
+
+          <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-1">
+      <div class="d-flex flex-column justify-content-between mt-5 pt-5 me-3">
+        <div class="my-3">
+          <a [href]="usuario?.linkIG" target="_blank">
+            <i class="fab fa-instagram iconoContacto"></i>
+          </a>
+        </div>
+        <div class="my-3">
+          <a href="https://wa.me/5491151171835" target="_blank">
+            <i class="fab fa-whatsapp iconoContacto"></i>
+          </a>
+        </div>
+        <div class="my-3">
+          <a [href]="usuario?.linkGH" target="_blank">
+            <i class="fab fa-github iconoContacto"></i>
+          </a>
+        </div>
+        <div class="my-3">
+          <a [href]="usuario?.linkIn" target="_blank">
+            <i class="fab fa-linkedin iconoContacto"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="mostrarConfirmacion" class="alert alert-warning mt-2 w-75 mx-4" role="alert">
+      ¡El mensaje se envió correctamente!
+    </div>
+    <div *ngIf="mostrarError" class="alert alert-danger mt-2 w-75 mx-4" role="alert">
+      ¡El mensaje no se pudo enviar!
+    </div>
+  </div>
+
+</div>

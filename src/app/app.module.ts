@@ -9,6 +9,16 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { SkillsComponent } from './skills/skills.component';
 import { SobreMiComponent } from './sobreMi/sobre-mi.component';
 import { CarrouselComponent } from './Shared/carrousel/carrousel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './Shared/services/login.service';
+import { LanguageService } from './Shared/services/language.service';
+import { SobreMiService } from './sobreMi/sobre-mi.service';
+import { HomeService } from './home/home.service';
+import { MailSenderService } from './contacto/mail-sender.service';
+import { ProyectosService } from './proyectos/proyectos.service';
+import { EducacionComponent } from './educacion/educacion.component';
+import { ExperienciaComponent } from './experiencia/experiencia.component';
+import { GetBackComponent } from './shared/get-back/get-back.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +30,17 @@ import { CarrouselComponent } from './Shared/carrousel/carrousel.component';
     ContactoComponent,
     SkillsComponent,
     CarrouselComponent,
+    EducacionComponent,
+    ExperienciaComponent,
+    GetBackComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginService,LanguageService, SobreMiService, HomeService, MailSenderService, ProyectosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

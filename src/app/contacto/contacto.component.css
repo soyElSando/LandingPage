@@ -1,0 +1,18 @@
+/* contacto */
+#section5{
+    background-color: #c7b299;
+    color: black;
+    padding:100px 20px;
+    min-height: 100vh;
+    
+}
+.sinDecoracion{
+    text-decoration: none;
+}
+.iconoContacto{
+    font-size: 2rem;
+    color:black;
+}
+.iconoContacto:hover{
+    text-shadow: 1px 1px 1px #201f1d
+}

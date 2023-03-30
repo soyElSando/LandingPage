@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LanguageService } from '../services/language.service';
 import I18n from 'src/assets/I18n.json'
 import { Subscription } from 'rxjs';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'navbar',
@@ -12,10 +13,11 @@ import { Subscription } from 'rxjs';
 export class NavbarComponent {
 
   titulos = I18n.seccion
+  boton = I18n.boton
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
 
-  constructor(private _router: Router, private languageService: LanguageService) { 
+  constructor(private loginService: LoginService, private _router: Router, private languageService: LanguageService) { 
   }
 
   ngOnInit() {
@@ -38,4 +40,15 @@ export class NavbarComponent {
       .scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     });
   }
+
+  estaLogueado(): Boolean{
+    return this.loginService.isLoggedIn();
+  }
+
+  logout(){
+    this.loginService.cerrarSesion();
+    this.estaLogueado();
+    this._router.navigate(['/'])
+  }
+
 }
