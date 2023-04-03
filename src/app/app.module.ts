@@ -19,6 +19,7 @@ import { ProyectosService } from './proyectos/proyectos.service';
 import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { GetBackComponent } from './shared/get-back/get-back.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { GetBackComponent } from './shared/get-back/get-back.component';
     EducacionComponent,
     ExperienciaComponent,
     GetBackComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

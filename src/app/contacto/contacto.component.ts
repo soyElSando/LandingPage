@@ -5,6 +5,9 @@ import { Mail } from 'src/app/models/Mail.model';
 import { SobreMi } from 'src/app/models/SobreMi.model';
 import { MailSenderService } from './mail-sender.service';
 import { SobreMiService } from 'src/app/sobreMi/sobre-mi.service';
+import I18n from 'src/assets/I18n.json'
+import { Subscription } from 'rxjs';
+import { LanguageService } from '../Shared/services/language.service';
 
 @Component({
   selector: 'app-contacto',
@@ -14,7 +17,9 @@ import { SobreMiService } from 'src/app/sobreMi/sobre-mi.service';
 export class ContactoComponent implements OnInit {
 
   public usuario: SobreMi | undefined;
-
+  texto = I18n.contacto
+  idiomaEspanol:boolean =true
+  esEspanolSub: Subscription = new Subscription;
   email!: String;
   nombre!: String;
   body!: String;
@@ -25,7 +30,13 @@ export class ContactoComponent implements OnInit {
   mailForm!: FormGroup;
   
 
-  constructor(private sobreMiService: SobreMiService, private formBuilder: FormBuilder, private mailSender: MailSenderService, private router: Router) { }
+  constructor(
+    private sobreMiService: SobreMiService,
+    private formBuilder: FormBuilder,
+    private mailSender: MailSenderService,
+    private router: Router,
+    private languageService: LanguageService
+  ) { }
 
   ngOnInit(): void {
 
@@ -43,7 +54,14 @@ export class ContactoComponent implements OnInit {
 
       }
     ) 
-    
+
+    this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
+      this.idiomaEspanol = isAuthenticated
+    })
+  }
+
+  ngOnDestroy() {
+    this.esEspanolSub.unsubscribe();
   }
 
   get Email(){

@@ -41,5 +41,80 @@
             "es":"Volver",
             "en":"Back"
         }   
+    },
+    "contacto":{
+        "title":{
+            "es":"Dejame un Mensaje",
+            "en":"Contact me"
+        },"mailPH":{
+            "es":"Dirección de correo electrónico",
+            "en":"Email adress"
+        },
+        "mailRequired":{
+            "es":"Debe ingresar un email si quiere enviar un mensaje",
+            "en":"You must enter an email address if you want to send a message"
+        },
+        "mailError":{
+            "es":"El formato es incorrecto",
+            "en":"Invalid email address"
+        },"name":{
+            "es":"Nombre:",
+            "en":"Name:"
+        },"namePH":{
+            "es":"Ingresá tu nombre",
+            "en":"Enter your name"
+        },
+        "nameRequired":{
+            "es":"Debés ingresar tu nombre",
+            "en":"You must enter your name"
+        },"message":{
+            "es":"Mensaje:",
+            "en":"Message:"
+        },"messageRequired":{
+            "es":"Debés ingresar un mensaje",
+            "en":"You must enter your message"
+        },"success":{
+            "es":"¡El mensaje se envió correctamente!",
+            "en":"¡Message sent!"
+        },"failure":{
+            "es":"¡El mensaje no se pudo enviar!",
+            "en":"¡Message couldn't be sent!"
+        },"send":{
+            "es":"Enviar",
+            "en":"Send"
+        }
+    },
+    "login":{
+        "title":{
+            "es":"Ingresá tus credenciales",
+            "en":"Enter your credentials"
+        },"mailPH":{
+            "es":"Ingrese su email",
+            "en":"Enter your email"
+        },
+        "mailRequired":{
+            "es":"Debe ingresar un email si quiere enviar un mensaje",
+            "en":"You must enter an email address if you want to send a message"
+        },
+        "mailError":{
+            "es":"El formato es incorrecto",
+            "en":"Invalid email address"
+        },"pass":{
+            "es":"Contraseña:",
+            "en":"Password:"
+        },"passPH":{
+            "es":"Ingresá tu contraseña",
+            "en":"Enter your password"
+        },
+        "passRequired":{
+            "es":"Debés ingresar una contraseña",
+            "en":"You must enter your password"
+        },"login":{
+            "es":"Ingresar",
+            "en":"Login"
+        },"failure":{
+            "es":"Usuario y/o contraseña inválido",
+            "en":"User and/or password incorrect"
+        }
     }
 }

@@ -1,0 +1,48 @@
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+  
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">{{idiomaEspanol ? texto.title.es : texto.title.en}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form [formGroup] = "form" class="custom-form" (ngSubmit)="login($event)">
+            <div class="modal-body">
+                
+            <div class="mb-2">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" formControlName="email" class="form-control" id="email" name="email"
+                  [placeholder]="idiomaEspanol ? texto.mailPH.es : texto.mailPH.en" 
+                  [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}" >
+            </div>
+            <div *ngIf = "Email?.errors && Email?.touched" class="mb-3">
+              <p *ngIf="Email?.hasError('required')" class="text-danger">{{idiomaEspanol ? texto.mailRequired.es : texto.mailRequired.en}}</p>
+              <p *ngIf="Email?.hasError('email')" class="text-danger">{{idiomaEspanol ? texto.mailError.es : texto.mailError.en}}</p>
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">{{idiomaEspanol ? texto.pass.es : texto.pass.en}}</label>
+                <input type="password" formControlName="password" class="form-control" id="pwd" name="pswd"
+                  [placeholder]="idiomaEspanol ? texto.passPH.es : texto.passPH.en"
+                  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+                  [(ngModel)]="password">
+            </div>
+            <div *ngIf = "Password?.errors && Password?.touched" class="mb-3">
+              <p *ngIf="Email?.hasError('required')" class="text-danger">{{idiomaEspanol ? texto.passRequired.es : texto.passRequired.en}}</p>
+            </div>
+            </div>
+            <div class="mb-3 text-danger" *ngIf="noAutenticado" >
+                <label for="" class="form-label mx-3">{{idiomaEspanol ? texto.failure.es : texto.failure.en}}</label>
+            </div>
+  
+        <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="submit" class="btn login btn-secondary" >{{idiomaEspanol ? texto.login.es : texto.login.en}}</button>
+            </div>
+        </form >
+      </div>
+    </div>
+  </div>

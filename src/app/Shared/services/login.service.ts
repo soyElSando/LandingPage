@@ -16,6 +16,13 @@ export class LoginService {
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')|| '{}'))
    }
 
+   //sin API
+   iniciarSesion({email}:any):Observable<any>{
+      sessionStorage.setItem('currentUser', JSON.stringify(email));  
+      this.currentUserSubject.next(email)
+      return this.currentUserSubject.asObservable();
+    }
+   //con API
    /* iniciarSesion(credenciales:any):Observable<any>{
     return this.http.post(this.apiServerUrl, credenciales).pipe(map(data => {
       sessionStorage.setItem('currentUser', JSON.stringify(data));  
@@ -35,7 +42,9 @@ export class LoginService {
    }
 
    isLoggedIn():Boolean {
-      const usuarioLogueado = false;
+      //sinAPI
+      const usuarioLogueado = sessionStorage['currentUser'];
+      //conAPI
       //const usuarioLogueado = Boolean(this.UsuarioAutenticado.accessToken);
       return usuarioLogueado
    }

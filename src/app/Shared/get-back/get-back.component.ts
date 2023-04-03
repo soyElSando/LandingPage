@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Location } from '@angular/common';
 import I18n from 'src/assets/I18n.json'
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/Shared/services/language.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class GetBackComponent {
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
 
-  constructor(private location: Location, private languageService: LanguageService) {}
+  constructor(private _router: Router, private languageService: LanguageService) {}
 
   ngOnInit() {
     this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
@@ -28,7 +28,11 @@ export class GetBackComponent {
   }
 
   goBack() {
-    this.location.back();
+    //Back to sobre-mi
+    this._router.navigate(['']).then(() => {
+      (document.getElementById('sobre-mi') as HTMLElement)
+      .scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    });
   }
 
 }

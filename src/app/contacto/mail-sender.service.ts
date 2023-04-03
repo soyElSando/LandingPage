@@ -15,7 +15,7 @@ export class MailSenderService {
     //implementación MockBD
     
     public enviarMail(mail: Mail): Observable<any> {
-      console.log(mail);
+      console.log(mail.body)
       return of('mail enviado!');
     }
     //implementación Back
