@@ -1,0 +1,53 @@
+<div class="modal" id="agregarExp">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Nueva Experiencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <form (ngSubmit)="onCreate()" class="custom-form" method="" #formNuevaExp="ngForm">
+        <div class="modal-body">
+
+          <div class="mb-3 form-group">
+            <label for="empresaNueva" class="form-label">Empresa:</label>
+            <input type="text" class="form-control" id="empresaNueva" placeholder="Nombre de la empresa"
+              name="empresaNueva" [(ngModel)]="empresaNueva" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="puestoNuevo" class="form-label">Puesto/s:</label>
+            <input type="text" class="form-control" id="puestoNuevo"
+              placeholder="Introduzca los puestos. Si es más de uno separelos con coma" name="puestoNuevo" [(ngModel)]="puestoNuevo" required>
+              <p class="mb-3 text-muted chico">Si escribe más de un puesto, sepárelos con coma</p>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="logoEmpresaNuevo" class="form-label">Logo:</label>
+            <input type="text" class="form-control" id="logoEmpresaNuevo"
+              placeholder="Introduzca la URL con el logo de la empresa" name="logoEmpresaNuevo" [(ngModel)]="logoEmpresaNuevo">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="inicioNuevo" class="form-label">Inicio:</label>
+            <input type="text" class="form-control" id="inicioNuevo"
+              placeholder="Introduzca cuándo comenzó en la empresa" name="inicioNuevo" [(ngModel)]="inicioNuevo" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="finNuevo" class="form-label">Fin:</label>
+            <input type="text" class="form-control" id="finNuevo"
+              placeholder="Introduzca cuándo comenzó en la empresa" name="finNuevo" [(ngModel)]="finNuevo">
+          </div>
+
+        </div>
+
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button [disabled]="formNuevaExp.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">Agregar experiencia</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

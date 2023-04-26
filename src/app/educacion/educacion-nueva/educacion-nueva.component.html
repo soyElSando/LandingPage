@@ -1,0 +1,69 @@
+<div >
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo Estudio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <form (ngSubmit)="onCreate()" class="custom-form" method="" #formNuevaEdu="ngForm">
+                <div class="modal-body">
+
+                    <div class="mb-2 form-group">
+                        <label for="institucionNueva" class="form-label">Institución:</label>
+                        <input type="text" class="form-control" id="institucionNueva"
+                            placeholder="Nombre de la institución" name="institucionNueva"
+                            [(ngModel)]="institucionNueva" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="tituloNuevo" class="form-label">Título:</label>
+                        <input type="text" class="form-control" id="tituloNuevo" placeholder="Introduzca el título"
+                            name="tituloNuevo" [(ngModel)]="tituloNuevo" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                      <label for="catEduNueva" class="form-label">Categoría:</label>
+                        <input  class="form-control inhabilitado" id="catEduNueva"
+                         name="catEduNueva"
+                        [(ngModel)]="nombreCatEduAsignada" disabled>                   
+               
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="logoInstitucionNuevo" class="form-label">Logo:</label>
+                        <input type="text" class="form-control" id="logoInstitucionNuevo"
+                            placeholder="Introduzca la URL con el logo de la institucion" name="logoInstitucionNuevo"
+                            [(ngModel)]="logoInstitucionNuevo">
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="descripcionNueva" class="form-label">Descipción:</label>
+                        <input type="text" class="form-control" id="descripcionNueva"
+                            placeholder="Introduzca una breve descripción" name="descripcionNueva"
+                            [(ngModel)]="descripcionNueva" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="inicioNuevo" class="form-label">Inicio:</label>
+                        <input type="text" class="form-control" id="inicioNuevo"
+                            placeholder="Introduzca cuándo comenzó los estudios" name="inicioNuevo"
+                            [(ngModel)]="inicioNuevo" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="finNuevo" class="form-label">Fin:</label>
+                        <input type="text" class="form-control" id="finNuevo" placeholder="Introduzca cuándo finalizó"
+                            name="finNuevo" [(ngModel)]="finNuevo">
+                    </div>
+
+                </div>
+
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button [disabled]="formNuevaEdu.invalid" type="submit" class="btn btn-success"
+                        data-bs-dismiss="modal">Agregar formación</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

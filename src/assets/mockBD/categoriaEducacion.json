@@ -1,0 +1,10 @@
+{"categoriaEducacion":[
+    {
+        "idCatEdu": 1,
+        "nombreCatEdu": "Certificaciones"
+    },
+    {
+        "idCatEdu": 2,
+        "nombreCatEdu": "Educación Formal"
+    }
+]}

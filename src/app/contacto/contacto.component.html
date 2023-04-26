@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-10">
       <div class="container mt-3">
-        <h2>{{idiomaEspanol ? texto.title.es : texto.title.en}}</h2>
+        <h2 class="color">{{idiomaEspanol ? texto.title.es : texto.title.en}}</h2>
         <form
           [formGroup]="mailForm"
           class="custom-form"
@@ -82,22 +82,22 @@
       <div class="d-flex flex-column justify-content-between mt-5 pt-5 me-3">
         <div class="my-3">
           <a [href]="usuario?.linkIG" target="_blank">
-            <i class="fab fa-instagram iconoContacto"></i>
+            <i class="fab fa-instagram iconoContacto "></i>
           </a>
         </div>
         <div class="my-3">
           <a href="https://wa.me/5491151171835" target="_blank">
-            <i class="fab fa-whatsapp iconoContacto"></i>
+            <i class="fab fa-whatsapp iconoContacto "></i>
           </a>
         </div>
         <div class="my-3">
           <a [href]="usuario?.linkGH" target="_blank">
-            <i class="fab fa-github iconoContacto"></i>
+            <i class="fab fa-github iconoContacto "></i>
           </a>
         </div>
         <div class="my-3">
           <a [href]="usuario?.linkIn" target="_blank">
-            <i class="fab fa-linkedin iconoContacto"></i>
+            <i class="fab fa-linkedin iconoContacto "></i>
           </a>
         </div>
       </div>

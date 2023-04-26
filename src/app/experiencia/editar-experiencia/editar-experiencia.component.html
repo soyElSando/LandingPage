@@ -1,0 +1,56 @@
+<div >
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Editar Experiencia </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form (ngSubmit)="onEdit()" class="custom-form" method="" #formEditarExp="ngForm">
+          <div class="modal-body">
+  
+            <div class="mb-3 form-group">
+              <label for="empresaEditada" class="form-label">Empresa:</label>
+              <input type="text" class="form-control" id="empresaEditada"
+                name="empresaEditada" [(ngModel)]="empresaEditada" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="puestoEditado" class="form-label">Puesto/s:</label>
+              <input type="text" class="form-control" id="puestoEditado"
+                 name="puestoEditado" [(ngModel)]="puestoEditado" required>
+                 <p class="mb-3 text-muted chico">Si escribe más de un puesto, sepárelos con coma</p>
+            </div>
+            
+              
+          
+            <div class="mb-3 form-group">
+              <label for="logoEmpresaEditado" class="form-label">Logo:</label>
+              <input type="text" class="form-control" id="logoEmpresaEditado"
+                 name="logoEmpresaEditado" [(ngModel)]="logoEmpresaEditado">
+            </div>
+            <div class="mb-3 form-group">
+              <label for="inicioEditado" class="form-label">Inicio:</label>
+              <input type="text" class="form-control" id="inicioEditado"
+                 name="inicioEditado" [(ngModel)]="inicioEditado" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="finNuevo" class="form-label">Fin:</label>
+              <input type="text" class="form-control" id="finNuevo"
+                 name="finNuevo" [(ngModel)]="finEditado">
+            </div>
+  
+          </div>
+  
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button [disabled]="formEditarExp.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="onEdit()">Editar experiencia</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

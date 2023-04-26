@@ -1,0 +1,24 @@
+{"experiencia":[
+    {
+        "Empresa":"Desarrolladora Web FullStack independiente",
+        "logoEmpresa":"assets/LogoLetiChiquito(transparencia).png",
+        "puesto":"Trabajos Free-Lance",
+        "inicio":"septiembre 2022",
+        "fin":"Actualidad"
+    },
+
+    {
+        "Empresa":"WOW!Cx",
+        "logoEmpresa":"assets/wowcx_v2.jpg",
+        "puesto": "Coordinadora de Proyectos",
+        "inicio":"marzo 2022",
+        "fin":"Actualidad"
+    },
+    {
+        "Empresa":"Ipsos Argentina",
+        "logoEmpresa":"assets/logo ipsos_v2.png",
+        "puesto":"Encuestadora telefónica",
+        "inicio":"marzo 2011",
+        "fin":"marzo 2022"
+    }
+]}

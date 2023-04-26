@@ -3,6 +3,7 @@ import { Carrousel } from 'src/app/models/Carrousel.model';
 import { LanguageService } from '../services/language.service';
 import I18n from 'src/assets/I18n.json'
 import { Subscription } from 'rxjs';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-carrousel',
@@ -29,7 +30,7 @@ export class CarrouselComponent {
 
   esEspanolSub: Subscription = new Subscription;
 
-  constructor(private languageService: LanguageService) {
+  constructor(private languageService: LanguageService, private _loginService: LoginService) {
   }
 
   ngOnInit() {
@@ -43,6 +44,6 @@ export class CarrouselComponent {
   }
 
   estaLogueado = () => {
-    return false;
+    return this._loginService.isLoggedIn();
   }
 }

@@ -1,0 +1,40 @@
+.oscura{
+    font-weight:600;
+    text-shadow: 1px 1px 1px #8f714c;
+    
+}
+
+.chico{
+    font-size: 0.8rem;
+   
+}
+
+.muyChico{
+    font-size: 0.6rem;
+    
+}
+
+.logoEducacion{
+    width: 3rem;
+    padding: 0.5rem;
+}
+
+
+
+i {
+    font-size: 0.75rem;
+}
+
+.icono-principal{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    
+}
+
+.mas-en-educacion{
+    font-size: 0.8rem;
+    color: black;
+    font-weight: bold;
+    margin: auto;
+}

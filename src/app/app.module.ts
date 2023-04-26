@@ -18,8 +18,14 @@ import { MailSenderService } from './contacto/mail-sender.service';
 import { ProyectosService } from './proyectos/proyectos.service';
 import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
-import { GetBackComponent } from './shared/get-back/get-back.component';
+import { GetBackComponent } from './Shared/get-back/get-back.component';
 import { LoginComponent } from './login/login.component';
+import { BorrarExperienciaComponent } from './experiencia/borrar-experiencia/borrar-experiencia.component';
+import { EditarExperienciaComponent } from './experiencia/editar-experiencia/editar-experiencia.component';
+import { ExperienciaNuevaComponent } from './experiencia/experiencia-nueva/experiencia-nueva.component';
+import { BorrarEducacionComponent } from './educacion/borrar-educacion/borrar-educacion.component';
+import { EditarEducacionComponent } from './educacion/editar-educacion/editar-educacion.component';
+import { EducacionNuevaComponent } from './educacion/educacion-nueva/educacion-nueva.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,12 @@ import { LoginComponent } from './login/login.component';
     ExperienciaComponent,
     GetBackComponent,
     LoginComponent,
+    BorrarExperienciaComponent,
+    EditarExperienciaComponent,
+    ExperienciaNuevaComponent,
+    BorrarEducacionComponent,
+    EditarEducacionComponent,
+    EducacionNuevaComponent
   ],
   imports: [
     BrowserModule,

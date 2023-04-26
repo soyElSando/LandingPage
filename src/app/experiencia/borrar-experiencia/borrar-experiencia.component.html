@@ -1,0 +1,25 @@
+<div  >
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar experiencia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+
+            <div class="modal-body">
+                <h3>{{experienciaABorrar?.Empresa}}</h3>
+                <p>¿Está seguro que desea borrar esta experiencia?</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDelete()">Borrar experiencia</button>
+            </div>
+
+        </div>
+    </div>

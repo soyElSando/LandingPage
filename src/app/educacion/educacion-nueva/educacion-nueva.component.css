@@ -1,0 +1,10 @@
+input{
+    font-size: 0.7rem;
+}
+select{
+    font-size: 0.7rem;
+}
+
+.inhabilitado{
+    background-color: rgb(190, 189, 188);
+}

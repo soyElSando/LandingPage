@@ -1,5 +1,39 @@
-<div class="contenedor">experiencia works!
-    <br><br>
-    <app-get-back></app-get-back>
-</div>
+<ul class="contenedor">
+  <h2 class="mt-0">Experiencia Laboral</h2>
+  <li *ngFor="let trabajo of experiencias" class="mb-2" style="list-style-type: none;">
+    <div class="row g-0 tarjeta mb-4">
+      <div class="col-md-1">
+        <img [src]="trabajo.logoEmpresa" class="img-fluid rounded logoEnTarjeta mt-3 mb-3" alt="imagen-logo">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body justify-content-start mx-3">
+          <h5 class="card-title fw-bold">{{trabajo.Empresa}}</h5>
+          <ul class="card-text small ">
+            <li *ngFor="let puesto of convertirEnArray(trabajo.puesto)">
+              {{puesto}}
+            </li>
+            <p class="card-text text-end"><small class="text-muted ">{{trabajo.inicio}} - {{trabajo.fin}}</small>
+            </p>
+          </ul>
+        </div>
+      </div>
+      <div  *ngIf="estaLogueado()" class="d-flex justify-content-end col-2 mt-2">
+        <i class="fa-regular fa-trash-can text-muted m-2" data-bs-toggle="modal" data-bs-target="#borrarExp"
+          (click)="guardarTrabajo(trabajo)"></i>
+        <i class="fa-regular fa-pen-to-square text-muted m-2" data-bs-toggle="modal" data-bs-target="#editarExp" (click)="guardarTrabajo(trabajo)"></i>
+      </div>
 
+      <app-borrar-experiencia (onDeleteEvent)="renderizar()" id="borrarExp"  class="modal" [experienciaABorrar]="trabajoActual"></app-borrar-experiencia>
+      <app-editar-experiencia (onEditEvent)="renderizar()" id="editarExp" class="modal" [experienciaAEditar]="trabajoActual"></app-editar-experiencia>
+      
+    </div>
+  </li>
+  <div *ngIf="estaLogueado()" class="d-flex justify-content-center">
+    <i class="fa-regular fa-plus icono-principal p-2 text-muted float-end" data-bs-toggle="modal"
+      data-bs-target="#agregarExp"></i>
+  </div>
+  <br><br>
+  <app-get-back></app-get-back>
+</ul>
+
+<app-experiencia-nueva (onCreateEvent)="renderizar()"></app-experiencia-nueva>

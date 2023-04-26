@@ -1,0 +1,31 @@
+.card-title{
+    font-size: 1.2rem;
+}
+
+.card-text{
+    font-size: 0.9rem;
+}
+
+.logoEnTarjeta{
+    width: 4rem;
+}
+
+.tarjeta{
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 1%;
+    width: 70%;
+    margin:auto;
+}
+
+i {
+    font-size: 0.75rem;
+
+}
+
+.icono-principal{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    
+}

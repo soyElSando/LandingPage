@@ -11,8 +11,12 @@
 }
 .iconoContacto{
     font-size: 2rem;
-    color:black;
+    color:#201f1d;
 }
 .iconoContacto:hover{
-    text-shadow: 1px 1px 1px #201f1d
+    text-shadow: 1px 1px 1px
+}
+
+.color{
+    color:#201f1d;
 }
