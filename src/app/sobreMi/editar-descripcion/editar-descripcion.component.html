@@ -1,0 +1,39 @@
+<div >
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}} </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form (ngSubmit)="onEdit()" class="custom-form" method="" #formEditarDesc="ngForm">
+          <div class="modal-body">
+  
+            <div class="mb-3 form-group">
+              <label for="descripcionEditadaEs" class="form-label">{{idiomaEspanol ? ediciones.enEspanol.es : ediciones.enEspanol.en}}:</label>
+              <textarea class="form-control" id="descripcionEditadaEs"
+                name="descripcionEditadaEs" [(ngModel)]="descripcionEs" required></textarea>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="descripcionEditadaEn" class="form-label">{{idiomaEspanol ? ediciones.enIngles.es : ediciones.enIngles.en}}:</label>
+              <textarea class="form-control" id="descripcionEditadaEn"
+                name="descripcionEditadaEn" [(ngModel)]="descripcionEn" required></textarea>
+            </div>
+            
+  
+          </div>
+  
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+            <button [disabled]="formEditarDesc.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="onEdit()">{{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

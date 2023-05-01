@@ -1,6 +1,7 @@
 export interface Experiencia {
     idExp?: number;
-    puesto: String;    
+    puestoEs: String;
+    puestoEn: String;    
     Empresa: String ;
     logoEmpresa: String ;
     inicio: String ;

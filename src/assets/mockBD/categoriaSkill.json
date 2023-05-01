@@ -1,0 +1,16 @@
+{"categoriaSkill":[{
+    "idCatSkill":1,
+    "nombreCatSkillEs":"Tecnología Front-End",
+    "nombreCatSkillEn":"Front-End technologies"
+},
+{
+    "idCatSkill":2,
+    "nombreCatSkillEs":"Teconología Back-End",
+    "nombreCatSkillEn":"Back-End technologies"
+},
+{
+    "idCatSkill":3,
+    "nombreCatSkillEs":"Idiomas",
+    "nombreCatSkillEn":"Languages"
+}]
+}

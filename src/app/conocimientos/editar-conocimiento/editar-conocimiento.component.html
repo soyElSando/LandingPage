@@ -1,0 +1,58 @@
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <form (ngSubmit)="onEdit()" class="custom-form" method="" #formEditarSkill="ngForm">
+                <div class="modal-body">
+
+                    <div class="mb-2 form-group">
+                        <label for="nombreSkillEditada" class="form-label">
+                            {{idiomaEspanol ? ediciones.nombre.es : ediciones.nombre.en}}:</label>
+                        <input type="text" class="form-control" id="nombreSkillEditada"
+                             name="institucionEditada"
+                            [(ngModel)]="nombreSkillEditada" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="avanceEditado" class="form-label">
+                            {{idiomaEspanol ? ediciones.avance.es : ediciones.avance.en}}:</label>
+                        <input type="number" min="0" step="5" max="100" class="form-control" id="avanceEditado" 
+                            name="avanceEditado" [(ngModel)]="avanceEditado" required
+                             [ngClass] = "{'is-invalid': avanceEditado == undefined || avanceEditado >100! || avanceEditado <= 0  && this.formEditarSkill.touched}">
+                    </div>
+                    <div class="mb-2">
+                        <label for="catSkillEditada" class="form-label">
+                            {{idiomaEspanol ? ediciones.categoria.es : ediciones.categoria.en}}:</label>
+                        <select class="form-select"  id="catSkillEditada"
+                             name="catSkillEditada"  [(ngModel)]="idCatSkillEditada"
+                            required [ngClass] = "{'is-invalid': !idCatSkillEditada && this.formEditarSkill.touched}">
+                            <!-- <option selected> {{skillAEditar?.catSkill?.nombreCatSkill}}</option> -->
+                            
+                            <option *ngFor="let categoria of categorias;" [value]="categoria.idCatSkill">
+                                {{idiomaEspanol ? categoria.nombreCatSkillEs : categoria.nombreCatSkillEn}}</option>
+                        </select>
+                        
+
+                    </div>
+                   
+                </div>
+
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}
+                    </button>
+                    <button [disabled]="formEditarSkill.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.editar.es: botones.editar.en}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

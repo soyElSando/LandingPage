@@ -1,0 +1,51 @@
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <form (ngSubmit)="onCreate()" class="custom-form" method="" #formNuevaSkill="ngForm">
+                <div class="modal-body">
+
+                    <div class="mb-2 form-group">
+                        <label for="nombreSkillNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.nombre.es : ediciones.nombre.en}}:</label>
+                        <input type="text" class="form-control" id="nombreSkillNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.comentarioSkill.nuevoNombre.es : ediciones.comentarioSkill.nuevoNombre.en"
+                             name="nombreSkillNuevo"
+                            [(ngModel)]="nombreSkillNuevo" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="avanceNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.avance.es : ediciones.avance.en}}:</label>
+                        <input type="number"min="0" step="5" max="100" class="form-control" id="avanceNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.comentarioSkill.nuevoAvance.es : ediciones.comentarioSkill.nuevoAvance.en"
+                             name="avanceNuevo"
+                            [(ngModel)]="avanceNuevo" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="catSkillNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.categoria.es : ediciones.categoria.en}}:</label>
+                        <input class="form-control inhabilitado" id="catSkillNuevo"  name="catSkillNuevo"
+                         [(ngModel)]="idiomaEspanol ? categoriaAsignada.nombreCatSkillEs : categoriaAsignada.nombreCatSkillEn"
+                          disabled>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+                    <button [disabled]="formNuevaSkill.invalid" type="submit" class="btn btn-success"
+                        data-bs-dismiss="modal">{{idiomaEspanol ? botones.crear.es: botones.crear.en}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

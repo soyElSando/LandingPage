@@ -4,6 +4,7 @@ import { LanguageService } from '../Shared/services/language.service';
 import { SobreMiService } from './sobre-mi.service';
 import I18n from 'src/assets/I18n.json'
 import { Subscription } from 'rxjs';
+import { LoginService } from '../Shared/services/login.service';
 
 
 @Component({
@@ -12,6 +13,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent {
+
+  idiomaEspanol:boolean =true
+  titulos = I18n.seccion
+  esEspanolSub: Subscription = new Subscription;
   datos: SobreMi ={
     "nombre": "Germán Sandoval",
     "email": "argentina@programa.com",
@@ -26,7 +31,8 @@ export class SobreMiComponent {
     "descripcionEn": "lorem ipsum dolor sit amet, consectetur adip",
     "avatar": "assets/gerSando.jpg"
 }
-  constructor(private SobreMiService: SobreMiService, private languageService:LanguageService) {
+  constructor(private SobreMiService: SobreMiService, private languageService:LanguageService, private loginService:LoginService) {
+    
     this.SobreMiService.getSobreMi().subscribe(data => {
       
       this.datos = data;
@@ -45,8 +51,12 @@ export class SobreMiComponent {
     this.esEspanolSub.unsubscribe();
   }
   
-  idiomaEspanol:boolean =true
-  titulos = I18n.seccion
-  esEspanolSub: Subscription = new Subscription;
-  
+  renderizar(){
+    this.SobreMiService.getSobreMi().subscribe(data => {
+      this.datos = data;
+  })}
+
+  estaLogueado(){
+    return this.loginService.isLoggedIn();
+  }
 }

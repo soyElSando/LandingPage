@@ -6,7 +6,6 @@ import { NavbarComponent } from './Shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ContactoComponent } from './contacto/contacto.component';
-import { SkillsComponent } from './skills/skills.component';
 import { SobreMiComponent } from './sobreMi/sobre-mi.component';
 import { CarrouselComponent } from './Shared/carrousel/carrousel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +25,14 @@ import { ExperienciaNuevaComponent } from './experiencia/experiencia-nueva/exper
 import { BorrarEducacionComponent } from './educacion/borrar-educacion/borrar-educacion.component';
 import { EditarEducacionComponent } from './educacion/editar-educacion/editar-educacion.component';
 import { EducacionNuevaComponent } from './educacion/educacion-nueva/educacion-nueva.component';
+import { CommonModule } from '@angular/common';
+import { ConocimientosComponent } from './conocimientos/conocimientos.component';
+import { ConocimientoNuevoComponent } from './conocimientos/conocimiento-nuevo/conocimiento-nuevo.component';
+import { BorrarConocimientoComponent } from './conocimientos/borrar-conocimiento/borrar-conocimiento.component';
+import { EditarConocimientoComponent } from './conocimientos/editar-conocimiento/editar-conocimiento.component';
+import { CategoriaSkillNuevaComponent } from './conocimientos/categoria-skill-nueva/categoria-skill-nueva.component';
+import { BorrarCategoriaSkillComponent } from './conocimientos/borrar-categoria-skill/borrar-categoria-skill.component';
+import { EditarDescripcionComponent } from './sobreMi/editar-descripcion/editar-descripcion.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +42,6 @@ import { EducacionNuevaComponent } from './educacion/educacion-nueva/educacion-n
     SobreMiComponent,
     ProyectosComponent,
     ContactoComponent,
-    SkillsComponent,
     CarrouselComponent,
     EducacionComponent,
     ExperienciaComponent,
@@ -46,9 +52,17 @@ import { EducacionNuevaComponent } from './educacion/educacion-nueva/educacion-n
     ExperienciaNuevaComponent,
     BorrarEducacionComponent,
     EditarEducacionComponent,
-    EducacionNuevaComponent
+    EducacionNuevaComponent,
+    ConocimientosComponent,
+    ConocimientoNuevoComponent,
+    BorrarConocimientoComponent,
+    EditarConocimientoComponent,
+    CategoriaSkillNuevaComponent,
+    BorrarCategoriaSkillComponent,
+    EditarDescripcionComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

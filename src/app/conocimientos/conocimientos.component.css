@@ -1,0 +1,31 @@
+/* Conocimiento */
+#section4{
+    padding: 20px;
+    min-height: 80vh;
+}
+
+.progress{
+    height: 1.5rem;
+}
+
+i {
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+}
+
+.icono-principal{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.progress-bar{
+    height: 100%;
+}
+
+.iconoEnBarra{
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.1rem
+    
+}

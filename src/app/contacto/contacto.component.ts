@@ -40,11 +40,11 @@ export class ContactoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.sobreMiService.getSobreMi().subscribe(data => {
-      
-      this.usuario = data;
+    this.renderizar()
 
-    } ); 
+    this.sobreMiService.getOnEditEvent().subscribe(() => {
+      this.renderizar();
+    });
 
     this.mailForm = this.formBuilder.group(
       {
@@ -75,6 +75,14 @@ export class ContactoComponent implements OnInit {
   get Body(){
     return this.mailForm.get('body')
   }
+  
+
+  renderizar(){
+    this.sobreMiService.getSobreMi().subscribe(data => {
+      
+    this.usuario = data;
+
+  } ); }
 
   enviar(event: Event){
     event.preventDefault;

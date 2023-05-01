@@ -1,0 +1,49 @@
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <form (ngSubmit)="onCreate()" class="custom-form" method="" #formNuevaSkill="ngForm">
+                <div class="modal-body">
+
+                    <div class="mb-2 form-group">
+                        <label for="nombreCatSkillEsNuevo" class="form-label">
+                            {{idiomaEspanol ? titulo.labelEs.es : titulo.labelEs.en}}:</label>
+                        <input type="text" class="form-control" id="nombreCatSkillEsNuevo"
+                            [placeholder]="idiomaEspanol ? titulo.comentario.es : titulo.comentario.en"
+                             name="nombreCatSkillEsNuevo"
+                            [(ngModel)]="nombreCatSkillEsNueva" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="nombreCatSkillEnNuevo" class="form-label">
+                            {{idiomaEspanol ? titulo.labelEn.es : titulo.labelEn.en}}:</label>
+                        <input type="text" class="form-control" id="nombreCatSkillEnNuevo"
+                            [placeholder]="idiomaEspanol ? titulo.comentario.es : titulo.comentario.en"
+                             name="nombreCatSkillEnNuevo"
+                            [(ngModel)]="nombreCatSkillEnNueva" required>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-muted">{{idiomaEspanol ? ediciones.nueva.es : ediciones.nueva.en}} </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}
+                    </button>
+                    <button [disabled]="formNuevaSkill.invalid" type="submit" class="btn btn-success"
+                        data-bs-dismiss="modal">{{idiomaEspanol ? botones.crear.es: botones.crear.en}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

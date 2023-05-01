@@ -1,24 +1,27 @@
 {"experiencia":[
     {
-        "Empresa":"Desarrolladora Web FullStack independiente",
+        "Empresa":"JVM Web Development",
         "logoEmpresa":"assets/LogoLetiChiquito(transparencia).png",
-        "puesto":"Trabajos Free-Lance",
-        "inicio":"septiembre 2022",
-        "fin":"Actualidad"
+        "puestoEs":"Trabajo Free-Lance",
+        "puestoEn":"Freelance worker",
+        "inicio":"09/2022",
+        "fin":"2023"
     },
 
     {
         "Empresa":"WOW!Cx",
         "logoEmpresa":"assets/wowcx_v2.jpg",
-        "puesto": "Coordinadora de Proyectos",
-        "inicio":"marzo 2022",
-        "fin":"Actualidad"
+        "puestoEs": "Coordinadora de Proyectos, Asistencia comercial",
+        "puestoEn":"Project manager",
+        "inicio":"03/2022",
+        "fin":"2023"
     },
     {
         "Empresa":"Ipsos Argentina",
         "logoEmpresa":"assets/logo ipsos_v2.png",
-        "puesto":"Encuestadora telefónica",
-        "inicio":"marzo 2011",
-        "fin":"marzo 2022"
+        "puestoEs":"Encuestadora telefónica",
+        "puestoEn":"Telemarketer",
+        "inicio":"03/2011",
+        "fin":"03/2022"
     }
 ]}

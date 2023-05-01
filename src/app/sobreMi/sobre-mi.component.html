@@ -2,6 +2,7 @@
     <div class="row">
         <img class="avatar col-xs-12 col-sm-7 col-md-4 p-4 m-auto" [src]="datos.avatar" alt="mi foto">
         <div class="col-sm-12 col-md-7 p-4 d-flex flex-column justify-content-between">
+            <i *ngIf="estaLogueado()" class="fa-regular fa-pen-to-square m-3 text-dark" data-bs-toggle="modal" data-bs-target="#editarDesc"></i>
             <div class="texto">{{idiomaEspanol ? datos.descripcionEs : datos.descripcionEn}}</div>
             <div class="d-flex row justify-content-center alig-items-center">
                 <a
@@ -23,3 +24,4 @@
         </div>
     </div>
 </div>
+<app-editar-descripcion (onEditEvent)="renderizar()" id="editarDesc" class="modal"></app-editar-descripcion>

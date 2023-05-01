@@ -1,0 +1,30 @@
+<div >
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+
+            <div class="modal-body">
+                <h3>{{idiomaEspanol ? categoria?.nombreCatSkillEs : categoria?.nombreCatSkillEn}}</h3>
+                <h6>{{idiomaEspanol ? ediciones.borrar1.es : ediciones.borrar1.en}}</h6>
+                <p class="verde">{{idiomaEspanol ? ediciones.borrar2.es : ediciones.borrar2.en}}</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDelete()">
+                    {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}</button>
+            </div>
+
+        </div>
+    </div>
+
+

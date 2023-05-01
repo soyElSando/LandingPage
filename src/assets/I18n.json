@@ -14,7 +14,50 @@
         },
         "skills":{
             "es":"Habilidades",
-            "en":"Skills"
+            "en":"Skills",
+            "edit":{
+                "es":"Editar conocimiento/habilidad",
+                "en":"Edit skill"
+            },
+            "new":{
+                "es":"Nuevo conocimiento/habilidad",
+                "en":"New skill"
+            },
+            "delete":{
+                "es":"Eliminar conocimiento/habilidad",
+                "en":"Delete skill",
+                "comentario":{
+                    "es":"¿Está seguro que desea borrar este conocimiento/habilidad?",
+                    "en":"There is no skill to display in this category yet!"
+                }
+            },
+            "deleteCat":{
+                "es":"Eliminar categoría",
+                "en":"Delete category"
+            },
+            "newCat":{
+                "es":"Nueva categoría",
+                "en":"New category",
+                "comentario":{
+                    "es":"Ingrese el nombre de la cateogiría que quiere agregar",
+                    "en":"Enter the name of the category you want to add"
+                },
+                "labelEs":{
+                    "es":"Nombre en español",
+                    "en":"Name in spanish"
+                },
+                "labelEn":{
+                    "es":"Nombre en inglés",
+                    "en":"Name in english"
+                }
+            },
+            "section":{
+                "es":"Conocimientos y habilidades",
+                "en":"Skills"
+            },"comentario":{
+                "es":"Aún no hay conocimiento/habilidad para mostrar en esta categoría!",
+                "en":"There is no skill to display in this category yet!"
+            }
         },
         "educacion":{
             "es":"Formación",
@@ -22,7 +65,23 @@
         },
         "experience":{
             "es":"Experiencia",
-            "en":"Experience"
+            "en":"Experience",
+            "edit":{
+                "es":"Editar experiencia laboral",
+                "en":"Edit job experience"
+            },
+            "new":{
+                "es":"Nueva experiencia laboral",
+                "en":"New job experience"
+            },
+            "delete":{
+                "es":"Eliminar experiencia laboral",
+                "en":"Delete job experience"
+            },
+            "section":{
+                "es":"Experiencia laboral",
+                "en":"Job experience"
+            }
         }
     },
     "boton":{
@@ -40,7 +99,22 @@
         "back":{
             "es":"Volver",
             "en":"Back"
-        }   
+        },
+        "editar":{
+            "es":"Guardar cambios",
+            "en":"Save changes"
+        },
+        "cancelar":{
+            "es":"Cancelar",
+            "en":"Cancel"
+        },"borrar":{
+            "es":"Eliminar",
+            "en":"Delete"
+        },"crear":{
+            "es":"Crear",
+            "en":"Create"
+        }
+          
     },
     "contacto":{
         "title":{
@@ -115,6 +189,86 @@
         },"failure":{
             "es":"Usuario y/o contraseña inválido",
             "en":"User and/or password incorrect"
+        }
+    },
+    "ediciones":{
+        "sobreMi":{
+            "enEspanol":{
+                "es":"Descripción en español",
+                "en":"Description in spanish"
+            },"enIngles":{
+                "es":"Descripción en inglés",
+                "en":"Description in english"
+            }
+        },
+        "experience":{
+            "empresa":{
+                "es":"Empresa",
+                "en":"Company name"
+            },"puestosEs":{
+                "es":"Puesto/s en español",
+                "en":"Positions in spanish"
+            },"puestosEn":{
+                "es":"Puesto/s en inglés",
+                "en":"Positions in english"
+            },"comentario":{
+                "edicion":{
+                    "es":"Si escribe más de un puesto, sepárelos con coma",
+                    "en":"If you write more than one position, please use comma in between them"  
+                },
+                "borrar":{
+                    "es":"¿Está seguro que desea borrar esta experiencia?",
+                    "en":"Are you sure you want to delete this experience?"
+                }
+                
+            },"logo":{
+                "es":"Logo",
+                "en":"Logo"
+            },"inicio":{
+                "es":"Inicio",
+                "en":"From"
+            },"fin":{
+                "es":"Fin",
+                "en":"To"
+            }
+        },
+        "skill":{
+            "comentarioCat":{
+                "borrar1":{
+                    "es":"¿Está seguro que desea borrar esta categoría?",
+                    "en":"Are you sure you want to delete this category?"
+                },
+                "borrar2":{
+                    "es":"Si la elimina también se borrará todo su contenido (conocimiento y/o habilidades que contenga)",
+                    "en":"If you delete it, you will also delete all the skils related to this category"
+                },
+                "nueva":{
+                    "es":"Se creará un área nueva vacía al final de las áreas de categorias existentes",
+                    "en":"A new empty area will be created at the end of the existing category areas"
+                }
+            },
+            "comentarioSkill":{
+                "borrar":{
+                    "es":"¿Está seguro que desea borrar este conocimiento/habilidad?",
+                    "en":"Are you sure you want to delete this skill?"
+                },
+                "nuevoNombre":{
+                    "es":"Ingrese el nombre del conocimiento o habilidad",
+                    "en":"Enter the name of the category you want to add"},
+                "nuevoAvance":{
+                    "es":"Ingrese el % de avance del 0 al 100",
+                    "en":"Enter the % of progress from 0 to 100"
+                }
+            },
+            "nombre":{
+                "es":"Nombre",
+                "en":"Name"},
+            "avance":{
+                "es":"Avance",
+                "en":"Progress"},
+            "categoria":{
+                "es":"Categoría",
+                "en":"Category"}
         }
     }
 }
