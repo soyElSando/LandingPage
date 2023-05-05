@@ -9,13 +9,14 @@
 }
 
 i {
-    color: rgb(255, 255, 255);
+    color: black;
     font-size: 0.9rem;
 }
 
 .icono-principal{
     font-size: 0.8rem;
     font-weight: bold;
+    align-items: center;
 }
 
 .progress-bar{

@@ -1,4 +1,86 @@
 {
+    "carrousel":{
+        "ediciones":{
+            "borrar":{
+                "titulo":{
+                    "es":"Eliminar Item",
+                    "en":"Delete item"
+                },
+                "comentario":{
+                    "es":"¿Está seguro que desea borrar este item?",
+                    "en":"Are you sure you want to delete this item?"
+                }
+            }
+        },
+        "proyectos":{
+            "es":"Proyecto",
+            "en":"Project",
+            "ediciones":{
+                "new":{
+                    "es":"Agregar proyecto",
+                    "en":"Add project"
+                },
+                "edit":{
+                    "es":"Editar proyecto",
+                    "en":"Edit project"
+                },
+                "nombreEs":{
+                    "es":"Nombre del proyecto en español",
+                    "en":"Name of the project in spanish"
+                },
+                "nombreEn":{
+                    "es":"Nombre del proyecto en inglés",
+                    "en":"Name of the project in english"
+                },
+                "descripcionEs":{
+                    "es":"Descripción del proyecto en español",
+                    "en":"Description of the project in spanish"
+                },
+                "descripcionEn":{
+                    "es":"Descripción del proyecto en inglés",
+                    "en":"Description of the project in english"
+                },
+                "imagen":{
+                    "es":"Imagen del proyecto (URL)",
+                    "en":"Image of the project (URL)"
+                }
+            }
+        },
+        "promos":{
+            "es":"Promo",
+            "en":"Promo",
+            "ediciones":{
+                "new":{
+                    "es":"Agregar promo",
+                    "en":"Add promo"
+                },
+                "edit":{
+                    "es":"Editar promo",
+                    "en":"Edit promo"
+                },
+                "nombreEs":{
+                    "es":"Nombre de la promo en español",
+                    "en":"Name of the promo in spanish"
+                },
+                "nombreEn":{
+                    "es":"Nombre del promo en inglés",
+                    "en":"Name of the promo in english"
+                },
+                "descripcionEs":{
+                    "es":"Descripción de la promo en español",
+                    "en":"Description of the promo in spanish"
+                },
+                "descripcionEn":{
+                    "es":"Descripción de la promo en inglés",
+                    "en":"Description of the promo in english"
+                },
+                "imagen":{
+                    "es":"Imagen del promo (URL)",
+                    "en":"Image of the promo (URL)"
+                }
+            }
+        }
+    },
     "seccion":{
         "sobreMi":{
             "es":"Sobre mí",
@@ -6,7 +88,7 @@
         },
         "proyectos":{
             "es":"Proyectos",
-            "en":"Proyects"
+            "en":"Projects"
         },
         "contacto":{
             "es":"Contacto",
@@ -28,7 +110,7 @@
                 "en":"Delete skill",
                 "comentario":{
                     "es":"¿Está seguro que desea borrar este conocimiento/habilidad?",
-                    "en":"There is no skill to display in this category yet!"
+                    "en":"Are you sure you want to delete this skill?"
                 }
             },
             "deleteCat":{
@@ -61,7 +143,27 @@
         },
         "educacion":{
             "es":"Formación",
-            "en":"Education"
+            "en":"Education",
+            "section":{
+                "es":"Formación",
+                "en":"Studies",
+                "borrar":{
+                    "es":"Eliminar estudio",
+                    "en":"Delete study",
+                    "comentario":{
+                        "es":"¿Está seguro que desea borrar este estudio?",
+                        "en":"Are you sure you want to delete this study?"
+                    }
+                },
+                "edit":{
+                    "es":"Editar estudio",
+                    "en":"Edit study"
+                },
+                "new":{
+                    "es":"Nuevo estudio",
+                    "en":"New study"
+                }
+            }
         },
         "experience":{
             "es":"Experiencia",
@@ -269,6 +371,68 @@
             "categoria":{
                 "es":"Categoría",
                 "en":"Category"}
+        },
+        "educacion":{
+            "institution":{
+                "es":"Institución",
+                "en":"Institution"
+            },"degreeEs":{
+                "es":"Título en español",
+                "en":"Degree in spanish"
+            },"degreeEn":{
+                "es":"Título en inglés",
+                "en":"Degree in english"
+            },"descripcionEs":{
+                "es":"Descripción en español",
+                "en":"Description in spanish"
+            },"descripcionEn":{
+                "es":"Descripción en inglés",
+                "en":"Descriptin in english"
+            },"placeholder":{
+                "tituloEs":{
+                    "es":"Introduzca el título en español",
+                    "en":"Enter your degree in spanish"
+                },
+                "tituloEn":{
+                    "es":"Introduzca el título en inglés",
+                    "en":"Enter your degree in english"
+                },
+                "descripcionEs":{
+                    "es":"Introduzca una breve descripción en español",
+                    "en":"Enter a brief description in spanish"
+                },
+                "descripcionEn":{
+                    "es":"Introduzca una breve descripción en inglés",
+                    "en":"Enter a brief description in english"
+                },
+                "institucion":{
+                    "es":"Nombre de la institución",
+                    "en":"Name of the education institution"
+                },
+                "logo":{
+                    "es":"Introduzca la URL con el logo de la institucion",
+                    "en":"Enter the URL with the institution logo"
+                },
+                "inicio":{
+                    "es":"Introduzca cuándo comenzó los estudios",
+                    "en":"Enter when you started your studies"
+                },
+                "fin":{
+                    "es":"Introduzca cuándo finalizó",
+                    "en":"Enter when you finished your studies"
+                }
+            },"categoria":{
+                "es":"Categoría",
+                "en":"Category"
+            },"logo":"Logo"
+            ,"inicio":{
+                "es":"Inicio",
+                "en":"From"
+            },"fin":{
+                "es":"Fin",
+                "en":"To"
+            }
         }
+
     }
 }

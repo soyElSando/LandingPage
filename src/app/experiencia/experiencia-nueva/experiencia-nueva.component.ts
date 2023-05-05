@@ -6,6 +6,8 @@ import { Output, EventEmitter } from '@angular/core';
 import I18n from 'src/assets/I18n.json';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/Shared/services/language.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-experiencia-nueva',
@@ -13,6 +15,7 @@ import { LanguageService } from 'src/app/Shared/services/language.service';
   styleUrls: ['./experiencia-nueva.component.css']
 })
 export class ExperienciaNuevaComponent implements OnInit {
+  
   puestoEsNuevo: String = "";
   puestoEnNuevo: String = "";
   empresaNueva: String = "";

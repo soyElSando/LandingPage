@@ -4,21 +4,24 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h5 class="modal-title">Eliminar estudio</h5>
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
 
             <div class="modal-body">
-                <h3>{{educacionABorrar?.titulo}}</h3>
-                <p>¿Está seguro que desea borrar este estudio?</p>
+                <h3>{{idiomaEspanol ? educacionABorrar?.tituloEs : educacionABorrar?.tituloEn}}</h3>
+                <p>{{idiomaEspanol ? titulo.comentario.es : titulo.comentario.en}}</p>
             </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDelete()">Borrar estudio</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDelete()">
+                    {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}
+                </button>
             </div>
 
         </div>

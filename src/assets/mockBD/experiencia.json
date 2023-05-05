@@ -1,27 +1,30 @@
 {"experiencia":[
     {
-        "Empresa":"JVM Web Development",
+        "id":1,
+        "Empresa":"LP Development",
         "logoEmpresa":"assets/LogoLetiChiquito(transparencia).png",
         "puestoEs":"Trabajo Free-Lance",
         "puestoEn":"Freelance worker",
-        "inicio":"09/2022",
+        "inicio":"2022",
         "fin":"2023"
     },
 
     {
+        "id":2,
         "Empresa":"WOW!Cx",
         "logoEmpresa":"assets/wowcx_v2.jpg",
-        "puestoEs": "Coordinadora de Proyectos, Asistencia comercial",
+        "puestoEs": "Coordinador de Proyectos, Asistencia comercial",
         "puestoEn":"Project manager",
-        "inicio":"03/2022",
+        "inicio":"2022",
         "fin":"2023"
     },
     {
+        "id":3,
         "Empresa":"Ipsos Argentina",
         "logoEmpresa":"assets/logo ipsos_v2.png",
-        "puestoEs":"Encuestadora telefónica",
+        "puestoEs":"Encuestador telefónico",
         "puestoEn":"Telemarketer",
-        "inicio":"03/2011",
-        "fin":"03/2022"
+        "inicio":"2011",
+        "fin":"2022"
     }
 ]}

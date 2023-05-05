@@ -1,8 +1,8 @@
 <!-- Seción 4 Skills-->
 <div id="section4" class="contenedor bg-white">
-  <div class="d-flex ">
+  <div class="d-flex">
     <h3 class="mt-5 pt-3">{{idiomaEspanol ? titulo.section.es : titulo.section.en}}</h3>
-    <i *ngIf="estaLogueado()" class="fa-regular fa-plus icono-principal p-2 m-1" data-bs-toggle="modal"
+    <i *ngIf="estaLogueado()" class="fa-regular fa-plus icono-principal mt-5 pt-3 px-3 d-flex" data-bs-toggle="modal"
     data-bs-target="#agregarCatSkill"></i>
   </div>
 
@@ -14,7 +14,7 @@
         <div class="d-flex justify-content-between">
           <h3> {{idiomaEspanol ? categoria.nombreCatSkillEs : categoria.nombreCatSkillEn}}</h3>
           <div class="d-flex flex-column">
-            <i *ngIf="estaLogueado()" class="fa-regular fa-trash-can  icono-principal" data-bs-toggle="modal"
+            <i *ngIf="estaLogueado()" class="fa-regular fa-trash-can icono-principal" data-bs-toggle="modal"
             data-bs-target="#eliminarCatSkill"(click)="guardarCategoriaSkill(categoria)"></i>
           </div>
         </div>
@@ -45,7 +45,6 @@
             </div>
 
           </div>
-
 
           <app-borrar-conocimiento class="modal" id="eliminarConocimiento" [skillABorrar]="skillActual" (onDeleteEvent)="renderizar()"></app-borrar-conocimiento>
           <app-editar-conocimiento class="modal" id="editarConocimiento" [skillAEditar]="skillActual" (onEditEvent)="renderizar()"></app-editar-conocimiento>

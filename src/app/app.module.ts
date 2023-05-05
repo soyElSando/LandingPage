@@ -33,6 +33,9 @@ import { EditarConocimientoComponent } from './conocimientos/editar-conocimiento
 import { CategoriaSkillNuevaComponent } from './conocimientos/categoria-skill-nueva/categoria-skill-nueva.component';
 import { BorrarCategoriaSkillComponent } from './conocimientos/borrar-categoria-skill/borrar-categoria-skill.component';
 import { EditarDescripcionComponent } from './sobreMi/editar-descripcion/editar-descripcion.component';
+import { ElementoNuevoComponent } from './Shared/carrousel/elemento-nuevo/elemento-nuevo.component';
+import { ElementoEditarComponent } from './Shared/carrousel/elemento-editar/elemento-editar.component';
+import { ElementoDeleteComponent } from './Shared/carrousel/elemento-delete/elemento-delete.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { EditarDescripcionComponent } from './sobreMi/editar-descripcion/editar-
     EditarConocimientoComponent,
     CategoriaSkillNuevaComponent,
     BorrarCategoriaSkillComponent,
-    EditarDescripcionComponent
+    EditarDescripcionComponent,
+    ElementoNuevoComponent,
+    ElementoEditarComponent,
+    ElementoDeleteComponent
   ],
   imports: [
     CommonModule,

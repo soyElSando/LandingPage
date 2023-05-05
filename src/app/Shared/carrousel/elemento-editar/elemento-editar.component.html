@@ -1,0 +1,70 @@
+<div >
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">{{idiomaEspanol ? textos.ediciones.edit.es : textos.ediciones.edit.en}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form (ngSubmit)="onEdit()" class="custom-form" method="" #formEditarElem="ngForm">
+          <div class="modal-body">
+  
+            <div class="mb-3 form-group">
+              <label for="nombreEsElemEditar" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.nombreEs.es : textos.ediciones.nombreEs.en}}:</label>
+              <input type="text" class="form-control" [id]="'nombreEsElemEditar'+textos.es"
+                name="nombreEsElemEditar" [placeholder]="idiomaEspanol ? textos.ediciones.nombreEs.es : textos.ediciones.nombreEs.en"
+                [(ngModel)]="nombreEsElemEditar" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="nombreEnElemEditar" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.nombreEn.es : textos.ediciones.nombreEn.en}}:</label>
+              <input type="text" class="form-control" [id]="'nombreEnElemEditar'+textos.es"
+                name="nombreEnElemEditar"  [placeholder]="idiomaEspanol ? textos.ediciones.nombreEn.es : textos.ediciones.nombreEn.en"
+                [(ngModel)]="nombreEnElemEditar" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label [for]="'descripcionEsElemEditar'+textos.es" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.descripcionEs.es : textos.ediciones.descripcionEs.en}}:</label>
+              <input type="text" class="form-control" [id]="'descripcionEsElemEditar'+textos.es"
+                 [name]="'descripcionEsElemEditar'+textos.es"
+                 [placeholder]="idiomaEspanol ? textos.ediciones.descripcionEs.es : textos.ediciones.descripcionEs.en"
+                 [(ngModel)]="descripcionEsElemEditar" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label [for]="'descripcionEnElemEditar'+textos.es" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.descripcionEn.es : textos.ediciones.descripcionEn.en}}:</label>
+              <input type="text" class="form-control" [id]="'descripcionEnElemEditar'+textos.es"
+                 [name]="'descripcionEnElemEditar'+textos.es"
+                  [placeholder]="idiomaEspanol ? textos.ediciones.descripcionEn.es : textos.ediciones.descripcionEn.en"
+                  [(ngModel)]="descripcionEnElemEditar" required>
+            </div>            
+            <div class="mb-3 form-group">
+              <label for="imagenElemEditar" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.imagen.es : textos.ediciones.imagen.en}}:</label>
+              <input type="text" class="form-control" [id]="'imagenElemEditar'+textos.es"
+                 name="imagenElemEditar" [placeholder]="idiomaEspanol ? textos.ediciones.imagen.es : textos.ediciones.imagen.en" [(ngModel)]="imagenElemEditar" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="linkElemEditar" class="form-label">Link:</label>
+              <input type="text" class="form-control" [id]="'linkElemEditar'+textos.es"
+                 name="linkElemEditar"  placeholder="Link"[(ngModel)]="linkElemEditar">
+            </div>
+  
+          </div>
+  
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+            <button [disabled]="formEditarElem.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">
+              {{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

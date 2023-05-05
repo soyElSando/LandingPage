@@ -1,10 +1,16 @@
 {"categoriaEducacion":[
     {
         "idCatEdu": 1,
-        "nombreCatEdu": "Certificaciones"
+        "nombreCatEdu": {
+            "es": "Certificaciones",
+            "en": "Courses"
+        }
     },
     {
         "idCatEdu": 2,
-        "nombreCatEdu": "Educación Formal"
+        "nombreCatEdu": {
+            "es": "Educación formal",
+            "en": "Degrees" 
+        }
     }
 ]}

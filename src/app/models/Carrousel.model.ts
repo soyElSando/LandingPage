@@ -1,5 +1,5 @@
 export interface Carrousel {
-    id: number;
+    id?: number;
     nombreEs: String ;
     nombreEn: String ;
     imagen: String ;

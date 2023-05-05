@@ -1,27 +1,26 @@
-<div  >
+<div    >
     <div class="modal-dialog">
         <div class="modal-content bg-dark text-white">
-
-            <!-- Modal Header -->
+  
+            
             <div class="modal-header">
-                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
+                <h5 class="modal-title">{{idiomaEspanol ? ediciones.titulo.es : ediciones.titulo.en}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-
-            <!-- Modal body -->
-
+  
+  
             <div class="modal-body">
-                <h3>{{experienciaABorrar?.Empresa}}</h3>
-                <p>{{idiomaEspanol ? ediciones.comentario.borrar.es : ediciones.comentario.borrar.en}}</p>
+                <h3>{{this.idiomaEspanol ? this.itemABorrar.nombreEs : this.itemABorrar.nombreEn}}</h3>
+                <p>{{idiomaEspanol ? ediciones.comentario.es : ediciones.comentario.en}}</p>
             </div>
-
-            <!-- Modal footer -->
+  
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+                  {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDelete()">
-                    {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}</button>
+                  {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}</button>
             </div>
-
+  
         </div>
     </div>
+  </div>

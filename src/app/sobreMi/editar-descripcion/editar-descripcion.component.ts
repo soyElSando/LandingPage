@@ -19,6 +19,7 @@ export class EditarDescripcionComponent implements OnInit {
   botones = I18n.boton
   ediciones = I18n.ediciones.sobreMi
 
+
   constructor(private usuarioService: SobreMiService, private languageService: LanguageService ) { }
 
   esEspanolSub: Subscription = new Subscription;
@@ -48,8 +49,8 @@ export class EditarDescripcionComponent implements OnInit {
     if(this.descripcionEs && this.descripcionEn){
       usuarioEditado.descripcionEs=this.descripcionEs
       usuarioEditado.descripcionEn=this.descripcionEn
-      this.usuarioService.updateSobreMi(usuarioEditado).subscribe(data => {
-      }, err => { alert(this.idiomaEspanol ? "Algo salió mal" : "Something went wrong") })
+      this.usuarioService.updateSobreMi(usuarioEditado).subscribe(() => {
+      }, () => { alert(this.idiomaEspanol ? "Algo salió mal" : "Something went wrong") })
     }
   }
   }

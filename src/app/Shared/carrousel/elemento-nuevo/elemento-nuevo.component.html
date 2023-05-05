@@ -1,0 +1,68 @@
+<div >
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">{{idiomaEspanol ? textos.ediciones.new.es : textos.ediciones.new.en}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form (ngSubmit)="onCreate()" class="custom-form" method="" #formNuevoElem="ngForm">
+          <div class="modal-body">
+  
+            <div class="mb-3 form-group">
+              <label for="nombreEsElemNuevo" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.nombreEs.es : textos.ediciones.nombreEs.en}}:</label>
+              <input type="text" class="form-control" [id]="'nombreEsElemNuevo'+textos.es"
+                name="nombreEsElemNuevo" [placeholder]="idiomaEspanol ? textos.ediciones.nombreEs.es : textos.ediciones.nombreEs.en"
+                [(ngModel)]="nombreEsElemNuevo" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="nombreEnElemNuevo" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.nombreEn.es : textos.ediciones.nombreEn.en}}:</label>
+              <input type="text" class="form-control" [id]="'nombreEnElemNuevo'+textos.es"
+                name="nombreEnElemNuevo"  [placeholder]="idiomaEspanol ? textos.ediciones.nombreEn.es : textos.ediciones.nombreEn.en"
+                [(ngModel)]="nombreEnElemNuevo" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="descripcionEsElemNuevo" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.descripcionEs.es : textos.ediciones.descripcionEs.en}}:</label>
+              <input type="text" class="form-control" [id]="'descripcionEsElemNuevo'+textos.es"
+                 name="descripcionEsElemNuevo" [placeholder]="idiomaEspanol ? textos.ediciones.descripcionEs.es : textos.ediciones.descripcionEs.en"
+                  [(ngModel)]="descripcionEsElemNuevo" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="descripcionEnElemNuevo" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.descripcionEn.es : textos.ediciones.descripcionEn.en}}:</label>
+              <input type="text" class="form-control" [id]="'descripcionEnElemNuevo'+textos.es"
+                 name="descripcionEnElemNuevo" [placeholder]="idiomaEspanol ? textos.ediciones.descripcionEn.es : textos.ediciones.descripcionEn.en"
+                  [(ngModel)]="descripcionEnElemNuevo" required>
+            </div>            
+            <div class="mb-3 form-group">
+              <label for="imagenElemNuevo" class="form-label">
+                {{idiomaEspanol ? textos.ediciones.imagen.es : textos.ediciones.imagen.en}}:</label>
+              <input type="text" class="form-control" [id]="'imagenElemNuevo'+textos.es"
+                 name="imagenElemNuevo" [placeholder]="idiomaEspanol ? textos.ediciones.imagen.es : textos.ediciones.imagen.en" [(ngModel)]="imagenElemNuevo" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="linkElemNuevo" class="form-label">Link:</label>
+              <input type="text" class="form-control" [id]="'linkElemNuevo'+textos.es"
+                 name="linkElemNuevo"  placeholder="Link"[(ngModel)]="linkElemNuevo">
+            </div>
+  
+          </div>
+  
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+            <button [disabled]="formNuevoElem.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">
+              {{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

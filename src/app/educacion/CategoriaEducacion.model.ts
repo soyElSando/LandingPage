@@ -1,4 +1,7 @@
 export interface CategoriaEducacion{
     idCatEdu: number;
-    nombreCatEdu: String;
+    nombreCatEdu: {
+        es: string;
+        en: string;
+    };
 }

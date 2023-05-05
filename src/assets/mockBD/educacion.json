@@ -3,26 +3,32 @@
             {
                 "institucion":"Argentina Programa - Ministerio de Desarrollo Productivo",
                 "logoInstitucion":"assets/LogoArgentinaPrograma.png",
-                "titulo":"Desarrolladora FullStack",
-                "descripcion": "Contenidos: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
+                "tituloEs":"Desarrolladora FullStack",
+                "tituloEn": "Fullstack Web Developer",
+                "descripcionEs": "Contenidos: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
+                "descripcionEn": "Contents: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
                 "inicio":"2022",
-                "fin":"En curso",
+                "fin":"...",
                 "catEdu":1
             },
             {
                 "institucion":"Codo a Codo - Ministerio de Educación de la Ciudad de Buenos Aires",
                 "logoInstitucion":"assets/logoCodoACodo.png",
-                "titulo":"Desarrollo FullStack Python",
-                "descripcion": "Contenidos: HTML, CSS, JavaScript, VUE, MySQL, Python, Django",
+                "tituloEs":"Desarrollo FullStack Python",
+                "tituloEn":"FullStack Python developer",
+                "descripcionEs": "Contenidos: HTML, CSS, JavaScript, VUE, MySQL, Python, Django",
+                "descripcionEn": "Contents: HTML, CSS, JavaScript, VUE, MySQL, Python, Django",
                 "inicio":"2020",
-                "fin":"concluído",
+                "fin":"2022",
                 "catEdu":1
             },
             {
                 "institucion":"Universidad de Buenos Aires",
                 "logoInstitucion":"assets/logoUBA.png",
-                "titulo":"Licenciatura en Filosofía",
-                "descripcion": "Estudios no finalizados",
+                "tituloEs":"Licenciatura en Filosofía",
+                "tituloEn":"Bachelor of Philosophy",
+                "descripcionEs": "Estudios no finalizados",
+                "descripcionEn": "Studies not completed",
                 "inicio":"2008",
                 "fin":"2012",
                 "catEdu":2
@@ -30,8 +36,10 @@
             {
                 "institucion":"Instituto Superior Lenguas Vivas",
                 "logoInstitucion":"assets/logoLenguasVidas.png",
-                "titulo":"Traductorado en alemán",
-                "descripcion": "Estudios no finalizados",
+                "tituloEs":"Traductorado en alemán",
+                "tituloEn":"German translation",
+                "descripcionEs": "Estudios no finalizados",
+                "descripcionEn": "Studies not completed",
                 "inicio":"2015",
                 "fin":"2018",
                 "catEdu":2

@@ -4,7 +4,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h5 class="modal-title">Editar Estudio</h5>
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -13,58 +13,80 @@
                 <div class="modal-body">
 
                     <div class="mb-2 form-group">
-                        <label for="institucionEditada" class="form-label">Institución:</label>
+                        <label for="institucionEditada" class="form-label">
+                            {{idiomaEspanol ? ediciones.institution.es : ediciones.institution.en}}:</label>
                         <input type="text" class="form-control" id="institucionEditada"
                              name="institucionEditada"
                             [(ngModel)]="institucionEditada" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="tituloEditado" class="form-label">Título:</label>
-                        <input type="text" class="form-control" id="tituloEditado" 
-                            name="tituloEditado" [(ngModel)]="tituloEditado" required>
+                        <label for="tituloEsEditado" class="form-label">
+                            {{idiomaEspanol ? ediciones.degreeEs.es : ediciones.degreeEs.en}}:</label>
+                        <input type="text" class="form-control" id="tituloEsEditado" 
+                            name="tituloEsEditado" [(ngModel)]="tituloEsEditado" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="catEduEditada" class="form-label">Categoría:</label>
+                        <label for="tituloEnEditado" class="form-label">
+                            {{idiomaEspanol ? ediciones.degreeEn.es : ediciones.degreeEn.en}}
+                        </label>
+                        <input type="text" class="form-control" id="tituloEnEditado" 
+                            name="tituloEnEditado" [(ngModel)]="tituloEnEditado" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="catEduEditada" class="form-label">
+                            {{idiomaEspanol ? ediciones.categoria.es : ediciones.categoria.en}}:</label>
                         <select class="form-select"  id="catEduEditada"
                              name="catEduEditada" [(ngModel)]="idCatEduEditada"
                             required>
                             
                             <option *ngFor="let categoria of categorias;" [value]="categoria.idCatEdu">
-                                {{categoria.nombreCatEdu}}</option>
+                                {{idiomaEspanol ? categoria.nombreCatEdu.es : categoria.nombreCatEdu.en}}</option>
                         </select>
 
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="logoInstitucionEditado" class="form-label">Logo:</label>
+                        <label for="logoInstitucionEditado" class="form-label">
+                            {{ediciones.logo}}:</label>
                         <input type="text" class="form-control" id="logoInstitucionEditado"
                              name="logoInstitucionEditado"
                             [(ngModel)]="logoInstitucionEditado">
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="descripcionEditada" class="form-label">Descipción:</label>
-                        <input type="text" class="form-control" id="descripcionEditada"
-                             name="descripcionEditada"
-                            [(ngModel)]="descripcionEditada" required>
+                        <label for="descripcionEsEditada" class="form-label">
+                            {{idiomaEspanol ? ediciones.descripcionEs.es : ediciones.descripcionEs.en}}:</label>
+                        <input type="text" class="form-control" id="descripcionEsEditada"
+                             name="descripcionEsEditada"
+                            [(ngModel)]="descripcionEsEditada" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="inicioEditado" class="form-label">Inicio:</label>
+                        <label for="descripcionEnEditada" class="form-label">
+                            {{idiomaEspanol ? ediciones.descripcionEn.es : ediciones.descripcionEn.en}}:</label>
+                        <input type="text" class="form-control" id="descripcionEnEditada"
+                             name="descripcionEnEditada"
+                            [(ngModel)]="descripcionEnEditada" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="inicioEditado" class="form-label">
+                            {{idiomaEspanol ? ediciones.inicio.es : ediciones.inicio.en}}:</label>
                         <input type="text" class="form-control" id="inicioEditado"
                              name="inicioEditado"
                             [(ngModel)]="inicioEditado" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="finEditado" class="form-label">Fin:</label>
+                        <label for="finEditado" class="form-label">
+                            {{idiomaEspanol ? ediciones.fin.es : ediciones.fin.en}}:</label>
                         <input type="text" class="form-control" id="finEditado" 
                             name="finEditado" [(ngModel)]="finEditado">
                     </div>
 
                 </div>
 
-
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button [disabled]="formEditarEdu.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">Guardar cambios</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+                    <button [disabled]="formEditarEdu.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.editar.es: botones.editar.en}}</button>
                 </div>
             </form>
         </div>

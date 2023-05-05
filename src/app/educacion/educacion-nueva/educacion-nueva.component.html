@@ -4,7 +4,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h5 class="modal-title">Nuevo Estudio</h5>
+                <h5 class="modal-title">{{idiomaEspanol ? titulo.es : titulo.en}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -13,55 +13,84 @@
                 <div class="modal-body">
 
                     <div class="mb-2 form-group">
-                        <label for="institucionNueva" class="form-label">Institución:</label>
+                        <label for="institucionNueva" class="form-label">
+                            {{idiomaEspanol ? ediciones.institution.es : ediciones.institution.en}}:</label>
                         <input type="text" class="form-control" id="institucionNueva"
-                            placeholder="Nombre de la institución" name="institucionNueva"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.institucion.es : ediciones.placeholder.institucion.en"
+                            name="institucionNueva"
                             [(ngModel)]="institucionNueva" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="tituloNuevo" class="form-label">Título:</label>
-                        <input type="text" class="form-control" id="tituloNuevo" placeholder="Introduzca el título"
-                            name="tituloNuevo" [(ngModel)]="tituloNuevo" required>
+                        <label for="tituloEsNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.degreeEs.es : ediciones.degreeEs.en}}:</label>
+                        <input type="text" class="form-control" id="tituloEsNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.tituloEs.es : ediciones.placeholder.tituloEs.en"
+                            name="tituloEsNuevo" [(ngModel)]="tituloEsNuevo" required>
                     </div>
                     <div class="mb-2 form-group">
-                      <label for="catEduNueva" class="form-label">Categoría:</label>
+                        <label for="tituloEnNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.degreeEn.es : ediciones.degreeEn.en}}:</label>
+                        <input type="text" class="form-control" id="tituloEnNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.tituloEn.es : ediciones.placeholder.tituloEn.en"
+                            name="tituloEnNuevo" [(ngModel)]="tituloEsNuevo" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                      <label for="catEduNueva" class="form-label">
+                        {{idiomaEspanol ? ediciones.categoria.es : ediciones.categoria.en}}:</label>
                         <input  class="form-control inhabilitado" id="catEduNueva"
                          name="catEduNueva"
-                        [(ngModel)]="nombreCatEduAsignada" disabled>                   
+                        [(ngModel)]="idiomaEspanol ? catAsignada.nombreCatEdu.es : catAsignada.nombreCatEdu.en" disabled>                   
                
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="logoInstitucionNuevo" class="form-label">Logo:</label>
+                        <label for="logoInstitucionNuevo" class="form-label">{{ediciones.logo}}:</label>
                         <input type="text" class="form-control" id="logoInstitucionNuevo"
-                            placeholder="Introduzca la URL con el logo de la institucion" name="logoInstitucionNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.logo.es : ediciones.placeholder.logo.en"
+                            name="logoInstitucionNuevo"
                             [(ngModel)]="logoInstitucionNuevo">
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="descripcionNueva" class="form-label">Descipción:</label>
-                        <input type="text" class="form-control" id="descripcionNueva"
-                            placeholder="Introduzca una breve descripción" name="descripcionNueva"
-                            [(ngModel)]="descripcionNueva" required>
+                        <label for="descripcionEsNueva" class="form-label">
+                            {{idiomaEspanol ? ediciones.descripcionEs.es : ediciones.descripcionEs.en}}:</label>
+                        <input type="text" class="form-control" id="descripcionEsNueva"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.descripcionEs.es : ediciones.placeholder.descripcionEs.en"
+                            name="descripcionEsNueva"
+                            [(ngModel)]="descripcionEsNueva" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="inicioNuevo" class="form-label">Inicio:</label>
+                        <label for="descripcionEnNueva" class="form-label">
+                            {{idiomaEspanol ? ediciones.descripcionEn.es : ediciones.descripcionEn.en}}:</label>
+                        <input type="text" class="form-control" id="descripcionEnNueva"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.descripcionEn.es : ediciones.placeholder.descripcionEn.en"
+                            name="descripcionEnNueva"
+                            [(ngModel)]="descripcionEnNueva" required>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label for="inicioNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.inicio.es : ediciones.inicio.en}}:</label>
                         <input type="text" class="form-control" id="inicioNuevo"
-                            placeholder="Introduzca cuándo comenzó los estudios" name="inicioNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.inicio.es : ediciones.placeholder.inicio.en"
+                            name="inicioNuevo"
                             [(ngModel)]="inicioNuevo" required>
                     </div>
                     <div class="mb-2 form-group">
-                        <label for="finNuevo" class="form-label">Fin:</label>
-                        <input type="text" class="form-control" id="finNuevo" placeholder="Introduzca cuándo finalizó"
+                        <label for="finNuevo" class="form-label">
+                            {{idiomaEspanol ? ediciones.fin.es : ediciones.fin.en}}:</label>
+                        <input type="text" class="form-control" id="finNuevo"
+                            [placeholder]="idiomaEspanol ? ediciones.placeholder.fin.es : ediciones.placeholder.fin.en"
                             name="finNuevo" [(ngModel)]="finNuevo">
                     </div>
 
                 </div>
 
-
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}
+                    </button>
                     <button [disabled]="formNuevaEdu.invalid" type="submit" class="btn btn-success"
-                        data-bs-dismiss="modal">Agregar formación</button>
+                        data-bs-dismiss="modal">
+                        {{idiomaEspanol ? botones.crear.es: botones.crear.en}}</button>
                 </div>
             </form>
         </div>

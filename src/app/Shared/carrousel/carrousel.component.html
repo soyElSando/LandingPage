@@ -1,67 +1,244 @@
-<!-- Seción 3 Porfolio   HACER ID DINAMICO     -->  
-
 <!-- La edición de esta sección resulta distinta a la de las otras secciones porque al ser un carrousel, si el botón de edición está dentro, el modal se ve solo en el primer slide del carrousel. Para no complicarme, decidí resolverlo de esta manera, para mantener los modales. -->
-<div id="section3" class="container-fluid text-white" style="padding:10px 0px 0px 0px; background-color: rgb(224, 224, 224);">
+<div [id]="'seccion3'+carrouselId" class="container-fluid text-white" style="padding:10px 0px 0px 0px; background-color: rgb(224, 224, 224);">
 
-    <!-- Botones de edición-->
-    <div *ngIf="estaLogueado()" class="mt-2">
-      <i class="fa-regular fa-plus p-2 m-1 float-end mas-en-proyectos my-3 mt-2 text-muted" data-bs-toggle="modal"
-        data-bs-target="#agregarElemento"></i>
-  
-      <i class="fa-regular fa-trash-can float-end mas-en-proyectos my-3 mt-2 text-muted p-2 m-1" data-bs-toggle="modal"
-        data-bs-target="#seleccionarElementoABorrar" ></i>
-  
-      <i class="fa-regular fa-pen-to-square float-end mas-en-proyectos my-3 mt-2 text-muted p-2 m-1" data-bs-toggle="modal"
-      data-bs-target="#seleccionarElementoAEditar" ></i>
-  
-    </div>
-  
-  
-    <div class="container-fluid mt-0">
-  
-  
-      <div class="container-fluid float-cenert pb-3 mt-5" id="contenedorCarrousel">
-        <!-- Carrousel -->
-        <div [id]="carrouselId" class="carousel slide mb-2" data-bs-ride="carousel">
-  
-          <!-- Indicators/dots -->
-          <div class="carousel-indicators">
-            <button *ngFor="let elemento of elementos; index as i; first as isFirst" type="button" data-bs-target="#demo"
-              [attr.data-bs-slide-to]=i [ngClass]="{'active': isFirst }"></button>
-            <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button> -->
-          </div>
-  
-          <!-- The slideshow/carousel -->
-          <div class="carousel-inner" style="height:fit-content">
-            <div *ngFor="let elemento of elementos; first as isFirst" class="carousel-item active"
-              [ngClass]="{'active': isFirst }">
-              <img [src]="elemento.imagen" [alt]="idiomaEspanol ? elemento.nombreEs : elemento.nombreEn" class="d-block imagenCarrousel">
-              <div class="carousel-caption">
-  
-                <h3>{{idiomaEspanol ? elemento.nombreEs : elemento.nombreEn}}</h3>
-  
-                <p>{{idiomaEspanol ? elemento.descripcionEs : elemento.descripcionEn}}</p>
-  
-                <a [href]="elemento.link" target="_blank" class="btn btn-sm text-white">
-                  {{idiomaEspanol ? link.es : link.en}} <i class="fab fa-github lead text-white"></i>
-                </a>
-                
-              </div>
-  
+  <!-- Botones de edición-->
+  <div *ngIf="estaLogueado()" class="mt-2">
+    <i class="fa-regular fa-plus p-2 m-1 float-end mas-en-proyectos my-3 mt-2 text-muted" data-bs-toggle="modal"
+      [attr.data-bs-target]="'#agregar'+carrouselId"></i>
+
+    <i class="fa-regular fa-trash-can float-end mas-en-proyectos my-3 mt-2 text-muted p-2 m-1"
+     data-bs-toggle="modal"
+    [attr.data-bs-target]="'#selectItemToDelete'+carrouselId"></i>
+
+    <i class="fa-regular fa-pen-to-square float-end mas-en-proyectos my-3 mt-2 text-muted p-2 m-1" data-bs-toggle="modal"
+    [attr.data-bs-target]="'#selectItemToEdit'+carrouselId"></i>
+
+  </div>
+
+
+  <div class="container-fluid mt-0">
+
+
+    <div class="container-fluid float-cenert pb-3 mt-5" [id]="'contenedorCarrousel'+carrouselId">
+      <!-- Carrousel -->
+      <div [id]="carrouselId" class="carousel slide mb-2" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button *ngFor="let elemento of elementos; index as i; first as isFirst" type="button" data-bs-target="#demo"
+            [attr.data-bs-slide-to]=i [ngClass]="{'active': isFirst }"></button>
+          <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button> -->
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" style="height:fit-content">
+          <div *ngFor="let elemento of elementos; first as isFirst" class="carousel-item active"
+            [ngClass]="{'active': isFirst }">
+            <img [src]="elemento.imagen" [alt]="idiomaEspanol ? elemento.nombreEs : elemento.nombreEn"
+             class="d-block imagenCarrousel">
+            <div class="carousel-caption">
+
+              <h3>{{idiomaEspanol ? elemento.nombreEs : elemento.nombreEn}}</h3>
+
+              <p>{{idiomaEspanol ? elemento.descripcionEs : elemento.descripcionEn}}</p>
+
+              <a [href]="elemento.link" target="_blank" class="btn btn-sm text-white">
+                {{idiomaEspanol ? link.es : link.en}} <i class="fab fa-github lead text-white"></i>
+              </a>
+              
             </div>
-  
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
+
+          </div>
+
+          <!-- Left and right controls/icons -->
+          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-elemento-nuevo class="modal" [id]="'agregar'+carrouselId" [servicio]="servicio" (onCreateEvent)="renderizar()"></app-elemento-nuevo>
+<app-elemento-editar class="modal" [id]="'editar'+carrouselId" [servicio]="servicio" [itemID]="idAEditar" (onEditEvent)="renderizar()"></app-elemento-editar>
+<app-elemento-delete class="modal" [id]="'borrar'+carrouselId" [servicio]="servicio" [itemID]="idABorrar" (onDeleteEvent)="renderizar()"></app-elemento-delete>
+<!-- Por ahora no lo hago en otro componente porque debería hacer un componente para la selección del proyecto y otro para la confirmación. Esto es tanto para borrar como editar. Quedan muchos componentes y me resulta engorroso. Si hago a tiempo voy a ver si lo puedo resolver mejor, por ahora quedan todos los modales dentro de este componente principal -->
+
+<div class="modal" [id]="'selectItemToDelete'+carrouselId">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white" >
+
+      
+      <div class="modal-header">
+        <h5 class="modal-title">{{idiomaEspanol ?"Eliminar item" : "Delete Item"}} </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      
+      <form class="custom-form" method="" #formBorrarItem="ngForm">
+        <div class="modal-body">
+
+          <div class="mb-3 form-group">
+            <h4>{{idiomaEspanol ?
+              "Seleccione el item que desea borrar" :
+               "Select item you want to delete"}}</h4>
+
+            <select  class="form-select" [id]="'itemABorrar'+carrouselId" placeholder="Seleccione el item a borrar"
+             name="itemABorrar" [(ngModel)]="idABorrar" required>                      
+                            
+              <option *ngFor="let elemento of elementos;" [value]="elemento.id">
+                {{idiomaEspanol ? elemento.nombreEs : elemento.nombreEn}}</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+          <button [disabled]="formBorrarItem.invalid" type="button" class="btn btn-success"
+           data-bs-toggle="modal" [attr.data-bs-target]="'#borrar'+carrouselId" >
+           {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal" [id]="'borrarItem'+carrouselId">
+  <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+
+          
+          <div class="modal-header">
+              <h5 class="modal-title">Eliminar item</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+
+          <div class="modal-body">
+              <h3>{{buscarPorId(idABorrar)}}</h3>
+              <p>¿Está seguro que desea borrar este item?</p>
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDelete()">
+                {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}</button>
+          </div>
+
+      </div>
+  </div>
+</div> -->
+
+<div class="modal" [id]="'selectItemToEdit'+carrouselId">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white" >
+
+      <div class="modal-header">
+        <h5 class="modal-title">{{idiomaEspanol ?"Editar item" : "Edit Item"}} </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form class="custom-form" method="" #itemAEditar="ngForm">
+        <div class="modal-body">
+
+          <div class="mb-3 form-group">
+            <h4>{{idiomaEspanol ?
+              "Seleccione el item que desea editar" :
+               "Select item you want to edit"}}</h4>
+
+            <select  class="form-select" [id]="'itemAEditar'+carrouselId"
+             placeholder="Seleccione el item que desea editar"
+             name="itemAEditar" [(ngModel)]="idAEditar" required>                      
+                            
+              <option *ngFor="let elemento of elementos;" [value]="elemento.id">
+              {{idiomaEspanol ? elemento.nombreEs : elemento.nombreEn}}</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+          <button [disabled]="itemAEditar.invalid" type="button" class="btn btn-success"
+            data-bs-toggle="modal" [attr.data-bs-target]="'#editar'+carrouselId" >
+            {{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
+        </div>
+      </form>
+ 
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="modal" id="editarProy">
+  <div class="modal-dialog" >
+    <div class="modal-content bg-dark text-white">
+
+      
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Item</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      
+      <form (ngSubmit)="onEdit()" class="custom-form" method="" #formEditarItem="ngForm">
+        <div class="modal-body">
+
+          <div class="mb-3 form-group">
+            <label for="nombreNuevo" class="form-label">Nombre en español:</label>
+            <input type="text" class="form-control" id="nombreNuevo"
+              name="nombreNuevo"  placeholder="Nombre en español"[(ngModel)]="nombreEsAEditar" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="nombreEnNuevo" class="form-label">Nombre en inglés:</label>
+            <input type="text" class="form-control" id="nombreEnNuevo"
+              name="nombreEnNuevo"  placeholder="Nombre en inglés"[(ngModel)]="nombreEnAEditar" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="descripcionEsNuevo" class="form-label">Descripción en español:</label>
+            <input type="text" class="form-control" id="descripcionEsNuevo"
+                name="descripcionEsNuevo" placeholder="Breve descripción en español" [(ngModel)]="descripcionEsAEditar" required>
+          </div>          
+          <div class="mb-3 form-group">
+            <label for="descripcionEnNuevo" class="form-label">Descripción en inglés:</label>
+            <input type="text" class="form-control" id="descripcionEnNuevo"
+                name="descripcionEnNuevo" placeholder="Breve descripción en inglés" [(ngModel)]="descripcionEnAEditar" required>
+          </div> 
+          <div class="mb-3 form-group">
+            <label for="imagenNuevo" class="form-label">Imagen (URL):</label>
+            <input type="text" class="form-control" id="imagenProyNuevo"
+                name="imagenNuevo" placeholder="Imagen (URL)" [(ngModel)]="imagenAEditar" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="linkNuevo" class="form-label">Link:</label>
+            <input type="text" class="form-control" id="linkNuevo"
+                name="linkNuevo"  placeholder="Link"[(ngModel)]="linkAEditar">
           </div>
         </div>
-  
-      </div>
-  
+
+
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
+          <button [disabled]="formEditarItem.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">
+            {{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
+        </div>
+      </form>
     </div>
-  
   </div>
+</div>
+ -->
