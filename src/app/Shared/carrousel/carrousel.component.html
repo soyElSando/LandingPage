@@ -14,7 +14,7 @@
     [attr.data-bs-target]="'#selectItemToEdit'+carrouselId"></i>
 
   </div>
-
+  
 
   <div class="container-fluid mt-0">
 
@@ -42,8 +42,11 @@
 
               <p>{{idiomaEspanol ? elemento.descripcionEs : elemento.descripcionEn}}</p>
 
-              <a [href]="elemento.link" target="_blank" class="btn btn-sm text-white">
-                {{idiomaEspanol ? link.es : link.en}} <i class="fab fa-github lead text-white"></i>
+              <a *ngIf="elemento.link" 
+                [href]="elemento.link"
+                target="_blank" class="btn btn-sm text-white">
+                  {{idiomaEspanol ? link.es : link.en}} 
+                <i *ngIf="carrouselId=='carrousel-proyectos'" class="fab fa-github lead text-white"></i>
               </a>
               
             </div>

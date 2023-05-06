@@ -13,14 +13,14 @@ import { LanguageService } from 'src/app/Shared/services/language.service';
 })
 export class EducacionNuevaComponent implements OnInit {
 
-  institucionNueva: String = "";
-  tituloEsNuevo: String = "";
-  tituloEnNuevo: String = "";
-  logoInstitucionNuevo: String = "";
-  inicioNuevo: String = "";
-  finNuevo: String = "";
-  descripcionEsNueva: String = "";
-  descripcionEnNueva: String = "";
+  institucionNueva: string = "";
+  tituloEsNuevo: string = "";
+  tituloEnNuevo: string = "";
+  logoInstitucionNuevo: string = "";
+  inicioNuevo: string = "";
+  finNuevo: string = "";
+  descripcionEsNueva: string = "";
+  descripcionEnNueva: string = "";
   catEduNueva: number | undefined = 0;
   categorias: CategoriaEducacion[] | undefined
   idCatEduNueva: number = 0;

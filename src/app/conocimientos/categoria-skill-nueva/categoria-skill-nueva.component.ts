@@ -14,8 +14,8 @@ export class CategoriaSkillNuevaComponent implements OnInit {
 
   @Output() onCreateEvent = new EventEmitter();
 
-  nombreCatSkillEsNueva?: String
-  nombreCatSkillEnNueva?: String
+  nombreCatSkillEsNueva?: string
+  nombreCatSkillEnNueva?: string
   ediciones = I18n.ediciones.skill.comentarioCat
   botones = I18n.boton
   titulo = I18n.seccion.skills.newCat

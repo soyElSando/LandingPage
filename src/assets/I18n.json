@@ -1,4 +1,10 @@
 {
+    "error":{
+        "request":{
+            "es":"Ocurrió un error. Por favor intente nuevamente",
+            "en":"An error occurred. Please try again later."
+        }
+    },
     "carrousel":{
         "ediciones":{
             "borrar":{

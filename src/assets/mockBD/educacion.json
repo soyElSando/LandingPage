@@ -1,6 +1,7 @@
 {
     "educacion":[
             {
+                "idEdu": 0,
                 "institucion":"Argentina Programa - Ministerio de Desarrollo Productivo",
                 "logoInstitucion":"assets/LogoArgentinaPrograma.png",
                 "tituloEs":"Desarrolladora FullStack",
@@ -12,6 +13,7 @@
                 "catEdu":1
             },
             {
+                "idEdu": 1,
                 "institucion":"Codo a Codo - Ministerio de Educación de la Ciudad de Buenos Aires",
                 "logoInstitucion":"assets/logoCodoACodo.png",
                 "tituloEs":"Desarrollo FullStack Python",
@@ -23,6 +25,7 @@
                 "catEdu":1
             },
             {
+                "idEdu": 2,
                 "institucion":"Universidad de Buenos Aires",
                 "logoInstitucion":"assets/logoUBA.png",
                 "tituloEs":"Licenciatura en Filosofía",
@@ -34,6 +37,7 @@
                 "catEdu":2
             },
             {
+                "idEdu": 3,
                 "institucion":"Instituto Superior Lenguas Vivas",
                 "logoInstitucion":"assets/logoLenguasVidas.png",
                 "tituloEs":"Traductorado en alemán",

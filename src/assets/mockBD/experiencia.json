@@ -1,6 +1,6 @@
 {"experiencia":[
     {
-        "id":1,
+        "idExp":1,
         "Empresa":"LP Development",
         "logoEmpresa":"assets/LogoLetiChiquito(transparencia).png",
         "puestoEs":"Trabajo Free-Lance",
@@ -10,7 +10,7 @@
     },
 
     {
-        "id":2,
+        "idExp":2,
         "Empresa":"WOW!Cx",
         "logoEmpresa":"assets/wowcx_v2.jpg",
         "puestoEs": "Coordinador de Proyectos, Asistencia comercial",
@@ -19,7 +19,7 @@
         "fin":"2023"
     },
     {
-        "id":3,
+        "idExp":3,
         "Empresa":"Ipsos Argentina",
         "logoEmpresa":"assets/logo ipsos_v2.png",
         "puestoEs":"Encuestador telefónico",

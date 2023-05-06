@@ -12,12 +12,12 @@ import I18n from 'src/assets/I18n.json';
 export class ElementoEditarComponent implements OnInit {
 
   elementoAEditar?: Carrousel;
-  nombreEsElemEditar: String = "";
-  nombreEnElemEditar: String = "";
-  descripcionEsElemEditar: String = "";
-  descripcionEnElemEditar: String = "";
-  imagenElemEditar: String = "";
-  linkElemEditar: String | undefined;
+  nombreEsElemEditar: string = "";
+  nombreEnElemEditar: string = "";
+  descripcionEsElemEditar: string = "";
+  descripcionEnElemEditar: string = "";
+  imagenElemEditar: string = "";
+  linkElemEditar: string ="";
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
   textos:any={es:"",en:""}
@@ -62,9 +62,9 @@ export class ElementoEditarComponent implements OnInit {
 
   onEdit() {
 
-    const { nombreEsElemEditar, nombreEnElemEditar, descripcionEsElemEditar, descripcionEnElemEditar,
+    const { itemID, nombreEsElemEditar, nombreEnElemEditar, descripcionEsElemEditar, descripcionEnElemEditar,
       linkElemEditar, imagenElemEditar } = this;
-    const elementoEditado: Carrousel = { nombreEs: nombreEsElemEditar, nombreEn: nombreEnElemEditar,
+    const elementoEditado: Carrousel = {id:itemID, nombreEs: nombreEsElemEditar, nombreEn: nombreEnElemEditar,
        descripcionEs: descripcionEsElemEditar, descripcionEn: descripcionEnElemEditar, link: linkElemEditar,
         imagen: imagenElemEditar };
     this.servicio.editElemento(elementoEditado).subscribe(() => {

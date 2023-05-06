@@ -1,10 +1,13 @@
 export interface Experiencia {
     idExp?: number;
-    puestoEs: String;
-    puestoEn: String;    
-    Empresa: String ;
-    logoEmpresa: String ;
-    inicio: String ;
-    fin: String ;
+    puestoEs: string;
+    puestoEn: string;    
+    Empresa: string ;
+    logoEmpresa: string ;
+    inicio: string ;
+    fin: string ;
+}
 
+export interface ExperienciaWithId extends Experiencia {
+    idExp: number;
 }

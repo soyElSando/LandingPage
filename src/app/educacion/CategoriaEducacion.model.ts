@@ -1,7 +1,11 @@
 export interface CategoriaEducacion{
-    idCatEdu: number;
+    idCatEdu?: number;
     nombreCatEdu: {
         es: string;
         en: string;
     };
+}
+
+export interface CategoriaEducacionWithId extends CategoriaEducacion{
+    idCatEdu: number;
 }

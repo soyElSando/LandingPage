@@ -1,9 +1,14 @@
 export interface Carrousel {
     id?: number;
-    nombreEs: String ;
-    nombreEn: String ;
-    imagen: String ;
-    descripcionEs: String ;
-    descripcionEn: String ;
-    link?: String ;
+    nombreEs: string ;
+    nombreEn: string ;
+    imagen: string ;
+    descripcionEs: string ;
+    descripcionEn: string ;
+    link: string;
 }
+
+export interface CarrouselWithId extends Carrousel {
+    id: number;
+  }
+  

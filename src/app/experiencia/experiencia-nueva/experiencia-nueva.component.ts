@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ExperienciaService } from 'src/app/experiencia/experiencia.service';
 import { Experiencia } from 'src/app/experiencia/Experiencia.model';
 import { Output, EventEmitter } from '@angular/core';
 import I18n from 'src/assets/I18n.json';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/Shared/services/language.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -16,12 +14,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ExperienciaNuevaComponent implements OnInit {
   
-  puestoEsNuevo: String = "";
-  puestoEnNuevo: String = "";
-  empresaNueva: String = "";
-  logoEmpresaNuevo: String = "";
-  inicioNuevo: String = "";
-  finNuevo: String = "";
+  puestoEsNuevo: string = "";
+  puestoEnNuevo: string = "";
+  empresaNueva: string = "";
+  logoEmpresaNuevo: string = "";
+  inicioNuevo: string = "";
+  finNuevo: string = "";
   titulo = I18n.seccion.experience.new
   botones = I18n.boton
   ediciones = I18n.ediciones.experience
@@ -30,7 +28,7 @@ export class ExperienciaNuevaComponent implements OnInit {
 
   @Output() onCreateEvent = new EventEmitter();
 
-  constructor(private experienciaService: ExperienciaService, private router: Router, private languageService:LanguageService) { }
+  constructor(private experienciaService: ExperienciaService, private languageService:LanguageService) { }
 
   ngOnInit(): void {
     this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{

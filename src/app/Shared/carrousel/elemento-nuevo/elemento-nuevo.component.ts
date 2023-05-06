@@ -11,12 +11,12 @@ import I18n from 'src/assets/I18n.json';
 })
 export class ElementoNuevoComponent implements OnInit {
 
-  nombreEsElemNuevo: String = "";
-  nombreEnElemNuevo: String = "";
-  descripcionEsElemNuevo: String = "";
-  descripcionEnElemNuevo: String = "";
-  imagenElemNuevo: String = "";
-  linkElemNuevo: String = "";
+  nombreEsElemNuevo: string = "";
+  nombreEnElemNuevo: string = "";
+  descripcionEsElemNuevo: string = "";
+  descripcionEnElemNuevo: string = "";
+  imagenElemNuevo: string = "";
+  linkElemNuevo: string = "";
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
   textos:any={es:"",en:""}

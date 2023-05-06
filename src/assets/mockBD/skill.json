@@ -1,61 +1,73 @@
 {"conocimientos": 
     [
         {
+        "idSkill":0,
          "nombreSkill":"HTML",
          "avance": 65,
          "catSkill": 1
         },
         {
+            "idSkill":1,
         "nombreSkill":"CSS",
         "avance": 60,
         "catSkill": 1
         },
         {
+            "idSkill":2,
         "nombreSkill":"JavaScript",
         "avance": 60,
         "catSkill": 1
         },
         {
+            "idSkill":3,
         "nombreSkill":"TypeScript",
         "avance": 60,
         "catSkill": 1
         },
         {
+            "idSkill":4,
         "nombreSkill":"Angular",
         "avance": 50,
         "catSkill": 1
         },
         {
+            "idSkill":5,
         "nombreSkill":"Python",
         "avance": 60,
         "catSkill": 2
         },
         {
+            "idSkill":6,
         "nombreSkill":"Java",
         "avance": 60,
         "catSkill": 2
         },
         {
+            "idSkill":7,
         "nombreSkill":"Django",
         "avance": 40,
         "catSkill": 2
         },
         {
+            "idSkill":8,
         "nombreSkill":"MySQL",
         "avance": 70,
         "catSkill": 2
         },
         {
+            "idSkill":9,
         "nombreSkill":"Spring",
         "avance": 10,
         "catSkill": 2
         },
         {
+            "idSkill":10,
         "nombreSkill":"English",
         "avance": 80,
         "catSkill": 3
         }, 
         {
+            "idSkill":11,
         "nombreSkill": "Português",
         "avance": 40,
         "catSkill": 3

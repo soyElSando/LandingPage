@@ -1,29 +1,29 @@
 {"promos" :[
     {
-        "id": 1,
-      "nombreEs": "Promoción1",
+      "id": 0,
+      "nombreEs": "Educacion",
       "nombreEn": "Oportunity1",
       "imagen":"https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/757_iss044e020824.jpg",
       "descripcionEs":"Una promo de prueba1",
       "descripcionEn":"Some test promo 1",
-      "link":"https://www.youtube.com/"
+      "link":""
     },
     {
-      "id": 2,
+      "id": 1,
       "nombreEs": "Promoción2",
       "nombreEn": "Oportunity2",
       "imagen":"https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/2-1-2023_rst_courtney_lee_portraits_1-2.jpg",
       "descripcionEs":"Una promo de prueba2",
       "descripcionEn":"Some test promo 2",
-      "link":"https://www.youtube.com/"
+      "link":""
     },
     {
-      "id": 3,
+      "id": 2,
       "nombreEs": "Promoción3",
       "nombreEn": "Oportunity3",
       "imagen":"https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/web_first_images_release_0.png?itok=eP3obzhq",
       "descripcionEs":"Una promo de prueba3",
       "descripcionEn":"Some test promo 3",
-      "link":"https://www.youtube.com/"
+      "link":""
     }
 ]}

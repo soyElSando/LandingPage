@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CategoriaSkill } from '../CategoriaSkill.model';
-import { Skill } from '../Skill.model';
+import { Skill, SkillWithID } from '../Skill.model';
 import { SkillService } from '../skill.service';
 import I18n from 'src/assets/I18n.json';
 import { Subscription } from 'rxjs';
@@ -16,12 +16,12 @@ export class EditarConocimientoComponent implements OnInit {
   @Input() skillAEditar?: Skill
   @Output() onEditEvent = new EventEmitter();
 
-  nombreSkillEditada: String | undefined = "";
-  avanceEditado: number | undefined = 0;
-  catSkillEditada: number | undefined
+  nombreSkillEditada?: string = "";
+  avanceEditado?: number = 0;
+  catSkillEditada?: number = 0
   categorias: CategoriaSkill[] = []
-  idCatSkillEditada: number | undefined ;
-  idSkillEditada: number | undefined = 0;
+  idCatSkillEditada: number = 0 ;
+  idSkillEditada?: number = 0;
 
   ediciones = I18n.ediciones.skill
   botones = I18n.boton
@@ -59,7 +59,7 @@ ngOnChanges(changes: SimpleChanges) {
     
     if (this.nombreSkillEditada && this.avanceEditado && this.idSkillEditada && this.catSkillEditada) {
       const { idSkillEditada, nombreSkillEditada, avanceEditado, catSkillEditada } = this
-      const skillEditada: Skill = { idSkill: idSkillEditada, nombreSkill: nombreSkillEditada, avance: avanceEditado, catSkill: catSkillEditada };
+      const skillEditada: SkillWithID = { idSkill: idSkillEditada, nombreSkill: nombreSkillEditada, avance: avanceEditado, catSkill: catSkillEditada };
 
       if (skillEditada !== undefined) {
         this.conocimientoService.updateSkill(skillEditada).subscribe(data => {

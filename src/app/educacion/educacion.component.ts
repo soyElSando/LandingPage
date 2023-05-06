@@ -46,7 +46,7 @@ export class EducacionComponent implements OnInit {
     this.esEspanolSub.unsubscribe();
   }
 
-  public filtrarPorCategoria(id: number): Educacion[]{
+  public filtrarPorCategoria(id: number | undefined): Educacion[]{
     this.educacionesFiltradas = this.educaciones.filter(educacion => educacion.catEdu==id)
     return this.educacionesFiltradas;
   }

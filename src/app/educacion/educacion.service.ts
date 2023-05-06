@@ -1,43 +1,78 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, Subscription, of, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CategoriaEducacion } from './CategoriaEducacion.model';
-import { Educacion } from './Educacion.model';
+import { CategoriaEducacion, CategoriaEducacionWithId } from './CategoriaEducacion.model';
+import { Educacion, EducacionWhitId} from './Educacion.model';
 import educacion from 'src/assets/mockBD/educacion.json'
 import categoriaEducacion from 'src/assets/mockBD/categoriaEducacion.json'
+import I18N from 'src/assets/I18n.json'
+import { LanguageService } from '../Shared/services/language.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-//IMPLEMENTACION CON MOCKBD
 export class EducacionService {
 
+  private apiUrl = environment.apiBaseUrl+'/api/educacion';
+  esEspanolSub: Subscription = new Subscription;
+
+  constructor(/* private http: HttpClient, */ private languageService: LanguageService) { } 
+  idiomaEspanol:boolean =true
+
+  ngOnInit() {
+    this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
+      this.idiomaEspanol = isAuthenticated
+    })
+  }
+
+  ngOnDestroy() {
+    this.esEspanolSub.unsubscribe();
+  }
+
+  //Implementacion con MockBD
   public getEducaciones(): Observable<Educacion[]>{
     return of(educacion.educacion);
   }
 
-  public updateEducacion(edu: Educacion): Observable<any>{
+  public updateEducacion(edu: EducacionWhitId): Observable<any>{
 
-    return of(educacion.educacion);
+    const index = educacion.educacion.findIndex(e => e.idEdu === edu.idEdu);
+    if (index >= 0) {
+      const updatedElemento = { ...edu };
+      educacion.educacion[index] = updatedElemento;
+      return of(updatedElemento);
+    } else {
+      return throwError('Element not found');
+    }
   } 
 
   public createEducacion(edu: Educacion): Observable<any>{
-    return of(educacion.educacion);
+    const newId = educacion.educacion.length + 1;
+    const newElemento = { idEdu: newId, ...edu };
+    educacion.educacion.push(newElemento);
+    return of(newElemento);
   }
 
   public deleteEducacion(id: number): Observable<void>{
-    return of(undefined);
+    const index = educacion.educacion.findIndex(e => e.idEdu === id);
+    if (index >= 0) {
+      educacion.educacion.splice(index, 1);
+      return of(undefined);
+    } else {
+      return throwError('Element not found');
+    }
   }
 
-  // Metodos para las categorias de Educacion
+  
   public getCateEducacion(): Observable<CategoriaEducacion[]>{
 
     return of(categoriaEducacion.categoriaEducacion);
   }
 
-  public updateCateEducacion(cateEdu: CategoriaEducacion): Observable<any>{
+  // Metodos para las categorias de Educacion no implementdos
+  /* public updateCateEducacion(cateEdu: CategoriaEducacion): Observable<any>{
     return of(categoriaEducacion.categoriaEducacion);
   } 
 
@@ -47,17 +82,12 @@ export class EducacionService {
 
   public deleteCateEducacion(id: number): Observable<void>{
     return of(undefined);
-  }
+  } */
 
 }
 
 //IMPLEMENTACION CON BACKEND
-/* export class EducacionService {
-
-  private apiServerUrl = environment.apiBaseUrl;
-
-  constructor(private http: HttpClient) { }
-
+/* 
   public getEducaciones(): Observable<Educacion[]>{
     return this.http.get<Educacion[]>( this.apiServerUrl + '/Educacion/todos');
   }
@@ -74,12 +104,12 @@ export class EducacionService {
   public deleteEducacion(id: number): Observable<void>{
     return this.http.delete<void>(this.apiServerUrl + '/Educacion/eliminar/' + id);
   }
-
-  // Metodos para las categorias de Educacion
+  
   public getCateEducacion(): Observable<CategoriaEducacion[]>{
     return this.http.get<CategoriaEducacion[]>( this.apiServerUrl + '/CategoriasEducacion/todos');
   }
 
+  // Metodos para las categorias de Educacion no implementados
   public updateCateEducacion(cateEdu: CategoriaEducacion): Observable<any>{
 
     return this.http.put<CategoriaEducacion>(`${this.apiServerUrl}/CategoriasEducacion/editar`, cateEdu);
@@ -93,5 +123,9 @@ export class EducacionService {
     return this.http.delete<void>(this.apiServerUrl + '/CategoriasEducacion/eliminar/' + id);
   }
 
+  private handleError(error: any) {
+    console.error(error);
+    return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
+  } 
 }
  */

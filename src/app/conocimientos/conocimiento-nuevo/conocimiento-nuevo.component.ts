@@ -19,7 +19,7 @@ export class ConocimientoNuevoComponent implements OnInit {
     "nombreCatSkillEs":"Tecnología Front-End",
     "nombreCatSkillEn":"Front-End technologies"
   }
-  nombreSkillNuevo: String = "";
+  nombreSkillNuevo: string = "";
   avanceNuevo?: number
   catSkillNuevo?: CategoriaSkill;
   categorias: CategoriaSkill[] = [];
