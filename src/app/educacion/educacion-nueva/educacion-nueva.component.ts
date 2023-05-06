@@ -26,10 +26,8 @@ export class EducacionNuevaComponent implements OnInit {
   idCatEduNueva: number = 0;
   catAsignada: CategoriaEducacion ={
     "idCatEdu": 1,
-    "nombreCatEdu": {
-        "es": "Certificaciones",
-        "en": "Courses"
-    }
+    "nombreCatEduEs": "Certificaciones",
+    "nombreCatEduEn": "Courses"
   }
 
   ediciones = I18n.ediciones.educacion
