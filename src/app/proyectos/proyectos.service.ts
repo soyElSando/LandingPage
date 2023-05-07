@@ -69,35 +69,22 @@ export class ProyectosService {
 
   //implementacion con Backend
 
-/*   getElements(): Observable<Carrousel[]> {
-    return this.http.get<Carrousel[]>(this.apiUrl)
-      .pipe(
-        catchError(this.handleError)
-      );
+/* 
+  public getProyectos(): Observable<Carrrousel[]>{
+    return this.http.get<Carrousel[]>( this.apiServerUrl + '/Proyectos/todos');
   }
 
-  createElemento(elemento: Carrousel): Observable<Carrousel> {
-    return this.http.post<Carrousel>(this.apiUrl, elemento)
-      .pipe(
-        catchError(this.handleError)
-      );
+  public updateProyecto(proyecto: CarrouselWithId): Observable<any>{
+
+    return this.http.put<Carrousel>(`${this.apiServerUrl}/Proyectos/editar`, proyecto);
+  } 
+
+  public createProyecto(proyecto: Carrousel): Observable<any>{
+    return this.http.post<Carrousel>(this.apiServerUrl + '/Proyectos/agregar', proyecto);
   }
 
-  deleteElemento(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete(url)
-      .pipe(
-        map(() => {}),
-        catchError(this.handleError)
-      );
-  }
-
-  editElemento(elemento: CarrouselWithId): Observable<Carrousel> {
-    const url = `${this.apiUrl}/${elemento.id}`;
-    return this.http.put<Carrousel>(url, elemento)
-      .pipe(
-        catchError(this.handleError)
-      );
+  public deleteProyecto(id: number): Observable<void>{
+    return this.http.delete<void>(this.apiServerUrl + '/Proyectos/eliminar/' + id);
   }
   
   private handleError(error: any) {

@@ -15,7 +15,7 @@ import { LanguageService } from '../Shared/services/language.service';
 
 export class SkillService {
 
-  private apiUrl = environment.apiBaseUrl+'/api/skill';
+  private apiUrl = environment.apiBaseUrl;
   esEspanolSub: Subscription = new Subscription;
 
   constructor(/* private http: HttpClient, */ private languageService: LanguageService) { } 

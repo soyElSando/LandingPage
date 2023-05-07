@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 
 export class HomeService {
 
-  private apiUrl = environment.apiBaseUrl+'/api/home';
+  private apiUrl = environment.apiBaseUrl;
   esEspanolSub: Subscription = new Subscription;
 
   constructor(/* private http: HttpClient, */ private languageService: LanguageService) { } 
@@ -70,35 +70,22 @@ export class HomeService {
 
   //implementacion con Backend
 
-/*   getElements(): Observable<Carrousel[]> {
-    return this.http.get<Carrousel[]>(this.apiUrl)
-      .pipe(
-        catchError(this.handleError)
-      );
+/*   
+  public getElements(): Observable<Carrrousel[]>{
+    return this.http.get<Carrousel[]>( this.apiServerUrl + '/Home/todos');
   }
 
-  createElemento(elemento: Carrousel): Observable<Carrousel> {
-    return this.http.post<Carrousel>(this.apiUrl, elemento)
-      .pipe(
-        catchError(this.handleError)
-      );
+  public updateElemento(home: CarrouselWithId): Observable<any>{
+
+    return this.http.put<Carrousel>(`${this.apiServerUrl}/Home/editar`, home);
+  } 
+
+  public createElemento(home: Carrousel): Observable<any>{
+    return this.http.post<Carrousel>(this.apiServerUrl + '/Home/agregar', home);
   }
 
-  deleteElemento(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete(url)
-      .pipe(
-        map(() => {}),
-        catchError(this.handleError)
-      );
-  }
-
-  editElemento(elemento: CarrouselWithId): Observable<Carrousel> {
-    const url = `${this.apiUrl}/${elemento.id}`;
-    return this.http.put<Carrousel>(url, elemento)
-      .pipe(
-        catchError(this.handleError)
-      );
+  public deleteElemento(id: number): Observable<void>{
+    return this.http.delete<void>(this.apiServerUrl + '/Home/eliminar/' + id);
   }
   
   private handleError(error: any) {

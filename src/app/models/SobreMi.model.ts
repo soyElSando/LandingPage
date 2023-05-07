@@ -1,10 +1,11 @@
 export interface SobreMi {
+    id?: number,
     nombre: string,
     email: string,
-    password: string,
+    // password: string,
     profesion: string,
     linkIn: string,
-    linkMail:string,
+    // linkMail:string,
     linkWP:string,
     linkGH: string,
     linkIG:string,

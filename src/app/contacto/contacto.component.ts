@@ -20,9 +20,9 @@ export class ContactoComponent implements OnInit {
   texto = I18n.contacto
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
-  email!: String;
-  nombre!: String;
-  body!: String;
+  email!: string;
+  nombre!: string;
+  body!: string;
   myModal = document.getElementById('confirmacionEnvio');
   mostrarConfirmacion: Boolean = false;
   mostrarError: Boolean = false;

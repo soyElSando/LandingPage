@@ -20,10 +20,10 @@ export class SobreMiComponent {
   datos: SobreMi ={
     "nombre": "Germán Sandoval",
     "email": "argentina@programa.com",
-    "password": "1234",
+    // "password": "1234",
     "profesion": "Desarrolladora Full Stack Jr.",
     "linkIn": "https://www.linkedin.com/in/leticia-portillo-b62ba3103/",
-    "linkMail":"/contacto",
+    // "linkMail":"/contacto",
     "linkWP":"",
     "linkGH": "https://github.com/soyElSando",
     "linkIG":"https://instagram.com/ger.sando",

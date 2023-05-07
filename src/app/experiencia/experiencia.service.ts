@@ -14,7 +14,7 @@ import { LanguageService } from '../Shared/services/language.service';
 //implementacion con mockBD
 export class ExperienciaService {
 
-  private apiUrl = environment.apiBaseUrl+'/api/skill';
+  private apiUrl = environment.apiBaseUrl;
   esEspanolSub: Subscription = new Subscription;
 
   constructor(/* private http: HttpClient, */ private languageService: LanguageService) { } 
