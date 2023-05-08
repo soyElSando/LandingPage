@@ -106,7 +106,7 @@ export class SkillService {
 //IMPLMENTACION CON BACKEND
 /* 
   public getSkills(): Observable<Skill[]>{
-    return this.http.get<Skill[]>( this.apiServerUrl + '/Skills/todas');
+    return this.http.get<Skill[]>( this.apiServerUrl + '/Skills/todos');
   }
 
   public updateSkill(skill: SkillWithId): Observable<any>{
