@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaSkill } from './CategoriaSkill.model';
-import { Skill } from './Skill.model';
+import { Skill, SkillWithId } from './Skill.model';
 import { LoginService } from 'src/app/Shared/services/login.service';
 import { SkillService } from './skill.service';
 import { LanguageService } from '../Shared/services/language.service';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class ConocimientosComponent implements OnInit {
 
-  conocimientos: Skill[]= [];
+  conocimientos: SkillWithId[]= [];
   categorias: CategoriaSkill[] = [];
   conocimientosFiltrados: Skill[] = [];
   skillActual?:Skill;
@@ -24,16 +24,12 @@ export class ConocimientosComponent implements OnInit {
   idiomaEspanol:boolean =true
   
 
-  constructor(private skillService: SkillService, private autenticacionService: LoginService, private languageService: LanguageService) { }
+  constructor(private skillService: SkillService,
+    private autenticacionService: LoginService,
+    private languageService: LanguageService) { }
 
   ngOnInit(): void {
-      this.skillService.getSkills().subscribe(data => {    
-      this.conocimientos = data;
-      } );
-
-      this.skillService.getCateSkills().subscribe(data => {    
-      this.categorias = data;
-      } );
+      this.renderizar();
 
       this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
         this.idiomaEspanol = isAuthenticated
@@ -45,7 +41,7 @@ export class ConocimientosComponent implements OnInit {
   }
 
   public filtrarPorCategoria(id: number | undefined): Skill[]{
-    this.conocimientosFiltrados = this.conocimientos.filter(skill => skill.catSkill==id)
+    this.conocimientosFiltrados = this.conocimientos.filter(skill => skill.catSkill.idCatSkill==id)
     return this.conocimientosFiltrados;
   }
 

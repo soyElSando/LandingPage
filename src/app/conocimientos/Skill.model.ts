@@ -1,12 +1,12 @@
-import { CategoriaSkill } from "./CategoriaSkill.model";
+import { CategoriaSkillWithId } from "./CategoriaSkill.model";
 
 export interface Skill{
     idSkill?: number;
     nombreSkill: string ;    
     avance: number ;
-    catSkill: number ;
+    catSkill: CategoriaSkillWithId ;
 }
 
-export interface SkillWithID extends Skill{
+export interface SkillWithId extends Skill{
     idSkill: number;
 }

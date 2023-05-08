@@ -10,7 +10,11 @@
                 "descripcionEn": "Contents: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
                 "inicio":"2022",
                 "fin":"...",
-                "catEdu":1
+                "catEdu":{
+                    "idCatEdu": 1,
+                    "nombreCatEduEs": "Certificaciones",
+                    "nombreCatEduEn": "Courses"
+                }
             },
             {
                 "idEdu": 1,
@@ -22,7 +26,11 @@
                 "descripcionEn": "Contents: HTML, CSS, JavaScript, VUE, MySQL, Python, Django",
                 "inicio":"2020",
                 "fin":"2022",
-                "catEdu":1
+                "catEdu":{
+                    "idCatEdu": 1,
+                    "nombreCatEduEs": "Certificaciones",
+                    "nombreCatEduEn": "Courses"
+                }
             },
             {
                 "idEdu": 2,
@@ -34,7 +42,11 @@
                 "descripcionEn": "Studies not completed",
                 "inicio":"2008",
                 "fin":"2012",
-                "catEdu":2
+                "catEdu":{
+                    "idCatEdu": 2,
+                    "nombreCatEduEs": "Educación formal",
+                    "nombreCatEduEn": "Degrees"   
+                }
             },
             {
                 "idEdu": 3,
@@ -46,7 +58,11 @@
                 "descripcionEn": "Studies not completed",
                 "inicio":"2015",
                 "fin":"2018",
-                "catEdu":2
+                "catEdu":{
+                    "idCatEdu": 2,
+                    "nombreCatEduEs": "Educación formal",
+                    "nombreCatEduEn": "Degrees"   
+                }
             }
         ]
 }

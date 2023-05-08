@@ -2,7 +2,7 @@ export interface Experiencia {
     idExp?: number;
     puestoEs: string;
     puestoEn: string;    
-    Empresa: string ;
+    empresa: string ;
     logoEmpresa: string ;
     inicio: string ;
     fin: string ;

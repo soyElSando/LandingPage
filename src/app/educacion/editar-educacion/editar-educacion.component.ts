@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CategoriaEducacion } from '../CategoriaEducacion.model';
+import { CategoriaEducacion, CategoriaEducacionWithId } from '../CategoriaEducacion.model';
 import { Educacion, EducacionWhitId } from '../Educacion.model';
 import { EducacionService } from '../educacion.service';
 import I18n from 'src/assets/I18n.json';
@@ -18,7 +18,7 @@ export class EditarEducacionComponent implements OnInit {
   institucionEditada: string |undefined = "";
   tituloEsEditado: string  |undefined = "";
   tituloEnEditado: string  |undefined = "";
-  categorias: CategoriaEducacion[] | undefined;
+  categorias: CategoriaEducacionWithId[] | undefined;
   idCatEduEditada: number |undefined = 0;
   logoInstitucionEditado: string |undefined = "";
   descripcionEsEditada: string |undefined  = "";
@@ -26,7 +26,13 @@ export class EditarEducacionComponent implements OnInit {
   inicioEditado: string  |undefined = "";
   finEditado: string |undefined  = "";
   idEduEditado: number |undefined  = 0;
-  catEduEditada: number | undefined = 0;
+  catEduEditada: CategoriaEducacionWithId = {
+    
+    "idCatEdu": 0,
+    "nombreCatEduEs": "",
+    "nombreCatEduEn": "s"
+
+};
   ediciones = I18n.ediciones.educacion
   botones = I18n.boton
   titulo = I18n.seccion.educacion.section.edit
@@ -58,7 +64,7 @@ export class EditarEducacionComponent implements OnInit {
     this.finEditado = this.educacionAEditar?.fin;
     this.descripcionEsEditada = this.educacionAEditar?.descripcionEs;
     this.descripcionEnEditada = this.educacionAEditar?.descripcionEn;
-    this.catEduEditada = this.educacionAEditar?.catEdu;
+    this.catEduEditada = this.educacionAEditar?.catEdu || {...this.catEduEditada};
 
   }
 
@@ -67,11 +73,15 @@ export class EditarEducacionComponent implements OnInit {
   }
   onEdit(){
 
-    this.catEduEditada = this.categorias?.find(categoria => categoria.idCatEdu == this.idCatEduEditada)?.idCatEdu
+    this.catEduEditada = this.categorias?.find(categoria => categoria.idCatEdu == this.idCatEduEditada)|| {...this.catEduEditada};
 
-    if (this.tituloEsEditado && this.tituloEnEditado && this.institucionEditada && this.logoInstitucionEditado && this.inicioEditado && this.finEditado && this.idEduEditado && this.descripcionEsEditada && this.descripcionEnEditada && this.catEduEditada) {
-      const { idEduEditado, institucionEditada, tituloEsEditado, tituloEnEditado,logoInstitucionEditado, inicioEditado, finEditado, descripcionEsEditada, descripcionEnEditada, catEduEditada } = this
-      const educacionEditada: EducacionWhitId = { idEdu: idEduEditado, institucion: institucionEditada, tituloEs: tituloEsEditado, tituloEn: tituloEnEditado, logoInstitucion: logoInstitucionEditado, inicio: inicioEditado, fin: finEditado, descripcionEs: descripcionEsEditada, descripcionEn: descripcionEnEditada, catEdu: catEduEditada };
+    if (this.tituloEsEditado && this.tituloEnEditado && this.institucionEditada && this.logoInstitucionEditado && this.inicioEditado
+      && this.finEditado && this.idEduEditado && this.descripcionEsEditada && this.descripcionEnEditada && this.catEduEditada) {
+      const { idEduEditado, institucionEditada, tituloEsEditado, tituloEnEditado,logoInstitucionEditado, inicioEditado, finEditado,
+        descripcionEsEditada, descripcionEnEditada, catEduEditada } = this
+      const educacionEditada: EducacionWhitId = { idEdu: idEduEditado, institucion: institucionEditada, tituloEs: tituloEsEditado,
+        tituloEn: tituloEnEditado, logoInstitucion: logoInstitucionEditado, inicio: inicioEditado, fin: finEditado,
+        descripcionEs: descripcionEsEditada, descripcionEn: descripcionEnEditada, catEdu: catEduEditada };
 
       if (educacionEditada !== undefined) {
         this.educacionService.updateEducacion(educacionEditada).subscribe(data => {

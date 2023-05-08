@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CategoriaSkill } from '../CategoriaSkill.model';
-import { Skill, SkillWithID } from '../Skill.model';
+import { CategoriaSkill, CategoriaSkillWithId } from '../CategoriaSkill.model';
+import { Skill, SkillWithId } from '../Skill.model';
 import { SkillService } from '../skill.service';
 import I18n from 'src/assets/I18n.json';
 import { Subscription } from 'rxjs';
@@ -18,8 +18,12 @@ export class EditarConocimientoComponent implements OnInit {
 
   nombreSkillEditada?: string = "";
   avanceEditado?: number = 0;
-  catSkillEditada?: number = 0
-  categorias: CategoriaSkill[] = []
+  catSkillEditada: CategoriaSkillWithId={
+    "idCatSkill":0,
+    "nombreCatSkillEs":"",
+    "nombreCatSkillEn":""
+  }
+  categorias: CategoriaSkillWithId[] = []
   idCatSkillEditada: number = 0 ;
   idSkillEditada?: number = 0;
 
@@ -45,7 +49,7 @@ export class EditarConocimientoComponent implements OnInit {
 ngOnChanges(changes: SimpleChanges) {
   this.idSkillEditada = this.skillAEditar?.idSkill;
   this.nombreSkillEditada = this.skillAEditar?.nombreSkill;
-  this.catSkillEditada = this.skillAEditar?.catSkill;
+  this.catSkillEditada = this.skillAEditar?.catSkill || {...this.catSkillEditada};
   this.avanceEditado = this.skillAEditar?.avance;
 
 }
@@ -55,11 +59,11 @@ ngOnChanges(changes: SimpleChanges) {
   }
   
   onEdit(){
-    this.catSkillEditada = this.categorias?.find(categoria => categoria.idCatSkill == this.idCatSkillEditada)?.idCatSkill;
+    this.catSkillEditada = this.categorias?.find(categoria => categoria.idCatSkill == this.idCatSkillEditada)|| {...this.catSkillEditada};
     
     if (this.nombreSkillEditada && this.avanceEditado && this.idSkillEditada && this.catSkillEditada) {
       const { idSkillEditada, nombreSkillEditada, avanceEditado, catSkillEditada } = this
-      const skillEditada: SkillWithID = { idSkill: idSkillEditada, nombreSkill: nombreSkillEditada, avance: avanceEditado, catSkill: catSkillEditada };
+      const skillEditada: SkillWithId = { idSkill: idSkillEditada, nombreSkill: nombreSkillEditada, avance: avanceEditado, catSkill: catSkillEditada };
 
       if (skillEditada !== undefined) {
         this.conocimientoService.updateSkill(skillEditada).subscribe(data => {

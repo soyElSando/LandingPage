@@ -32,7 +32,7 @@ export class EducacionService {
   }
 
   //Implementacion con MockBD
-  public getEducaciones(): Observable<Educacion[]>{
+  public getEducaciones(): Observable<EducacionWhitId[]>{
     return of(educacion.educacion);
   }
 
@@ -50,7 +50,7 @@ export class EducacionService {
 
   public createEducacion(edu: Educacion): Observable<any>{
     const newId = educacion.educacion.length + 1;
-    const newElemento = { idEdu: newId, ...edu };
+    const newElemento:EducacionWhitId = { idEdu: newId, ...edu };
     educacion.educacion.push(newElemento);
     return of(newElemento);
   }
@@ -66,7 +66,7 @@ export class EducacionService {
   }
 
   
-  public getCateEducacion(): Observable<CategoriaEducacion[]>{
+  public getCateEducacion(): Observable<CategoriaEducacionWithId[]>{
 
     return of(categoriaEducacion.categoriaEducacion);
   }
@@ -88,7 +88,7 @@ export class EducacionService {
 
 //IMPLEMENTACION CON BACKEND
 /* 
-  public getEducaciones(): Observable<Educacion[]>{
+  public getEducaciones(): Observable<EducacionWithId[]>{
     return this.http.get<Educacion[]>( this.apiServerUrl + '/Educacion/todos');
   }
 
@@ -105,7 +105,7 @@ export class EducacionService {
     return this.http.delete<void>(this.apiServerUrl + '/Educacion/eliminar/' + id);
   }
   
-  public getCateEducacion(): Observable<CategoriaEducacion[]>{
+  public getCateEducacion(): Observable<CategoriaEducacionWithId[]>{
     return this.http.get<CategoriaEducacion[]>( this.apiServerUrl + '/CategoriasEducacion/todos');
   }
 

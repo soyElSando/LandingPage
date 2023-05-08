@@ -47,7 +47,7 @@ export class EducacionComponent implements OnInit {
   }
 
   public filtrarPorCategoria(id: number | undefined): Educacion[]{
-    this.educacionesFiltradas = this.educaciones.filter(educacion => educacion.catEdu==id)
+    this.educacionesFiltradas = this.educaciones.filter(educacion => educacion.catEdu.idCatEdu==id)
     return this.educacionesFiltradas;
   }
 

@@ -14,7 +14,7 @@ export class EditarExperienciaComponent implements OnInit {
 
   @Input() experienciaAEditar?: Experiencia
 
-  empresaEditada: string | undefined = this.experienciaAEditar?.Empresa;
+  empresaEditada: string | undefined = this.experienciaAEditar?.empresa;
   puestoEsEditado: string | undefined = this.experienciaAEditar?.puestoEs;
   puestoEnEditado: string | undefined = this.experienciaAEditar?.puestoEn;
   logoEmpresaEditado: string | undefined = this.experienciaAEditar?.logoEmpresa;
@@ -46,7 +46,7 @@ export class EditarExperienciaComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     this.idExpEditado = this.experienciaAEditar?.idExp;
-    this.empresaEditada = this.experienciaAEditar?.Empresa;
+    this.empresaEditada = this.experienciaAEditar?.empresa;
     this.puestoEsEditado = this.experienciaAEditar?.puestoEs;
     this.puestoEnEditado = this.experienciaAEditar?.puestoEn;
     this.logoEmpresaEditado = this.experienciaAEditar?.logoEmpresa;
@@ -59,7 +59,7 @@ export class EditarExperienciaComponent implements OnInit {
 
     if (this.puestoEsEditado && this.puestoEnEditado && this.empresaEditada && this.logoEmpresaEditado && this.inicioEditado && this.finEditado && this.idExpEditado) {
       const { idExpEditado, empresaEditada, puestoEsEditado, puestoEnEditado, logoEmpresaEditado, inicioEditado, finEditado } = this
-      const experienciaEditada: ExperienciaWithId = { idExp: idExpEditado, Empresa: empresaEditada, puestoEs: puestoEsEditado, puestoEn: puestoEnEditado, logoEmpresa: logoEmpresaEditado, inicio: inicioEditado, fin: finEditado };
+      const experienciaEditada: ExperienciaWithId = { idExp: idExpEditado, empresa: empresaEditada, puestoEs: puestoEsEditado, puestoEn: puestoEnEditado, logoEmpresa: logoEmpresaEditado, inicio: inicioEditado, fin: finEditado };
 
       if (experienciaEditada !== undefined) {
         this.experienciaService.updateExperiencia(experienciaEditada).subscribe(data => {

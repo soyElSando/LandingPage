@@ -1,3 +1,5 @@
+import { CategoriaEducacionWithId } from "./CategoriaEducacion.model";
+
 export interface Educacion{
     idEdu?:number;
     institucion: string ;
@@ -8,7 +10,7 @@ export interface Educacion{
     descripcionEn: string ;
     inicio: string ;
     fin: string ; 
-    catEdu: number;
+    catEdu: CategoriaEducacionWithId;
 }
 export interface EducacionWhitId extends Educacion{
     idEdu:number;

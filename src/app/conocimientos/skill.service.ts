@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subscription, of, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CategoriaSkill, CategoriaSkillWithId } from './CategoriaSkill.model';
-import { Skill, SkillWithID } from './Skill.model';
+import { Skill, SkillWithId } from './Skill.model';
 import conocimientos from 'src/assets/mockBD/skill.json'
 import categoriaSkill from 'src/assets/mockBD/categoriaSkill.json'
 import I18N from 'src/assets/I18n.json'
@@ -33,11 +33,11 @@ export class SkillService {
 
   //Implementacion con MockBD
 
-  public getSkills(): Observable<Skill[]>{
+  public getSkills(): Observable<SkillWithId[]>{
     return of(conocimientos.conocimientos);
   }
 
-  public updateSkill(skill: SkillWithID): Observable<any>{
+  public updateSkill(skill: SkillWithId): Observable<any>{
 
     const index = conocimientos.conocimientos.findIndex(e => e.idSkill === skill.idSkill);
     if (index >= 0) {
@@ -67,7 +67,7 @@ export class SkillService {
   }
 
   // Metodos para las categorias de Skills
-  public getCateSkills(): Observable<CategoriaSkill[]>{
+  public getCateSkills(): Observable<CategoriaSkillWithId[]>{
     return of(categoriaSkill.categoriaSkill);
   }
 
@@ -105,7 +105,7 @@ export class SkillService {
 
 //IMPLMENTACION CON BACKEND
 /* 
-  public getSkills(): Observable<Skill[]>{
+  public getSkills(): Observable<SkillWithId[]>{
     return this.http.get<Skill[]>( this.apiServerUrl + '/Skills/todos');
   }
 
@@ -127,7 +127,7 @@ export class SkillService {
   }
 
   // Metodos para las categorias de Skills
-  public getCateSkills(): Observable<CategoriaSkill[]>{
+  public getCateSkills(): Observable<CategoriaSkillWithId[]>{
     return this.http.get<CategoriaSkill[]>( this.apiServerUrl + '/CategoriasSkill/todos');
   }
 

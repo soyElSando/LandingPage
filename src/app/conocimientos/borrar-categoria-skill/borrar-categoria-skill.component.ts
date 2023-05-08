@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CategoriaSkill } from '../CategoriaSkill.model';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { CategoriaSkillWithId } from '../CategoriaSkill.model';
 import { SkillService } from '../skill.service';
 import I18n from 'src/assets/I18n.json';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,8 @@ import { LanguageService } from 'src/app/Shared/services/language.service';
 })
 export class BorrarCategoriaSkillComponent implements OnInit {
 
-  categoria:CategoriaSkill |undefined;
+  categoria:CategoriaSkillWithId |undefined;
+  categorias:CategoriaSkillWithId[]=[];
   ediciones = I18n.ediciones.skill.comentarioCat
   botones = I18n.boton
   titulo = I18n.seccion.skills.deleteCat
@@ -22,7 +23,9 @@ export class BorrarCategoriaSkillComponent implements OnInit {
   @Input() catSkillABorrar?: number
   @Output() onDeleteEvent = new EventEmitter();
 
-  constructor(private skillService: SkillService, private languageService:LanguageService) { }
+  constructor(private skillService: SkillService, private languageService:LanguageService) { 
+    
+  }
 
   ngOnInit(): void {
     this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
@@ -30,11 +33,16 @@ export class BorrarCategoriaSkillComponent implements OnInit {
     })
 
     this.skillService.getCateSkills()
-      .subscribe(data=>
-        this.categoria=
-        data.find((item:CategoriaSkill) =>
+      .subscribe(data=>this.categorias=data)
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    let x = this.categorias.find(item =>
           item.idCatSkill==this.catSkillABorrar)
-      )
+    if(x){
+      this.categoria=x;
+    }
+      
   }
 
   ngOnDestroy() {
@@ -43,7 +51,8 @@ export class BorrarCategoriaSkillComponent implements OnInit {
 
   onDelete() {
     if(this.catSkillABorrar!== undefined){
-      this.skillService.deleteSkill(this.catSkillABorrar).subscribe(data => {      
+      console.log(this.catSkillABorrar)
+      this.skillService.deleteCateSkill(this.catSkillABorrar).subscribe(data => {      
         this.onDeleteEvent.emit();
     }, err =>{alert(this.idiomaEspanol ? "Algo salió mal" : "Something went wrong")}
     )}

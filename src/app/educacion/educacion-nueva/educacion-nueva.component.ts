@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CategoriaEducacion } from '../CategoriaEducacion.model';
+import { CategoriaEducacion, CategoriaEducacionWithId } from '../CategoriaEducacion.model';
 import { Educacion } from '../Educacion.model';
 import { EducacionService } from '../educacion.service';
 import I18n from 'src/assets/I18n.json';
@@ -21,14 +21,16 @@ export class EducacionNuevaComponent implements OnInit {
   finNuevo: string = "";
   descripcionEsNueva: string = "";
   descripcionEnNueva: string = "";
-  catEduNueva: number | undefined = 0;
-  categorias: CategoriaEducacion[] | undefined
+  catEduNueva: CategoriaEducacion | undefined;
+  categorias: CategoriaEducacionWithId[] | undefined
   idCatEduNueva: number = 0;
-  catAsignada: CategoriaEducacion ={
-    "idCatEdu": 1,
-    "nombreCatEduEs": "Certificaciones",
-    "nombreCatEduEn": "Courses"
-  }
+  catAsignada: CategoriaEducacionWithId={
+    
+      "idCatEdu": 0,
+      "nombreCatEduEs": "",
+      "nombreCatEduEn": ""
+  
+  };
 
   ediciones = I18n.ediciones.educacion
   botones = I18n.boton
@@ -45,6 +47,8 @@ export class EducacionNuevaComponent implements OnInit {
   ngOnInit(): void {
     this.educacionService.getCateEducacion().subscribe(data => {
       this.categorias = data;
+      
+      this.catAsignada = data.find(categoria => categoria.idCatEdu == this.catEduAsignada) || {...this.catAsignada}
     })
 
     this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
@@ -58,14 +62,14 @@ export class EducacionNuevaComponent implements OnInit {
 
   onCreate() {
     
-      this.catEduNueva = this.categorias?.find(categoria => categoria.idCatEdu == this.idCatEduNueva)?.idCatEdu
+      this.catEduNueva = this.categorias?.find(categoria => categoria.idCatEdu == this.idCatEduNueva)
 
       if (this.catEduAsignada) {
         const { institucionNueva, tituloEsNuevo, tituloEnNuevo,logoInstitucionNuevo, inicioNuevo, finNuevo, descripcionEsNueva,
-           descripcionEnNueva,catEduAsignada } = this;
+           descripcionEnNueva,catAsignada } = this;
         const nuevaEducacion: Educacion = { institucion: institucionNueva, tituloEs: tituloEsNuevo, tituloEn: tituloEnNuevo,
           logoInstitucion: logoInstitucionNuevo, inicio: inicioNuevo, fin: finNuevo, descripcionEs: descripcionEsNueva,
-          descripcionEn: descripcionEnNueva, catEdu: catEduAsignada };
+          descripcionEn: descripcionEnNueva, catEdu: catAsignada };
 
         this.educacionService.createEducacion(nuevaEducacion).subscribe(data => {
 

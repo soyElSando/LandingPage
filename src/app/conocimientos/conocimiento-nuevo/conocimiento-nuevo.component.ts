@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CategoriaSkill } from '../CategoriaSkill.model';
+import { CategoriaSkill, CategoriaSkillWithId } from '../CategoriaSkill.model';
 import { Skill } from '../Skill.model';
 import { SkillService } from '../skill.service';
 import I18n from 'src/assets/I18n.json';
@@ -14,7 +14,7 @@ import { LanguageService } from 'src/app/Shared/services/language.service';
 export class ConocimientoNuevoComponent implements OnInit {
 
   @Input() catSkillAsignada?: number
-  categoriaAsignada: CategoriaSkill ={
+  categoriaAsignada: CategoriaSkillWithId ={
     "idCatSkill":1,
     "nombreCatSkillEs":"Tecnología Front-End",
     "nombreCatSkillEn":"Front-End technologies"
@@ -22,7 +22,7 @@ export class ConocimientoNuevoComponent implements OnInit {
   nombreSkillNuevo: string = "";
   avanceNuevo?: number
   catSkillNuevo?: CategoriaSkill;
-  categorias: CategoriaSkill[] = [];
+  categorias: CategoriaSkillWithId[] = [];
   idCatSkillNueva: number = 0;
   nuevoSkill?: Skill
   ediciones = I18n.ediciones.skill
@@ -65,10 +65,11 @@ export class ConocimientoNuevoComponent implements OnInit {
       this.catSkillNuevo = this.categorias?.find(categoria => categoria.idCatSkill == this.idCatSkillNueva)
       console.log(this.catSkillNuevo) */
 
-      if (this.catSkillAsignada && this.avanceNuevo) {
+      if (this.categoriaAsignada && this.avanceNuevo) {
         
-        const { nombreSkillNuevo, avanceNuevo, catSkillAsignada } = this;
-        const nuevaSkill: Skill = { nombreSkill: nombreSkillNuevo, avance: avanceNuevo, catSkill: catSkillAsignada };
+        const { nombreSkillNuevo, avanceNuevo, categoriaAsignada } = this;
+        const nuevaSkill: Skill = { nombreSkill: nombreSkillNuevo, avance: avanceNuevo,
+           catSkill: categoriaAsignada };
         this.skillService.createSkill(nuevaSkill).subscribe(data => {
 
           this.onCreateEvent.emit();

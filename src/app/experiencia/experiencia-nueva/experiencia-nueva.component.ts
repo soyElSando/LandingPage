@@ -47,7 +47,7 @@ export class ExperienciaNuevaComponent implements OnInit {
           : "Company name, position and from date must be specified for creating a new experience")
     } else {
       const { puestoEsNuevo, puestoEnNuevo, empresaNueva, logoEmpresaNuevo, inicioNuevo, finNuevo } = this;
-      const nuevaExperiencia: Experiencia = { puestoEs: puestoEsNuevo, puestoEn: puestoEnNuevo, Empresa: empresaNueva, logoEmpresa: logoEmpresaNuevo, inicio: inicioNuevo, fin: finNuevo };
+      const nuevaExperiencia: Experiencia = { puestoEs: puestoEsNuevo, puestoEn: puestoEnNuevo, empresa: empresaNueva, logoEmpresa: logoEmpresaNuevo, inicio: inicioNuevo, fin: finNuevo };
       this.experienciaService.createExperiencia(nuevaExperiencia).subscribe(data => {
         
         this.onCreateEvent.emit();

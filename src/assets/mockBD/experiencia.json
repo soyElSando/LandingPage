@@ -1,7 +1,7 @@
 {"experiencia":[
     {
         "idExp":1,
-        "Empresa":"LP Development",
+        "empresa":"LP Development",
         "logoEmpresa":"assets/LogoLetiChiquito(transparencia).png",
         "puestoEs":"Trabajo Free-Lance",
         "puestoEn":"Freelance worker",
@@ -11,7 +11,7 @@
 
     {
         "idExp":2,
-        "Empresa":"WOW!Cx",
+        "empresa":"WOW!Cx",
         "logoEmpresa":"assets/wowcx_v2.jpg",
         "puestoEs": "Coordinador de Proyectos, Asistencia comercial",
         "puestoEn":"Project manager",
@@ -20,7 +20,7 @@
     },
     {
         "idExp":3,
-        "Empresa":"Ipsos Argentina",
+        "empresa":"Ipsos Argentina",
         "logoEmpresa":"assets/logo ipsos_v2.png",
         "puestoEs":"Encuestador telefónico",
         "puestoEn":"Telemarketer",
