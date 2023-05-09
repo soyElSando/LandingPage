@@ -41,9 +41,12 @@
           </div>
           <div class="mb-3 form-group">
             <label for="finNuevo" class="form-label">{{idiomaEspanol ? ediciones.fin.es : ediciones.fin.en}}:</label>
-            <input type="text" class="form-control" id="finNuevo"
+            <input type="text" class="form-control" id="finNuevo"  [formControl]="finNuevoControl"
               placeholder="Introduzca cuándo comenzó en la empresa" name="finNuevo" [(ngModel)]="finNuevo">
+              <!-- <small class="form-text text-danger" *ngIf="errorFin">
+                {{idiomaEspanol ? ediciones.fin.error.es : ediciones.fin.error.en}}</small> -->
           </div>
+          
 
         </div>
 

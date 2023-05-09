@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SobreMi } from '../models/SobreMi.model';
+import { SobreMi } from './SobreMi.model';
 import { LanguageService } from '../Shared/services/language.service';
 import { SobreMiService } from './sobre-mi.service';
 import I18n from 'src/assets/I18n.json'

@@ -8,29 +8,31 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
+  private useMock = environment.mockDB;
   private apiServerUrl = environment.apiBaseUrl + "/api/login";
   currentUserSubject: BehaviorSubject<any>
   
 
-  constructor(/* private http: HttpClient */) {
+  constructor( private http: HttpClient ) {
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')|| '{}'))
    }
 
    //sin API
-   iniciarSesion({email}:any):Observable<any>{
-      sessionStorage.setItem('currentUser', JSON.stringify(email));  
-      this.currentUserSubject.next(email)
-      return this.currentUserSubject.asObservable();
+   iniciarSesion(credenciales:any):Observable<any>{
+      if (this.useMock) {
+        sessionStorage.setItem('currentUser', JSON.stringify(credenciales.email));  
+        this.currentUserSubject.next(credenciales.email)
+        return this.currentUserSubject.asObservable();
+      }else{
+        return this.http.post(this.apiServerUrl, credenciales).pipe(map(data => {
+          sessionStorage.setItem('currentUser', JSON.stringify(data));  
+          this.currentUserSubject.next(data); 
+              
+          return data;
+        }))
+      }
     }
-   //con API
-   /* iniciarSesion(credenciales:any):Observable<any>{
-    return this.http.post(this.apiServerUrl, credenciales).pipe(map(data => {
-      sessionStorage.setItem('currentUser', JSON.stringify(data));  
-      this.currentUserSubject.next(data); 
-          
-      return data;
-    }))
-   } */
+   
 
    get UsuarioAutenticado() {
     return this.currentUserSubject.value;

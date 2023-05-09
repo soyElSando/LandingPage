@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Carrousel } from 'src/app/models/Carrousel.model';
+import { Carrousel } from 'src/app/Shared/models/Carrousel.model';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/Shared/services/language.service';
 import I18n from 'src/assets/I18n.json';

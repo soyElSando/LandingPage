@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Carrousel, CarrouselWithId } from '../models/Carrousel.model';
+import { Carrousel, CarrouselWithId } from '../Shared/models/Carrousel.model';
 import proyectos from 'src/assets/mockBD/proyectos.json'
 import { Observable, Subscription, of, throwError } from 'rxjs';
 import I18N from 'src/assets/I18n.json'
 import { LanguageService } from '../Shared/services/language.service';
 import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,12 @@ import { environment } from 'src/environments/environment';
 
 
 export class ProyectosService {
-
+  
+  private useMock = environment.mockDB;
   private apiUrl = environment.apiBaseUrl+'/api/proyectos';
   esEspanolSub: Subscription = new Subscription;
 
-  constructor(/* private http: HttpClient, */ private languageService: LanguageService) { } 
+  constructor( private http: HttpClient,  private languageService: LanguageService) { } 
   idiomaEspanol:boolean =true
 
   ngOnInit() {
@@ -33,63 +35,51 @@ export class ProyectosService {
     return I18N.carrousel.proyectos
   }
 
-  //implementacion con MockBD
-  
   public getElements():Observable<Carrousel[]>{
-    return of(proyectos.proyectos)
+    if (this.useMock) {
+      return of(proyectos.proyectos)
+    } else {
+      return this.http.get<Carrousel[]>( this.apiUrl + '/Proyectos/todos');
+    }  
   }
 
   createElemento(elemento: Carrousel): Observable<any> {
-    const newId = proyectos.proyectos.length + 1;
-    const newElemento = { id: newId, ...elemento };
-    proyectos.proyectos.push(newElemento);
-    return of(newElemento);
+    if (this.useMock) {
+      const newId = proyectos.proyectos.length + 1;
+      const newElemento = { id: newId, ...elemento };
+      proyectos.proyectos.push(newElemento);
+      return of(newElemento);
+    } else {
+      return this.http.post<Carrousel>(this.apiUrl + '/Proyectos/agregar', elemento);
+    }
   }
 
   deleteElemento(id: number): Observable<void> {
-    const index = proyectos.proyectos.findIndex(e => e.id === id);
-    if (index >= 0) {
-      proyectos.proyectos.splice(index, 1);
-      return of(undefined);
+    if (this.useMock) {
+      const index = proyectos.proyectos.findIndex(e => e.id === id);
+      if (index >= 0) {
+        proyectos.proyectos.splice(index, 1);
+        return of(undefined);
+      } else {
+        return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
+      }
     } else {
-      return throwError('Element not found');
+      return this.http.delete<void>(this.apiUrl + '/Proyectos/eliminar/' + id);
     }
   }
 
   editElemento(elemento:CarrouselWithId): Observable<any> {
-    const index = proyectos.proyectos.findIndex(e => e.id === elemento.id);
-    if (index >= 0) {
-      const updatedElemento = { ...elemento };
-      proyectos.proyectos[index] = updatedElemento;
-      return of(updatedElemento);
+    if (this.useMock) {
+      const index = proyectos.proyectos.findIndex(e => e.id === elemento.id);
+      if (index >= 0) {
+        const updatedElemento = { ...elemento };
+        proyectos.proyectos[index] = updatedElemento;
+        return of(updatedElemento);
+      } else {
+        return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
+      }
     } else {
-      return throwError('Element not found');
+      return this.http.put<Carrousel>(`${this.apiUrl}/Proyectos/editar`, elemento);
     }
   }
-
-  //implementacion con Backend
-
-/* 
-  public getProyectos(): Observable<Carrrousel[]>{
-    return this.http.get<Carrousel[]>( this.apiServerUrl + '/Proyectos/todos');
-  }
-
-  public updateProyecto(proyecto: CarrouselWithId): Observable<any>{
-
-    return this.http.put<Carrousel>(`${this.apiServerUrl}/Proyectos/editar`, proyecto);
-  } 
-
-  public createProyecto(proyecto: Carrousel): Observable<any>{
-    return this.http.post<Carrousel>(this.apiServerUrl + '/Proyectos/agregar', proyecto);
-  }
-
-  public deleteProyecto(id: number): Observable<void>{
-    return this.http.delete<void>(this.apiServerUrl + '/Proyectos/eliminar/' + id);
-  }
-  
-  private handleError(error: any) {
-    console.error(error);
-    return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
-  } 
-  */
 }

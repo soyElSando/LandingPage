@@ -36,6 +36,7 @@ import { EditarDescripcionComponent } from './sobreMi/editar-descripcion/editar-
 import { ElementoNuevoComponent } from './Shared/carrousel/elemento-nuevo/elemento-nuevo.component';
 import { ElementoEditarComponent } from './Shared/carrousel/elemento-editar/elemento-editar.component';
 import { ElementoDeleteComponent } from './Shared/carrousel/elemento-delete/elemento-delete.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ElementoDeleteComponent } from './Shared/carrousel/elemento-delete/elem
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [LoginService,LanguageService, SobreMiService, HomeService, MailSenderService, ProyectosService],
   bootstrap: [AppComponent]

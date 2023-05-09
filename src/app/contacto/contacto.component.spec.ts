@@ -5,8 +5,8 @@ import { of, throwError } from 'rxjs';
 import { ContactoComponent } from './contacto.component';
 import { MailSenderService } from './mail-sender.service';
 import { SobreMiService } from 'src/app/sobreMi/sobre-mi.service';
-import { SobreMi } from 'src/app/models/SobreMi.model';
-import { Mail } from 'src/app/models/Mail.model';
+import { SobreMi } from 'src/app/sobreMi/SobreMi.model';
+import { Mail } from 'src/app/Shared/models/Mail.model';
 
 describe('ContactoComponent', () => {
   let component: ContactoComponent;

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CategoriaEducacion, CategoriaEducacionWithId } from '../CategoriaEducacion.model';
-import { Educacion, EducacionWhitId } from '../Educacion.model';
+import { Educacion, EducacionWithId } from '../Educacion.model';
 import { EducacionService } from '../educacion.service';
 import I18n from 'src/assets/I18n.json';
 import { Subscription } from 'rxjs';
@@ -79,7 +79,7 @@ export class EditarEducacionComponent implements OnInit {
       && this.finEditado && this.idEduEditado && this.descripcionEsEditada && this.descripcionEnEditada && this.catEduEditada) {
       const { idEduEditado, institucionEditada, tituloEsEditado, tituloEnEditado,logoInstitucionEditado, inicioEditado, finEditado,
         descripcionEsEditada, descripcionEnEditada, catEduEditada } = this
-      const educacionEditada: EducacionWhitId = { idEdu: idEduEditado, institucion: institucionEditada, tituloEs: tituloEsEditado,
+      const educacionEditada: EducacionWithId = { idEdu: idEduEditado, institucion: institucionEditada, tituloEs: tituloEsEditado,
         tituloEn: tituloEnEditado, logoInstitucion: logoInstitucionEditado, inicio: inicioEditado, fin: finEditado,
         descripcionEs: descripcionEsEditada, descripcionEn: descripcionEnEditada, catEdu: catEduEditada };
 

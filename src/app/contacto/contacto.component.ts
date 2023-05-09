@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Mail } from 'src/app/models/Mail.model';
-import { SobreMi } from 'src/app/models/SobreMi.model';
+import { Mail } from 'src/app/Shared/models/Mail.model';
+import { SobreMi } from 'src/app/sobreMi/SobreMi.model';
 import { MailSenderService } from './mail-sender.service';
 import { SobreMiService } from 'src/app/sobreMi/sobre-mi.service';
 import I18n from 'src/assets/I18n.json'

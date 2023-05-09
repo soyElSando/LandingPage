@@ -61,7 +61,14 @@ export class EducacionNuevaComponent implements OnInit {
   }
 
   onCreate() {
-    
+      const inicio = new Date(this.inicioNuevo);
+      const fin = new Date(this.finNuevo);
+      if (this.finNuevo.length > 0 && fin < inicio) {
+        alert(this.idiomaEspanol ?
+          "La fecha de fin no puede ser anterior a la fecha de inicio"
+          : "End date cannot be before start date");
+        return;
+      }
       this.catEduNueva = this.categorias?.find(categoria => categoria.idCatEdu == this.idCatEduNueva)
 
       if (this.catEduAsignada) {

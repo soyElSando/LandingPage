@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SobreMi } from '../../models/SobreMi.model';
+import { SobreMi } from '../SobreMi.model';
 import { SobreMiService } from '../sobre-mi.service';
 import { LanguageService } from 'src/app/Shared/services/language.service';
 import { Subscription } from 'rxjs';

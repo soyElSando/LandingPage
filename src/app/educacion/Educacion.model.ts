@@ -12,6 +12,6 @@ export interface Educacion{
     fin: string ; 
     catEdu: CategoriaEducacionWithId;
 }
-export interface EducacionWhitId extends Educacion{
+export interface EducacionWithId extends Educacion{
     idEdu:number;
 }

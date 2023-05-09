@@ -337,7 +337,11 @@
                 "en":"From"
             },"fin":{
                 "es":"Fin",
-                "en":"To"
+                "en":"To",
+                "error":{
+                    "es":"La fecha de fin debe ser posterior a la fecha de inicio.",
+                    "en":"The end date must be after the start date."
+                }
             }
         },
         "skill":{

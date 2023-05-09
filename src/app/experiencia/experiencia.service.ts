@@ -14,10 +14,11 @@ import { LanguageService } from '../Shared/services/language.service';
 //implementacion con mockBD
 export class ExperienciaService {
 
+  private useMock = environment.mockDB;
   private apiUrl = environment.apiBaseUrl;
   esEspanolSub: Subscription = new Subscription;
 
-  constructor(/* private http: HttpClient, */ private languageService: LanguageService) { } 
+  constructor( private http: HttpClient,  private languageService: LanguageService) { } 
   idiomaEspanol:boolean =true
 
   ngOnInit() {
@@ -30,60 +31,51 @@ export class ExperienciaService {
     this.esEspanolSub.unsubscribe();
   }
 
-  //Implementacion con MockDB
   public getExperiencias():Observable<Experiencia[]>{
-    return of(experiencia.experiencia)
+    if (this.useMock) {
+      return of(experiencia.experiencia)
+    } else {
+      return this.http.get<Experiencia[]>( this.apiUrl + '/Experiencia/todos');
+    }
   }
 
   public updateExperiencia(expLab: ExperienciaWithId):Observable<Experiencia>{
-    const index = experiencia.experiencia.findIndex(e => e.idExp === expLab.idExp);
-    if (index >= 0) {
-      const updatedElemento = { ...expLab };
-      experiencia.experiencia[index] = updatedElemento;
-      return of(updatedElemento);
+    if (this.useMock) {
+      const index = experiencia.experiencia.findIndex(e => e.idExp === expLab.idExp);
+      if (index >= 0) {
+        const updatedElemento = { ...expLab };
+        experiencia.experiencia[index] = updatedElemento;
+        return of(updatedElemento);
+      } else {
+        return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
+      }
     } else {
-      return throwError('Element not found');
+      return this.http.put<Experiencia>(`${this.apiUrl}/Experiencia/editar`, expLab);
     }
   }
+
   public deleteExperiencia(id: number):Observable<void>{
-    const index = experiencia.experiencia.findIndex(e => e.idExp === id);
-    if (index >= 0) {
-      experiencia.experiencia.splice(index, 1);
-      return of(undefined);
+    if (this.useMock) {
+      const index = experiencia.experiencia.findIndex(e => e.idExp === id);
+      if (index >= 0) {
+        experiencia.experiencia.splice(index, 1);
+        return of(undefined);
+      } else {
+        return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
+      }
     } else {
-      return throwError('Element not found');
+      return this.http.delete<void>(this.apiUrl + '/Experiencia/eliminar/' + id);
     }
   }
+
   public createExperiencia(expLab: Experiencia):Observable<any>{
-    const newId = experiencia.experiencia.length + 1;
-    const newElemento = { idExp: newId, ...expLab };
-    experiencia.experiencia.push(newElemento);
-    return of(newElemento);
+    if (this.useMock) {
+      const newId = experiencia.experiencia.length + 1;
+      const newElemento = { idExp: newId, ...expLab };
+      experiencia.experiencia.push(newElemento);
+      return of(newElemento);
+    } else {
+      return this.http.post<Experiencia>(this.apiUrl + '/Experiencia/agregar', expLab);
+    }
   }
 }
-
-//implementacion con backend
-/* 
-  public getExperiencias(): Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>( this.apiServerUrl + '/Experiencia/todos');
-  }
-
-  public updateExperiencia(expLab: Experiencia): Observable<any>{
-
-    return this.http.put<Experiencia>(`${this.apiServerUrl}/Experiencia/editar`, expLab);
-  } 
-
-  public createExperiencia(expLab: Experiencia): Observable<any>{
-    return this.http.post<Experiencia>(this.apiServerUrl + '/Experiencia/agregar', expLab);
-  }
-
-  public deleteExperiencia(id: number): Observable<void>{
-    return this.http.delete<void>(this.apiServerUrl + '/Experiencia/eliminar/' + id);
-  }
-
-  private handleError(error: any) {
-    console.error(error);
-    return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
-  } 
-}
- */

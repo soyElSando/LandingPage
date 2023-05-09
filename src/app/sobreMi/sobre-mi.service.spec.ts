@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { SobreMiService } from './sobre-mi.service';
 import sobreMi from 'src/assets/mockBD/sobreMi.json';
-import { SobreMi } from '../models/SobreMi.model';
+import { SobreMi } from './SobreMi.model';
 import { of } from 'rxjs';
 
 describe('SobreMiService', () => {

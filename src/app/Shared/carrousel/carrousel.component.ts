@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Carrousel } from 'src/app/models/Carrousel.model';
+import { Carrousel } from 'src/app/Shared/models/Carrousel.model';
 import { LanguageService } from '../services/language.service';
 import I18n from 'src/assets/I18n.json'
 import { Subscription } from 'rxjs';
