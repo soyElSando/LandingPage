@@ -58,11 +58,9 @@ export class ElementoDeleteComponent {
     this.elementosSub = this.servicio.getElements().subscribe(
       
       (data:Carrousel[])=>{
-        console.log(this.itemID)
         this.elemento=data
       .find((elemento: Carrousel) => elemento.id == this.itemID)
       if(this.elemento){
-        console.log(this.elemento)
         this.itemABorrar=this.elemento
     }})
   }

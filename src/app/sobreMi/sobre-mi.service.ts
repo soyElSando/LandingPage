@@ -29,27 +29,22 @@ export class SobreMiService {
 
   ngOnDestroy() {
     this.esEspanolSub.unsubscribe();
-  }
-
-  //Implementacion con MockDB
-  private data:SobreMi = sobreMi;
-  
+  }  
 
   public getSobreMi():Observable<SobreMi>{
     if (this.useMock) {
-      return of(this.data);
+      return of(sobreMi);
     } else {
-      return this.http.get<SobreMi>( this.apiUrl + '/SobreMi/');
+      return this.http.get<SobreMi>( this.apiUrl + '/usuario/id/12');
     }
   }
 
   public updateSobreMi(updatedElemento:SobreMi):Observable<SobreMi>{
     if (this.useMock) {
       this.onEditEvent.emit();
-      this.data = updatedElemento;
       return of(updatedElemento); 
     } else {
-      return this.http.put<SobreMi>(`${this.apiUrl}/SobreMi/editar`, updatedElemento);
+      return this.http.put<SobreMi>(`${this.apiUrl}/usuario/editar`, updatedElemento);
     }
   }
 

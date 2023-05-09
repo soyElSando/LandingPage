@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CategoriaSkill, CategoriaSkillWithId } from '../CategoriaSkill.model';
+import { CategoriaSkillWithId } from '../CategoriaSkill.model';
 import { Skill, SkillWithId } from '../Skill.model';
 import { SkillService } from '../skill.service';
 import I18n from 'src/assets/I18n.json';

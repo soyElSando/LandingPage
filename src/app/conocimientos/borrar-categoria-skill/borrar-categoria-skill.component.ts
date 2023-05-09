@@ -51,7 +51,6 @@ export class BorrarCategoriaSkillComponent implements OnInit {
 
   onDelete() {
     if(this.catSkillABorrar!== undefined){
-      console.log(this.catSkillABorrar)
       this.skillService.deleteCateSkill(this.catSkillABorrar).subscribe(data => {      
         this.onDeleteEvent.emit();
     }, err =>{alert(this.idiomaEspanol ? "Algo salió mal" : "Something went wrong")}
