@@ -1,5 +1,6 @@
 <!-- La edición de esta sección resulta distinta a la de las otras secciones porque al ser un carrousel, si el botón de edición está dentro, el modal se ve solo en el primer slide del carrousel. Para no complicarme, decidí resolverlo de esta manera, para mantener los modales. -->
-<div [id]="'seccion3'+carrouselId" class="container-fluid text-white" style="padding:10px 0px 0px 0px; background-color: rgb(224, 224, 224);">
+<div [id]="'seccion3'+carrouselId" class="container-fluid text-white"
+ style="padding:10px 0px 0px 0px; background-color: rgb(224, 224, 224);">
 
   <!-- Botones de edición-->
   <div *ngIf="estaLogueado()" class="mt-2">
@@ -25,7 +26,8 @@
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
-          <button *ngFor="let elemento of elementos; index as i; first as isFirst" type="button" data-bs-target="#demo"
+          <button *ngFor="let elemento of elementos; index as i; first as isFirst" type="button"
+           [attr.data-bs-target]="carrouselId"
             [attr.data-bs-slide-to]=i [ngClass]="{'active': isFirst }"></button>
           <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button> -->
         </div>
@@ -46,7 +48,8 @@
                 [href]="elemento.link"
                 target="_blank" class="btn btn-sm text-white">
                   {{idiomaEspanol ? link.es : link.en}} 
-                <i *ngIf="carrouselId=='carrousel-proyectos'" class="fab fa-github lead text-white"></i>
+                  <!-- Logo de github solo en proyectos -->
+                <i *ngIf="carrouselId=='carrousel-proyectos'" class="fab fa-github lead text-white"></i> 
               </a>
               
             </div>
@@ -54,10 +57,12 @@
           </div>
 
           <!-- Left and right controls/icons -->
-          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button"
+           [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
-          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="next">
+          <button class="carousel-control-next" type="button"
+           [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
           </button>
         </div>

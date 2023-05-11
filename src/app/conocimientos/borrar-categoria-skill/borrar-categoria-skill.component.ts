@@ -19,6 +19,7 @@ export class BorrarCategoriaSkillComponent implements OnInit {
   titulo = I18n.seccion.skills.deleteCat
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
+  cateSub:Subscription = new Subscription;
 
   @Input() catSkillABorrar?: number
   @Output() onDeleteEvent = new EventEmitter();
@@ -31,18 +32,24 @@ export class BorrarCategoriaSkillComponent implements OnInit {
     this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
       this.idiomaEspanol = isAuthenticated
     })
+    this.renderizar()
+    
+  }
 
-    this.skillService.getCateSkills()
-      .subscribe(data=>this.categorias=data)
+  renderizar (){
+    this.cateSub = this.skillService.getCateSkills()
+    .subscribe(data=>{this.categorias=data
+      let x = this.categorias.find(item =>
+        item.idCatSkill==this.catSkillABorrar)
+      if(x){
+        this.categoria=x;
+      }
+    })
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    let x = this.categorias.find(item =>
-          item.idCatSkill==this.catSkillABorrar)
-    if(x){
-      this.categoria=x;
-    }
-      
+    
+      this.renderizar()
   }
 
   ngOnDestroy() {

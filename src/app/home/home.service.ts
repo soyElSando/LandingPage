@@ -58,7 +58,7 @@ export class HomeService {
 
   deleteElemento(id: number): Observable<void> {
     if (this.useMock) {
-      const index = home.promos.findIndex(e => e.id === id);
+      const index = home.promos.findIndex(e => e.id == id);
       if (index >= 0) {
         home.promos.splice(index, 1);
         return of(undefined);

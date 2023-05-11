@@ -30,15 +30,14 @@ export class ConocimientoNuevoComponent implements OnInit {
   titulo = I18n.seccion.skills.new
   idiomaEspanol:boolean =true
   esEspanolSub: Subscription = new Subscription;
+  cateSub: Subscription = new Subscription
 
   @Output() onCreateEvent = new EventEmitter();
 
   constructor(private skillService: SkillService, private languageService: LanguageService) { }
 
   ngOnInit(): void {
-    this.skillService.getCateSkills().subscribe(data => {
-      this.categorias = data;
-    })
+    this.renderizar()
 
     this.esEspanolSub = this.languageService.esEspanol.subscribe((isAuthenticated: boolean)=>{
       this.idiomaEspanol = isAuthenticated
@@ -49,12 +48,20 @@ export class ConocimientoNuevoComponent implements OnInit {
     this.esEspanolSub.unsubscribe();
   }
 
+  renderizar(){
+    this.cateSub =this.skillService.getCateSkills().subscribe(data => {
+      this.categorias = data;
+      let x = this.categorias.find(item=>item.idCatSkill==this.catSkillAsignada)
+      if(x){
+        this.categoriaAsignada = x
+      }
+    })
+  }
+
   ngOnChanges(changes: SimpleChanges) {
-    let x = this.categorias.find(item=>item.idCatSkill==this.catSkillAsignada)
-    if(x){
-      this.categoriaAsignada = x
-    }
+    this.cateSub.unsubscribe()
     
+    this.renderizar()
   
   }
 

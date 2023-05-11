@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class SobreMiService {
 
   private useMock = environment.mockDB;
-  private apiUrl = environment.apiBaseUrl+'/api/sobreMi';
+  private apiUrl = environment.apiBaseUrl;
   esEspanolSub: Subscription = new Subscription;
 
   constructor(private http: HttpClient, private languageService: LanguageService) {   } 
@@ -35,7 +35,7 @@ export class SobreMiService {
     if (this.useMock) {
       return of(sobreMi);
     } else {
-      return this.http.get<SobreMi>( this.apiUrl + '/usuario/id/12');
+      return this.http.get<SobreMi>( this.apiUrl + '/usuario/id/1');
     }
   }
 

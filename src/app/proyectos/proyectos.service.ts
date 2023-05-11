@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProyectosService {
   
   private useMock = environment.mockDB;
-  private apiUrl = environment.apiBaseUrl+'/api/proyectos';
+  private apiUrl = environment.apiBaseUrl;
   esEspanolSub: Subscription = new Subscription;
 
   constructor( private http: HttpClient,  private languageService: LanguageService) { } 
@@ -56,7 +56,7 @@ export class ProyectosService {
 
   deleteElemento(id: number): Observable<void> {
     if (this.useMock) {
-      const index = proyectos.proyectos.findIndex(e => e.id === id);
+      const index = proyectos.proyectos.findIndex(e => e.id == id);
       if (index >= 0) {
         proyectos.proyectos.splice(index, 1);
         return of(undefined);
@@ -66,6 +66,20 @@ export class ProyectosService {
     } else {
       return this.http.delete<void>(this.apiUrl + '/Proyectos/eliminar/' + id);
     }
+    /* console.log(id)
+    if (this.useMock) {
+      console.log(proyectos.proyectos)
+      const proyectoAEliminar = proyectos.proyectos.find(e => e.id == id);
+      console.log(proyectoAEliminar?.id);
+      if (proyectoAEliminar) {
+        proyectos.proyectos = proyectos.proyectos.filter(e => e.id != id);
+        return of(undefined);
+      } else {
+        return throwError(this.idiomaEspanol ? I18N.error.request.es : I18N.error.request.en);
+      }
+    } else {
+      return this.http.delete<void>(this.apiUrl + '/Proyectos/eliminar/' + id);
+    } */
   }
 
   editElemento(elemento:CarrouselWithId): Observable<any> {

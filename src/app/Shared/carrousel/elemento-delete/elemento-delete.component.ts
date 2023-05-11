@@ -66,7 +66,7 @@ export class ElementoDeleteComponent {
   }
 
   onDelete(): void {
-    this.servicio.delete(this.itemID).subscribe(() => {
+    this.servicio.deleteElemento(this.itemID).subscribe(() => {
         this.onDeleteEvent.emit();
     }, () => { alert(this.idiomaEspanol ? "Algo salió mal" : "Something went wrong") })
 

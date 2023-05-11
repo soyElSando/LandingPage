@@ -18,7 +18,7 @@ export class CarrouselComponent {
   ediciones = I18n.carrousel.ediciones
   idABorrar: number = 1;
   idAEditar: number = 2;
-  itemABorrar?: Carrousel;
+  //itemABorrar?: Carrousel;
   esEspanolSub: Subscription = new Subscription;
   elementosSub: Subscription = new Subscription;
   elementos: Carrousel[] =
