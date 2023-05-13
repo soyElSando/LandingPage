@@ -8,6 +8,7 @@
 
 .nav-link:hover, .logo:hover{
     cursor: pointer;
+    color:rgb(255, 193, 7);
 }
 
 nav{

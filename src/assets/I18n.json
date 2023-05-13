@@ -259,7 +259,7 @@
         },"messageRequired":{
             "es":"Debés ingresar un mensaje",
             "en":"You must enter your message"
-        },"success":{
+        },"warning":{
             "es":"¡El mensaje se envió correctamente!",
             "en":"¡Message sent!"
         },"failure":{

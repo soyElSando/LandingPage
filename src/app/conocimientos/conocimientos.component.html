@@ -1,7 +1,7 @@
 <!-- Seción 4 Skills-->
-<div id="section4" class="contenedor">
+<div id="section4" class="contenedor bg-dark">
   <div class="d-flex">
-    <h3 class="mt-5 pt-3">{{idiomaEspanol ? titulo.section.es : titulo.section.en}}</h3>
+    <h3 class="mt-5 pt-3 text-light">{{idiomaEspanol ? titulo.section.es : titulo.section.en}}</h3>
     <i *ngIf="estaLogueado()" class="fa-regular fa-plus icono-principal mt-5 pt-3 px-3 d-flex" data-bs-toggle="modal"
     data-bs-target="#agregarCatSkill"></i>
   </div>
@@ -10,15 +10,15 @@
     <div *ngFor="let categoria of categorias; last as isLast; even as isEven"
       [ngClass]="{' col-md-12': isLast && isEven , 'col-sm-12 col-md-6': !(isLast && isEven)}">
 
-      <div class="border border-1 border-success p-3 mt-3">
-        <div class="d-flex justify-content-between">
+      <div class="border border-1 border-secondary p-3 mt-3">
+        <div class="d-flex justify-content-between text-light">
           <h3> {{idiomaEspanol ? categoria.nombreCatSkillEs : categoria.nombreCatSkillEn}}</h3>
           <div class="d-flex flex-column">
             <i *ngIf="estaLogueado()" class="fa-regular fa-trash-can icono-principal" data-bs-toggle="modal"
             data-bs-target="#eliminarCatSkill"(click)="guardarCategoriaSkill(categoria)"></i>
           </div>
         </div>
-        <div *ngIf="filtrarPorCategoria(categoria.idCatSkill).length==0" class="alert alert-success m-2" role="alert">
+        <div *ngIf="filtrarPorCategoria(categoria.idCatSkill).length==0" class="alert alert-warning m-2" role="alert">
           {{idiomaEspanol ? titulo.comentario.es : titulo.comentario.en}}
         </div>
 
@@ -28,7 +28,7 @@
           <div style="width: 100%;" class="d-flex">
             <div style="width: 100%;" class="d-flex">
 
-              <div class="progress-bar  bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+              <div class="progress-bar  bg-warning progress-bar-striped progress-bar-animated texto" role="progressbar"
                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': item.avance}">
                 {{item.nombreSkill}} {{item.avance}}%
               </div>

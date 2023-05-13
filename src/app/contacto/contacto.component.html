@@ -86,7 +86,7 @@
           </a>
         </div>
         <div class="my-3">
-          <a href="https://wa.me/5491151171835" target="_blank">
+          <a href="https://wa.me/549{{usuario?.linkWP}}" target="_blank">
             <i class="fab fa-whatsapp iconoContacto "></i>
           </a>
         </div>
@@ -103,7 +103,7 @@
       </div>
     </div>
     <div *ngIf="mostrarConfirmacion" class="alert alert-warning mt-2 w-75 mx-4" role="alert">
-      {{idiomaEspanol ? texto.success.es : texto.success.en}}
+      {{idiomaEspanol ? texto.warning.es : texto.warning.en}}
     </div>
     <div *ngIf="mostrarError" class="alert alert-danger mt-2 w-75 mx-4" role="alert">
       {{idiomaEspanol ? texto.failure.es : texto.failure.en}}

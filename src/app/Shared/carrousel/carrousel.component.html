@@ -20,7 +20,7 @@
   <div class="container-fluid mt-0">
 
 
-    <div class="container-fluid float-cenert pb-3 mt-5" [id]="'contenedorCarrousel'+carrouselId">
+    <div class="container-fluid pb-3 mt-5" [id]="'contenedorCarrousel'+carrouselId">
       <!-- Carrousel -->
       <div [id]="carrouselId" class="carousel slide mb-2" data-bs-ride="carousel">
 
@@ -57,11 +57,11 @@
           </div>
 
           <!-- Left and right controls/icons -->
-          <button class="carousel-control-prev" type="button"
+          <button *ngIf="elementos.length>1" class="carousel-control-prev" type="button"
            [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
-          <button class="carousel-control-next" type="button"
+          <button *ngIf="elementos.length>1" class="carousel-control-next" type="button"
            [attr.data-bs-target]="'#' + carrouselId" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
           </button>
@@ -110,7 +110,7 @@
           
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
-          <button [disabled]="formBorrarItem.invalid" type="button" class="btn btn-success"
+          <button [disabled]="formBorrarItem.invalid" type="button" class="btn btn-warning"
            data-bs-toggle="modal" [attr.data-bs-target]="'#borrar'+carrouselId" >
            {{idiomaEspanol ? botones.borrar.es : botones.borrar.en}}</button>
         </div>
@@ -180,7 +180,7 @@
           
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
-          <button [disabled]="itemAEditar.invalid" type="button" class="btn btn-success"
+          <button [disabled]="itemAEditar.invalid" type="button" class="btn btn-warning"
             data-bs-toggle="modal" [attr.data-bs-target]="'#editar'+carrouselId" >
             {{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
         </div>
@@ -242,7 +242,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             {{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
-          <button [disabled]="formEditarItem.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal">
+          <button [disabled]="formEditarItem.invalid" type="submit" class="btn btn-warning" data-bs-dismiss="modal">
             {{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
         </div>
       </form>

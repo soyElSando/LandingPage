@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <div class="d-flex">
         <a class="navbar-brand my-auto" (click)="scrollTo('home')">
-          <img class="logo" src="../../../assets/Logo_DEV.png" alt="GS DEV" id="logo" />
+          <img class="logo" src="../../../assets/logo_192.png" alt="GS DEV" id="logo" />
         </a>
         <div class="navbar-brand my-auto">
           <img class="logo2" src="../../../assets/LogoArgentinaPrograma.png" alt="LogoArgentinaPrograma" id="logo2" />
@@ -51,14 +51,14 @@
         </ul>
         <div class="float-sm-end">
           <button 
-            class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
+            class="btn btn-sm m-2 float-sm-end btn-outline-warning"
             (click)="toggleLanguage()">
               {{idiomaEspanol ? "En" : "Es"}}
           </button>
           <button
             *ngIf="!estaLogueado()"
             type="button"
-            class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
+            class="btn btn-sm m-2 float-sm-end btn-outline-warning"
             data-bs-toggle="modal"
             data-bs-target="#myModal"
             id="login"
@@ -69,7 +69,7 @@
           <button
             *ngIf="estaLogueado()"
             type="button"
-            class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
+            class="btn btn-sm m-2 float-sm-end btn-outline-warning"
             (click)="logout()"
             data-bs-toggle="collapse"
             data-bs-target="#mynavbar"

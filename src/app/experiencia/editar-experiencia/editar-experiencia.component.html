@@ -53,7 +53,7 @@
           <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{idiomaEspanol ? botones.cancelar.es : botones.cancelar.en}}</button>
-            <button [disabled]="formEditarExp.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="onEdit()">{{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
+            <button [disabled]="formEditarExp.invalid" type="submit" class="btn btn-warning" data-bs-dismiss="modal" (click)="onEdit()">{{idiomaEspanol ? botones.editar.es : botones.editar.en}}</button>
           </div>
         </form>
       </div>

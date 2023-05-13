@@ -64,7 +64,7 @@ describe('ContactoComponent', () => {
     expect(component.usuario).toEqual(sobreMi);
   });
 
-  it('should set mostrarConfirmacion to true after sending email successfully', fakeAsync(() => {
+  it('should set mostrarConfirmacion to true after sending email warningfully', fakeAsync(() => {
     const mail: Mail = {
       nombre: 'test',
       fromEmail: 'test@test.com',
