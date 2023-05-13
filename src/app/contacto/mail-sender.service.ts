@@ -10,19 +10,18 @@ import { Mail } from '../Shared/models/Mail.model';
 export class MailSenderService {
 
   private apiServerUrl = environment.apiBaseUrl;
+  private useMock = environment.mockDB;
 
-  constructor(/* private http: HttpClient */) { }
-    //implementación MockBD
+  constructor( private http: HttpClient ) { }
+    
     
     public enviarMail(mail: Mail): Observable<any> {
-      console.log(mail.body)
-      return of('mail enviado!');
+      if (this.useMock) {
+        console.log(mail.body)
+        return of('mail enviado!');
+      }else{
+        return this.http.post<Mail>(this.apiServerUrl + '/Mail/enviar', mail);
+      }
     }
-    //implementación Back
-
-    /*
-  public enviarMail(mail: Mail): Observable<any>{
-    return this.http.post<Mail>(this.apiServerUrl + '/Mail/enviar', mail);
-  }
-    */
+    
 }

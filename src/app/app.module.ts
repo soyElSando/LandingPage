@@ -36,7 +36,10 @@ import { EditarDescripcionComponent } from './sobreMi/editar-descripcion/editar-
 import { ElementoNuevoComponent } from './Shared/carrousel/elemento-nuevo/elemento-nuevo.component';
 import { ElementoEditarComponent } from './Shared/carrousel/elemento-editar/elemento-editar.component';
 import { ElementoDeleteComponent } from './Shared/carrousel/elemento-delete/elemento-delete.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PaginaInexistenteComponent } from './pagina-inexistente/pagina-inexistente.component';
+import { InterceptorService } from './Shared/services/interceptor.service';
+import { SpinnerComponent } from './Shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,9 @@ import { HttpClientModule } from '@angular/common/http';
     EditarDescripcionComponent,
     ElementoNuevoComponent,
     ElementoEditarComponent,
-    ElementoDeleteComponent
+    ElementoDeleteComponent,
+    PaginaInexistenteComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -76,7 +81,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoginService,LanguageService, SobreMiService, HomeService, MailSenderService, ProyectosService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
-  private useMock = true //environment.mockDB;
+  //private useMock = true;
+  private useMock = environment.mockDB;
   private apiServerUrl = environment.apiBaseUrl + "/login";
   currentUserSubject: BehaviorSubject<any>
   

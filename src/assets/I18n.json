@@ -1,4 +1,8 @@
 {
+    "_404":{
+        "es":"La página que estás buscando no existe...aún...",
+        "en":"The page you are looking for does not exist...yet..."
+    },
     "error":{
         "request":{
             "es":"Ocurrió un error. Por favor intente nuevamente",

@@ -1,0 +1,13 @@
+ #pagInexistente{
+   background-image: url("../../assets/_404.gif"); 
+   background-repeat: repeat-x;
+   background-position-y: bottom;
+    min-width: 100vw;
+    min-height: 100vh;
+    opacity: 0.7;
+}
+
+.inexistente{
+   margin-top: 16vh;
+  /*  opacity: 0.7;*/
+}

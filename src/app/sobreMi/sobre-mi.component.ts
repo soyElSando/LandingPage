@@ -27,8 +27,8 @@ export class SobreMiComponent {
     "linkWP":"",
     "linkGH": "",
     "linkIG":"",
-    "descripcionEs": "vacío",
-    "descripcionEn": "void",
+    "descripcionEs": "Error de conexión con el servidor",
+    "descripcionEn": "Server conection error",
     "avatar": "assets/gerSando.jpg"
 }
   constructor(private SobreMiService: SobreMiService, private languageService:LanguageService, private loginService:LoginService) {

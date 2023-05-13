@@ -20,7 +20,7 @@
         <span class="navbar-toggler-icon "></span>
       </button>
       <div class="collapse bg-dark navbar-collapse" id="mynavbar" style="width: 100%" >
-        <ul class="navbar-nav m-auto px-3">
+        <ul class="navbar-nav m-auto px-0">
           <li class="nav-item">
             <a
               class="nav-link"
@@ -53,7 +53,7 @@
           <button 
             class="btn btn-sm m-2 float-sm-end btn-outline-secondary"
             (click)="toggleLanguage()">
-              {{idiomaEspanol ? "English" : "Español"}}
+              {{idiomaEspanol ? "En" : "Es"}}
           </button>
           <button
             *ngIf="!estaLogueado()"
@@ -63,7 +63,8 @@
             data-bs-target="#myModal"
             id="login"
           >
-          {{idiomaEspanol ? boton.login.es : boton.login.en}}
+          <i class="fa fa-sign-in" aria-hidden="true"></i>
+          <!-- {{idiomaEspanol ? boton.login.es : boton.login.en}} -->
           </button>
           <button
             *ngIf="estaLogueado()"
@@ -73,7 +74,8 @@
             data-bs-toggle="collapse"
             data-bs-target="#mynavbar"
           >
-          {{idiomaEspanol ? boton.logout.es : boton.logout.en}}
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <!-- {{idiomaEspanol ? boton.logout.es : boton.logout.en}} -->
           </button>
         </div>
       </div>
