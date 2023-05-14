@@ -23,7 +23,7 @@
         <ul class="navbar-nav m-auto px-0">
           <li class="nav-item">
             <a
-              class="nav-link"
+              class="nav-link mx-2"
               (click)="scrollTo('sobre-mi')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
@@ -32,7 +32,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link"
+              class="nav-link mx-2"
               (click)="scrollTo('proyectos')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
@@ -41,7 +41,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link"
+              class="nav-link mx-2"
               (click)="scrollTo('contacto')"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
@@ -51,14 +51,14 @@
         </ul>
         <div class="float-sm-end">
           <button 
-            class="btn btn-sm m-2 float-sm-end btn-outline-warning"
+            class="btn btn-sm m-2 float-sm-end btn-outline-light"
             (click)="toggleLanguage()">
               {{idiomaEspanol ? "En" : "Es"}}
           </button>
           <button
             *ngIf="!estaLogueado()"
             type="button"
-            class="btn btn-sm m-2 float-sm-end btn-outline-warning"
+            class="btn btn-sm m-2 float-sm-end btn-outline-light"
             data-bs-toggle="modal"
             data-bs-target="#myModal"
             id="login"
@@ -69,7 +69,7 @@
           <button
             *ngIf="estaLogueado()"
             type="button"
-            class="btn btn-sm m-2 float-sm-end btn-outline-warning"
+            class="btn btn-sm m-2 float-sm-end btn-outline-light"
             (click)="logout()"
             data-bs-toggle="collapse"
             data-bs-target="#mynavbar"

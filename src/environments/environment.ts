@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl:'http://localhost:8080',
+  //apiBaseUrl:'http://localhost:8080',
+  apiBaseUrl:'https://portfolio-backend-ytk9.onrender.com',
   mockDB: false
 };
 

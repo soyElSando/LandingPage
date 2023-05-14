@@ -6,10 +6,17 @@
     height: 8vh !important;
 }
 
-.nav-link:hover, .logo:hover{
+.nav-link:hover, .logo:hover, .btn:hover{
     cursor: pointer;
     color:rgb(255, 193, 7);
+    transform: translate(10%, -5%);
 }
+
+.btn:hover{
+    background-color: rgb(33, 37, 41)   ;
+    border-color: rgb(255, 193, 7);
+}
+
 
 nav{
     height: 10vh;
