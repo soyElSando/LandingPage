@@ -12,7 +12,7 @@ import { LoginService } from '../services/login.service';
 })
 export class CarrouselComponent {
 
-  idiomaEspanol:boolean =true
+  idiomaEspanol:boolean = true
   link = I18n.boton.link
   botones = I18n.boton
   ediciones = I18n.carrousel.ediciones
