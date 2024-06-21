@@ -3,7 +3,7 @@
             {
                 "idEdu": 0,
                 "institucion":"Argentina Programa - Ministerio de Desarrollo Productivo",
-                "logoInstitucion":"assets/LogoArgentinaPrograma.png",
+                "logoInstitucion":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1718937837/argentinaPrograma.png",
                 "tituloEs":"Desarrollador FullStack",
                 "tituloEn": "Fullstack Web Developer",
                 "descripcionEs": "Contenidos: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
