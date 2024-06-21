@@ -10,6 +10,11 @@
 },
 {
     "idCatSkill":3,
+    "nombreCatSkillEs":"Desarrollo Mobile",
+    "nombreCatSkillEn":"Mobile Development"
+},
+{
+    "idCatSkill":4,
     "nombreCatSkillEs":"Idiomas",
     "nombreCatSkillEn":"Languages"
 }]

@@ -1,30 +1,48 @@
 {"experiencia":[
     {
         "idExp":1,
-        "empresa":"LP Development",
-        "logoEmpresa":"assets/LogoLetiChiquito(transparencia).png",
-        "puestoEs":"Trabajo Free-Lance",
-        "puestoEn":"Freelance worker",
+        "empresa":"JVM Soluciones (emprendimiento)",
+        "logoEmpresa":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683948937/Computadora_u1tdc7.jpg",
+        "puestoEs":"Desarrollador .Net/Xamarin",
+        "puestoEn":".NET/Xamarin Developer",
+        "inicio":"2023",
+        "fin":"-"
+    },
+    {
+        "idExp":2,
+        "empresa":"ABACC",
+        "logoEmpresa":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1718936020/abacc.jpg",
+        "puestoEs":"Apoyo Técnico",
+        "puestoEn":"Technical Support",
+        "inicio":"2023",
+        "fin":"-"
+    },
+    {
+        "idExp":3,
+        "empresa":"Iadev S.A.",
+        "logoEmpresa":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683945677/iadev_bchvzt.png",
+        "puestoEs":"Responsable de Proyectos, Responsable de calidad",
+        "puestoEn":"Project Manager, QA Manager",
         "inicio":"2022",
         "fin":"2023"
     },
 
     {
-        "idExp":2,
-        "empresa":"WOW!Cx",
-        "logoEmpresa":"assets/wowcx_v2.jpg",
-        "puestoEs": "Coordinador de Proyectos, Asistencia comercial",
-        "puestoEn":"Project manager",
-        "inicio":"2022",
-        "fin":"2023"
+        "idExp":4,
+        "empresa":"Freelance",
+        "logoEmpresa":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683948937/Computadora_u1tdc7.jpg",
+        "puestoEs": "Reparación de computadoras y televisores",
+        "puestoEn":"TVs and PCs technician",
+        "inicio":"2012",
+        "fin":"2022"
     },
     {
-        "idExp":3,
-        "empresa":"Ipsos Argentina",
-        "logoEmpresa":"assets/logo ipsos_v2.png",
-        "puestoEs":"Encuestador telefónico",
-        "puestoEn":"Telemarketer",
-        "inicio":"2011",
-        "fin":"2022"
+        "idExp":5,
+        "empresa":"Lenor Group",
+        "logoEmpresa":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683949086/lenor_u057xu.jpg",
+        "puestoEs":"Analista de seguridad eléctrica",
+        "puestoEn":"Electrical security analist",
+        "inicio":"2005",
+        "fin":"2012"
     }
 ]}

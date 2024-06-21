@@ -2,8 +2,8 @@
     [
         {
         "idSkill":0,
-        "nombreSkill":"HTML",
-        "avance": 65,
+        "nombreSkill":"React",
+        "avance": 80,
         "catSkill": {
             "idCatSkill":1,
             "nombreCatSkillEs":"Tecnología Front-End",
@@ -12,8 +12,8 @@
         },
         {
         "idSkill":1,
-        "nombreSkill":"CSS",
-        "avance": 60,
+        "nombreSkill":"CSS / Bootstrap",
+        "avance": 80,
         "catSkill": {
             "idCatSkill":1,
             "nombreCatSkillEs":"Tecnología Front-End",
@@ -22,8 +22,8 @@
         },
         {
         "idSkill":2,
-        "nombreSkill":"JavaScript",
-        "avance": 60,
+        "nombreSkill":"Javascript (Jquerry/Vanilla)",
+        "avance": 90,
         "catSkill": {
             "idCatSkill":1,
             "nombreCatSkillEs":"Tecnología Front-End",
@@ -33,7 +33,7 @@
         {
         "idSkill":3,
         "nombreSkill":"TypeScript",
-        "avance": 60,
+        "avance": 70,
         "catSkill": {
             "idCatSkill":1,
             "nombreCatSkillEs":"Tecnología Front-End",
@@ -43,7 +43,7 @@
         {
             "idSkill":4,
         "nombreSkill":"Angular",
-        "avance": 50,
+        "avance": 70,
         "catSkill": {
             "idCatSkill":1,
             "nombreCatSkillEs":"Tecnología Front-End",
@@ -52,7 +52,7 @@
         },
         {
         "idSkill":5,
-        "nombreSkill":"Python",
+        "nombreSkill":"Net Core MVC Razor Pages",
         "avance": 60,
         "catSkill": {
             "idCatSkill":2,
@@ -62,7 +62,7 @@
         },
         {
         "idSkill":6,
-        "nombreSkill":"Java",
+        "nombreSkill":"Java (Spring Boot)",
         "avance": 60,
         "catSkill": {
             "idCatSkill":2,
@@ -72,7 +72,7 @@
         },
         {
         "idSkill":7,
-        "nombreSkill":"Django",
+        "nombreSkill":"NodeJs (Express)",
         "avance": 40,
         "catSkill": {
             "idCatSkill":2,
@@ -83,7 +83,7 @@
         {
         "idSkill":8,
         "nombreSkill":"MySQL",
-        "avance": 70,
+        "avance": 80,
         "catSkill": {
             "idCatSkill":2,
             "nombreCatSkillEs":"Teconología Back-End",
@@ -92,8 +92,8 @@
         },
         {
         "idSkill":9,
-        "nombreSkill":"Spring",
-        "avance": 10,
+        "nombreSkill":"MongoDB",
+        "avance": 50,
         "catSkill": {
             "idCatSkill":2,
             "nombreCatSkillEs":"Teconología Back-End",
@@ -101,21 +101,31 @@
             }
         },
         {
-        "idSkill":10,
+            "idSkill":10,
+            "nombreSkill":"Xamarin",
+            "avance": 60,
+            "catSkill": {
+                "idCatSkill":3,
+                "nombreCatSkillEs":"Desarrollo Mobile",
+                "nombreCatSkillEn":"Mobile Development"
+                }
+            },
+        {
+        "idSkill":11,
         "nombreSkill":"English",
-        "avance": 80,
+        "avance": 95,
         "catSkill": {
-            "idCatSkill":3,
+            "idCatSkill":4,
             "nombreCatSkillEs":"Idiomas",
             "nombreCatSkillEn":"Languages"
             }
         }, 
         {
-        "idSkill":11,
+        "idSkill":12,
         "nombreSkill": "Português",
-        "avance": 40,
+        "avance": 60,
         "catSkill": {
-            "idCatSkill":3,
+            "idCatSkill":4,
             "nombreCatSkillEs":"Idiomas",
             "nombreCatSkillEn":"Languages"
             }

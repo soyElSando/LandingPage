@@ -1,29 +1,29 @@
 {"proyectos" :[
     {
         "id": 1,
-      "nombreEs": "Proyecto1",
-      "nombreEn": "Project 1",
-      "imagen":"https://lonelyplanetes.cdnstatics2.com/sites/default/files/fotos/Marruecos_Chefcahouen_500px_103832325_Gareth%20Bell_500px.jpg",
-      "descripcionEs":"Un proyecto de prueba1",
-      "descripcionEn":"Mock project 1",
-      "link":"https://www.youtube.com/"
+      "nombreEs": "Juego de la vida",
+      "nombreEn": "Game of life",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683943700/GameOfLife_qxvb3j.gif",
+      "descripcionEs":"Un ejercicio de Python usando Pygame",
+      "descripcionEn":"A Python exercise using Pygame",
+      "link":"https://github.com/soyElSando/juegoDeLaVida"
     },
     {
       "id": 2,
-      "nombreEs": "Proyecto2",
-      "nombreEn": "Project 2",
-      "imagen":"https://lonelyplanetes.cdnstatics2.com/sites/default/files/fotos/Marruecos_Casablanca_LPT0517_110_Philip%20Lee%20Harvey_Lonely%20Planet.jpg",
-      "descripcionEs":"Un proyecto de prueba2",
-      "descripcionEn":"Mock project 2",
-      "link":"https://www.youtube.com/"
+      "nombreEs": "Clon de Netflix",
+      "nombreEn": "Netflix Clon",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683940466/FalsoNetflix_gmz74z.png",
+      "descripcionEs":"Ejercicio de clonar un sitio web con React",
+      "descripcionEn":"Excersise for copying a website using React",
+      "link":"https://falso-netflix.vercel.app/"
     },
     {
       "id": 3,
-      "nombreEs": "Proyecto3",
-      "nombreEn": "Project 3",
-      "imagen":"https://lonelyplanetes.cdnstatics2.com/sites/default/files/fotos/Marruecos_Sahara_shutterstock_717589531_Igor%20from%20Sarajevo_Shutterstock.jpg",
-      "descripcionEs":"Un proyecto de prueba3",
-      "descripcionEn":"Mock project 3",
-      "link":"https://www.youtube.com/"
+      "nombreEs": "Portfolio de Desarrollo Web",
+      "nombreEn": "Web Devoloper Portfolio",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683947378/Portfolio_ukhw0b.png",
+      "descripcionEs":"Una aplicación editable realizada como proyecto final del curso Argentina Programa.",
+      "descripcionEn":"An editable Web App made as the final project of Argentina Programa certification.",
+      "link":"https://github.com/soyElSando/ArgPrograma_FrontEnd"
     }
 ]}

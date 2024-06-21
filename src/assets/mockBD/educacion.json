@@ -4,12 +4,12 @@
                 "idEdu": 0,
                 "institucion":"Argentina Programa - Ministerio de Desarrollo Productivo",
                 "logoInstitucion":"assets/LogoArgentinaPrograma.png",
-                "tituloEs":"Desarrolladora FullStack",
+                "tituloEs":"Desarrollador FullStack",
                 "tituloEn": "Fullstack Web Developer",
                 "descripcionEs": "Contenidos: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
                 "descripcionEn": "Contents: HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular, MySQL, Java, Spring",
                 "inicio":"2022",
-                "fin":"...",
+                "fin":"2023",
                 "catEdu":{
                     "idCatEdu": 1,
                     "nombreCatEduEs": "Certificaciones",
@@ -19,13 +19,13 @@
             {
                 "idEdu": 1,
                 "institucion":"Codo a Codo - Ministerio de Educación de la Ciudad de Buenos Aires",
-                "logoInstitucion":"assets/logoCodoACodo.png",
-                "tituloEs":"Desarrollo FullStack Python",
-                "tituloEn":"FullStack Python developer",
-                "descripcionEs": "Contenidos: HTML, CSS, JavaScript, VUE, MySQL, Python, Django",
-                "descripcionEn": "Contents: HTML, CSS, JavaScript, VUE, MySQL, Python, Django",
-                "inicio":"2020",
-                "fin":"2022",
+                "logoInstitucion":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683945464/logoCodoACodo_kmhoys.png",
+                "tituloEs":"Desarrollador FullStack",
+                "tituloEn":"Fullstack Web Developer",
+                "descripcionEs": "Contenidos: React, NodeJs, MongoDB",
+                "descripcionEn": "Contents: React, NodeJs, MongoDB",
+                "inicio":"2022",
+                "fin":"2023",
                 "catEdu":{
                     "idCatEdu": 1,
                     "nombreCatEduEs": "Certificaciones",
@@ -35,13 +35,13 @@
             {
                 "idEdu": 2,
                 "institucion":"Universidad de Buenos Aires",
-                "logoInstitucion":"assets/logoUBA.png",
-                "tituloEs":"Licenciatura en Filosofía",
-                "tituloEn":"Bachelor of Philosophy",
+                "logoInstitucion":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683945483/logoUBA_ihey5c.png",
+                "tituloEs":"Ingenierìa en sistemas",
+                "tituloEn":"Software engineer",
                 "descripcionEs": "Estudios no finalizados",
                 "descripcionEn": "Studies not completed",
-                "inicio":"2008",
-                "fin":"2012",
+                "inicio":"2005",
+                "fin":"2008",
                 "catEdu":{
                     "idCatEdu": 2,
                     "nombreCatEduEs": "Educación formal",
@@ -50,18 +50,34 @@
             },
             {
                 "idEdu": 3,
-                "institucion":"Instituto Superior Lenguas Vivas",
-                "logoInstitucion":"assets/logoLenguasVidas.png",
-                "tituloEs":"Traductorado en alemán",
-                "tituloEn":"German translation",
-                "descripcionEs": "Estudios no finalizados",
-                "descripcionEn": "Studies not completed",
-                "inicio":"2015",
-                "fin":"2018",
+                "institucion":"ET Otto Krause",
+                "logoInstitucion":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683948690/OK_wecawv.jpg",
+                "tituloEs":"Técnico electrónico",
+                "tituloEn":"Electronics technician",
+                "descripcionEs": "Orientación en telecomunicaciones y redes",
+                "descripcionEn": "Specialized in computer networks and telecommunications",
+                "inicio":"2004",
+                "fin":"1999",
                 "catEdu":{
                     "idCatEdu": 2,
                     "nombreCatEduEs": "Educación formal",
                     "nombreCatEduEn": "Degrees"   
+                }
+            },
+            {
+                "idEdu": 4,
+                "institucion":"Educacion IT",
+                "logoInstitucion":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683948343/IT_yhfozl.jpg",
+                "tituloEs":"Desarrollador .NET",
+                "tituloEn":".NET Developer",
+                "descripcionEs": "ASP NET CORE MVC",
+                "descripcionEn": "ASP NET CORE MVC",
+                "inicio":"2023",
+                "fin":"2023",
+                "catEdu":{
+                    "idCatEdu": 1,
+                    "nombreCatEduEs": "Certificaciones",
+                    "nombreCatEduEn": "Courses"
                 }
             }
         ]
