@@ -19,11 +19,11 @@
     },
     {
       "id": 3,
-      "nombreEs": "Portfolio de Desarrollo Web",
-      "nombreEn": "Web Devoloper Portfolio",
-      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1683947378/Portfolio_ukhw0b.png",
-      "descripcionEs":"Una aplicación editable realizada como proyecto final del curso Argentina Programa.",
-      "descripcionEn":"An editable Web App made as the final project of Argentina Programa certification.",
-      "link":"https://github.com/soyElSando/ArgPrograma_FrontEnd"
+      "nombreEs": "Aplicación de carga de combustibles",
+      "nombreEn": "Fuel loading App",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1719014918/Xamarin.jpg",
+      "descripcionEs":"Mantenimiento de aplicación Xamarin para iOS y Android.",
+      "descripcionEn":"Xamarin app maintenance for iOS and Android",
+      "link":""
     }
 ]}
