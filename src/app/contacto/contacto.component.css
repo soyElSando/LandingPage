@@ -2,8 +2,8 @@
 #section5{
     background-color: #c7b299;
     color: black;
-    padding:100px 20px;
-    min-height: 100vh;
+    padding:20px;
+    min-height: 0.1vh;
     
 }
 .sinDecoracion{
@@ -12,6 +12,7 @@
 .iconoContacto{
     font-size: 2rem;
     color:#201f1d;
+    margin: 20px;
 }
 .iconoContacto:hover{
     text-shadow: 1px 1px 1px

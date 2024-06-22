@@ -1,5 +1,26 @@
 <div id="section5" class="container-fluid contenedor">
-  <div class="row">
+  <!-- Sin Form -->
+  <h4 class="color text-center pt-5">{{idiomaEspanol ? texto.title2.es : texto.title2.en}}</h4>
+  <div class="text-center">{{idiomaEspanol ? texto.mailAdress.es : texto.mailAdress.en}}</div>
+  <div class="text-center m-2 p-2">
+    <a [href]="usuario?.linkIG" target="_blank">
+      <i class="fab fa-instagram iconoContacto "></i>
+    </a>
+    
+      <a href="https://wa.me/549{{usuario?.linkWP}}" target="_blank">
+        <i class="fab fa-whatsapp iconoContacto "></i>
+      </a>
+    
+      <a [href]="usuario?.linkGH" target="_blank">
+        <i class="fab fa-github iconoContacto "></i>
+      </a>
+    
+      <a [href]="usuario?.linkIn" target="_blank">
+        <i class="fab fa-linkedin iconoContacto "></i>
+      </a>
+  </div>
+  <!-- Con Form -->
+  <!-- <div class="row">
     <div class="col-10">
       <div class="container mt-3">
         <h2 class="color">{{idiomaEspanol ? texto.title.es : texto.title.en}}</h2>
@@ -78,8 +99,8 @@
         </form>
       </div>
     </div>
-    <div class="col-1">
-      <div class="d-flex flex-column justify-content-between mt-5 pt-5 me-3">
+     <div class="col-1">
+      <div class="d-flex flex justify-content-between mt-5 pt-5 me-3">
         <div class="my-3">
           <a [href]="usuario?.linkIG" target="_blank">
             <i class="fab fa-instagram iconoContacto "></i>
@@ -108,6 +129,6 @@
     <div *ngIf="mostrarError" class="alert alert-danger mt-2 w-75 mx-4" role="alert">
       {{idiomaEspanol ? texto.failure.es : texto.failure.en}}
     </div>
-  </div>
+  </div> -->
 
 </div>

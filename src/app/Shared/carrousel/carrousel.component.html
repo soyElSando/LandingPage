@@ -17,11 +17,11 @@
   </div>
   
 
-  <div class="container-fluid mt-0">
+  <div class="container-fluid mt-0 carrouselMinHeight">
 
-    <div class="container-fluid pb-3 mt-5" [id]="'contenedorCarrousel'+carrouselId">
+    <div class="container-fluid pb-3 mt-5 carrouselMinHeight" [id]="'contenedorCarrousel'+carrouselId">
       <!-- Carrousel -->
-      <div [id]="carrouselId" class="carousel slide mb-2" data-bs-ride="carousel">
+      <div [id]="carrouselId" class="carousel slide mb-2 carrousel300px" data-bs-ride="carousel">
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
@@ -32,12 +32,12 @@
         </div>
 
         <!-- The slideshow/carousel -->
-        <div class="carousel-inner" style="height:fit-content">
+        <div class="carousel-inner carrouselMinHeight" style="height:fit-content">
           <!-- <div *ngFor="let elemento of elementos; first as isFirst" class="carousel-item active"
             [ngClass]="{'active': isFirst }"> -->
             <div *ngFor="let elemento of elementos" class="carousel-item active">
             <img [src]="elemento.imagen" [alt]="idiomaEspanol ? elemento.nombreEs : elemento.nombreEn"
-             class="d-block imagenCarrousel">
+             class="d-block imagenCarrousel carrouselMinHeight">
             <div class="carousel-caption">
 
               <h3>{{idiomaEspanol ? elemento.nombreEs : elemento.nombreEn}}</h3>

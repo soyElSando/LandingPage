@@ -232,7 +232,14 @@
         "title":{
             "es":"Dejame un Mensaje",
             "en":"Contact me"
-        },"mailPH":{
+        },"title2":{
+            "es":"Contactame:",
+            "en":"Contact me:"
+        },"mailAdress":{
+            "es":"ger.sandoval.dm@gmail.com",
+            "en":"ger.sandoval.dm@gmail.com"
+        },
+        "mailPH":{
             "es":"Dirección de correo electrónico",
             "en":"Email adress"
         },
