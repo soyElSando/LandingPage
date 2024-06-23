@@ -1,14 +1,14 @@
 {
-    "nombre": "Germán Sandoval",
-    "email": "argentina@programa.com",
-    "password": "1234",
-    "profesion": "Desarrollador Full Stack Semi-Senior.",
-    "linkIn": "https://www.linkedin.com/in/german-sandoval-arg/",
+    "nombre": "Nicolas Diaz",
+    "email": "",
+    "password": "",
+    "profesion": "Guitarrista, arreglador y educador",
+    "linkIn": "",
     "linkMail":"/contacto",
-    "linkWP":"1161034092",
-    "linkGH": "https://github.com/soyElSando",
-    "linkIG":"https://instagram.com/ger.sando",
+    "linkWP":"1165471529",
+    "linkGH": "",
+    "linkIG":"https://www.instagram.com/nic6cuerdas/",
     "descripcionEs": "Soy una persona inquieta apasionada por la tecnología. Lo que me motiva a seguir estudiando es la idea de encontrar soluciones creativas a problemas de la vida de las personas y las empresas. Te invito a recorrer la sección de proyectos y escribirme tu consulta.",
     "descripcionEn": "I am a restless person passionate about technology. What motivates me to keep studying is the idea of finding creative solutions to problems in people's and companies' lives. I invite you to explore the projects section and write me your inquiry.",
-    "avatar": "https://res.cloudinary.com/dupw9w3xy/image/upload/v1718937837/gerSando.jpg"
+    "avatar": ""
 }

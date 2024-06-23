@@ -1,11 +1,35 @@
 {"promos" :[
     {
       "id": 0,
-      "nombreEs": "Germán Sandoval",
-      "nombreEn": "Germán Sandoval",
-      "imagen":"https://www.infoquestgroup.com/wp-content/uploads/banner-software-development.jpg",
-      "descripcionEs":"Desarrollador Web Fullstack",
-      "descripcionEn":"Fullstack Web Developer",
+      "nombreEs": "",
+      "nombreEn": "",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1719180491/NicolasDiaz/portada-1.jpg",
+      "descripcionEs":"",
+      "descripcionEn":"",
+      "link":""
+    },{
+      "id": 1,
+      "nombreEs": "",
+      "nombreEn": "",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1719180491/NicolasDiaz/portada-2.jpg",
+      "descripcionEs":"",
+      "descripcionEn":"",
+      "link":""
+    },{
+      "id": 2,
+      "nombreEs": "",
+      "nombreEn": "",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1719180491/NicolasDiaz/portada-3.jpg",
+      "descripcionEs":"",
+      "descripcionEn":"",
+      "link":""
+    },{
+      "id": 3,
+      "nombreEs": "",
+      "nombreEn": "",
+      "imagen":"https://res.cloudinary.com/dupw9w3xy/image/upload/v1719180491/NicolasDiaz/portada-4.jpg",
+      "descripcionEs":"",
+      "descripcionEn":"",
       "link":""
     }
 ]}

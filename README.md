@@ -1,5 +1,4 @@
-# Frontend Portfolio - TP Final Argentina Programa
+# Landing Page
 
 This is an SPA aplication created with Angular.
-
-BackEnd: https://github.com/soyElSando/ArgPrograma_Backend
+Esta es una SPA creada con Angular.
